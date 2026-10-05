@@ -1,7 +1,9 @@
 // Hand-written recipe collection. No AI, no network: recipes ship with the app
 // and are matched locally against the ingredient tags of expiring items.
-// Text is provided in English, Italian and Spanish; other languages fall back
-// to English until translated.
+// English, Italian and Spanish text lives inline; the other app languages are in
+// recipes-i18n/. Anything missing falls back to English.
+
+import { RECIPE_TRANSLATIONS } from './recipes-i18n';
 
 export type RecipeLang = 'en' | 'it' | 'es';
 
@@ -385,4 +387,4 @@ export const RECIPES: Recipe[] = [
 ];
 
 export const recipeText = (r: Recipe, lang: string): Localized =>
-    (r.text as Record<string, Localized | undefined>)[lang] ?? r.text.en;
+    (r.text as Record<string, Localized | undefined>)[lang] ?? RECIPE_TRANSLATIONS[lang]?.[r.id] ?? r.text.en;
