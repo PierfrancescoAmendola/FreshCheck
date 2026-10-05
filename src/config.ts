@@ -1,17 +1,13 @@
-import { Platform } from 'react-native';
+// Store product IDs, identical on App Store Connect and Google Play Console.
+// Purchases are handled directly by StoreKit / Play Billing (expo-iap), no third-party service.
+export const PRODUCT_IDS = {
+    monthly: 'com.anonymous.freshcheck.pro.monthly',
+    annual: 'com.anonymous.freshcheck.pro.yearly',
+    lifetime: 'com.anonymous.freshcheck.pro.lifetime',
+} as const;
 
-// RevenueCat public SDK keys. Create the app in app.revenuecat.com and paste
-// the keys here. They are public keys, safe to ship in the binary.
-export const REVENUECAT_API_KEY = Platform.select({
-    ios: 'appl_REPLACE_ME',
-    android: 'goog_REPLACE_ME',
-    default: '',
-});
-
-export const REVENUECAT_ENTITLEMENT = 'pro';
-
-export const isRevenueCatConfigured = (): boolean =>
-    !!REVENUECAT_API_KEY && !REVENUECAT_API_KEY.includes('REPLACE_ME');
+export const SUBSCRIPTION_IDS = [PRODUCT_IDS.monthly, PRODUCT_IDS.annual];
+export const PRO_PRODUCT_IDS: string[] = [PRODUCT_IDS.monthly, PRODUCT_IDS.annual, PRODUCT_IDS.lifetime];
 
 // Free tier limits
 export const FREE_LIMITS = {

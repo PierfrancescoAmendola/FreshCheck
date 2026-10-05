@@ -97,7 +97,8 @@
             "deploymentTarget": "15.5"
           }
         }
-      ]
+      ],
+      "expo-iap"
     ],
     "notification": {
       "icon": "./assets/icon.png",
