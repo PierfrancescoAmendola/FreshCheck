@@ -1,0 +1,270 @@
+{
+  "products": {
+    "monthly": {
+      "id": "com.anonymous.freshcheck.pro.monthly",
+      "type": "auto-renewable",
+      "duration": "1 month",
+      "price_eur": "2.99"
+    },
+    "yearly": {
+      "id": "com.anonymous.freshcheck.pro.yearly",
+      "type": "auto-renewable",
+      "duration": "1 year",
+      "price_eur": "19.99",
+      "intro_offer": "free trial, 1 week, new subscribers"
+    },
+    "lifetime": {
+      "id": "com.anonymous.freshcheck.pro.lifetime",
+      "type": "non-consumable",
+      "price_eur": "49.99"
+    }
+  },
+  "subscription_group": "FreshCheck Pro",
+  "urls": {
+    "privacy": "https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+    "support": "https://pierfrancescoamendola.github.io/FreshCheck/support.html",
+    "terms": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+  },
+  "locales": {
+    "en-US": {
+      "app_lang": "en",
+      "name": "FreshCheck: Expiry Tracker",
+      "subtitle": "Track food dates, waste less",
+      "promo": "New: read expiry dates from a photo, recipes for what's ending, a shopping list and your savings stats. Everything stays on your phone.",
+      "keywords": "expiration,date,best before,pantry,fridge,food,grocery,shopping list,waste,reminder,barcode,recipes",
+      "description": "FreshCheck tells you what's in your fridge and what needs eating first, before it ends up in the bin.\n\nScan a barcode, snap the printed date, and FreshCheck sorts your pantry by urgency: use today, next 3 days, this week, later on. A gentle reminder arrives before anything goes off.\n\nSCAN, DON'T TYPE\n• The barcode scanner finds the product name for you\n• Read the expiry date straight from the package with your camera\n• Quick picks and typical shelf-life suggestions for fresh food\n\nKNOW WHAT'S ENDING\n• Pantry sorted by expiry date, with clear colour cues\n• Fridge, freezer, cupboard, and your own places\n• Move an item to the freezer and get a new date automatically\n• Mark items as opened, eaten or thrown away\n\nCOOK WHAT'S ENDING\n• Recipes matched to the items that expire first\n• Filters for quick and vegetarian meals\n• Add missing ingredients to your shopping list in one tap\n\nSHOPPING LIST\n• Finished something? Put it on the list\n• Share the list with anyone\n\nYOUR IMPACT\n• Money saved and wasted this month\n• Waste rate, no-waste streak and 6-month history\n• Badges for every milestone\n\nREMINDERS THAT FIT YOU\n• Choose when: a week before, the day before, on the day\n• Morning digest of what expires today\n• Weekly plan every Monday\n\nPRIVATE BY DESIGN\nNo account, no servers, no tracking. Your items and history stay on your phone. Export a CSV or a backup whenever you want.\n\nFRESHCHECK PRO\nThe free version includes up to 20 items, 3 date reads from photos and a selection of recipes. Pro unlocks:\n• Unlimited items\n• Unlimited date reading from photos\n• Custom storage places\n• Full savings history, charts and badges\n• Every recipe, with filters\n• Custom reminders, morning digest and weekly plan\n• CSV export and backup\n• Colour themes\n\nPro is available as a monthly or yearly subscription (the yearly plan includes a 7-day free trial) or as a one-time lifetime purchase. Payment is charged to your Apple Account at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel them in your App Store account settings.\n\nTerms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPrivacy Policy: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+      "whatsNew": "FreshCheck 2.0 is rebuilt from the ground up.\n\n• A brand-new design, with dark mode and colour themes\n• Read expiry dates from a photo of the package\n• Recipes matched to what expires first\n• A shopping list you can share\n• Impact: money saved, waste rate, streaks and badges\n• Storage places: fridge, freezer, cupboard and your own\n• Morning digest and weekly plan\n• CSV export and backup\n• Now available in 10 languages\n• New FreshCheck Pro: monthly, yearly with a 7-day free trial, or lifetime",
+      "group_name": "FreshCheck Pro",
+      "iap": {
+        "monthly": [
+          "FreshCheck Pro Monthly",
+          "All Pro features, billed every month"
+        ],
+        "yearly": [
+          "FreshCheck Pro Yearly",
+          "All Pro features for a year, 7 days free"
+        ],
+        "lifetime": [
+          "FreshCheck Pro Lifetime",
+          "All Pro features forever, pay once"
+        ]
+      }
+    },
+    "it": {
+      "app_lang": "it",
+      "name": "FreshCheck: Scadenze Cibo",
+      "subtitle": "Zero sprechi, più risparmio",
+      "promo": "Novità: leggi la scadenza da una foto, ricette per ciò che sta finendo, lista della spesa e statistiche sui risparmi. Tutto resta sul tuo telefono.",
+      "keywords": "scadenza,scadenze,cibo,dispensa,frigo,spesa,lista spesa,spreco,promemoria,codice a barre,ricette",
+      "description": "FreshCheck ti dice cosa c'è in frigo e cosa va consumato per primo, prima che finisca nella spazzatura.\n\nScansiona il codice a barre, inquadra la data stampata e FreshCheck ordina la dispensa per urgenza: da usare oggi, nei prossimi 3 giorni, questa settimana, più avanti. Un promemoria discreto arriva prima che qualcosa scada.\n\nSCANSIONA, NON SCRIVERE\n• Il lettore di codici a barre trova il nome del prodotto per te\n• Leggi la data di scadenza dalla confezione con la fotocamera\n• Scelte rapide e durata tipica suggerita per i cibi freschi\n\nSAPPI COSA STA SCADENDO\n• Dispensa ordinata per scadenza, con colori chiari\n• Frigo, freezer, credenza e i tuoi luoghi personalizzati\n• Sposta un prodotto in freezer e ottieni subito una nuova data\n• Segna i prodotti come aperti, mangiati o buttati\n\nCUCINA CIÒ CHE STA FINENDO\n• Ricette abbinate ai prodotti che scadono per primi\n• Filtri per piatti veloci e vegetariani\n• Aggiungi gli ingredienti mancanti alla lista con un tocco\n\nLISTA DELLA SPESA\n• Finito qualcosa? Mettilo in lista\n• Condividi la lista con chi vuoi\n\nIL TUO IMPATTO\n• Soldi risparmiati e sprecati questo mese\n• Tasso di spreco, serie senza sprechi e storico di 6 mesi\n• Medaglie per ogni traguardo\n\nPROMEMORIA SU MISURA\n• Scegli quando: una settimana prima, il giorno prima, il giorno stesso\n• Riepilogo mattutino di ciò che scade oggi\n• Piano settimanale ogni lunedì\n\nPRIVACY PRIMA DI TUTTO\nNessun account, nessun server, nessun tracciamento. Prodotti e storico restano sul tuo telefono. Esporta un CSV o un backup quando vuoi.\n\nFRESHCHECK PRO\nLa versione gratuita include fino a 20 prodotti, 3 letture della data da foto e una selezione di ricette. Pro sblocca:\n• Prodotti illimitati\n• Lettura illimitata della data da foto\n• Luoghi di conservazione personalizzati\n• Storico completo dei risparmi, grafici e medaglie\n• Tutte le ricette, con filtri\n• Promemoria personalizzati, riepilogo mattutino e piano settimanale\n• Esportazione CSV e backup\n• Temi colore\n\nPro è disponibile con abbonamento mensile o annuale (l'annuale include 7 giorni di prova gratuita) oppure con un acquisto unico a vita. Il pagamento viene addebitato sul tuo Account Apple alla conferma dell'acquisto. Gli abbonamenti si rinnovano automaticamente se non vengono disdetti almeno 24 ore prima della fine del periodo in corso. Puoi gestirli o disdirli nelle impostazioni del tuo account App Store.\n\nTermini d'uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nInformativa sulla privacy: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+      "whatsNew": "FreshCheck 2.0 è stata ricostruita da zero.\n\n• Un design completamente nuovo, con modalità scura e temi colore\n• Leggi la data di scadenza da una foto della confezione\n• Ricette abbinate a ciò che scade per primo\n• Lista della spesa da condividere\n• Impatto: soldi risparmiati, tasso di spreco, serie e medaglie\n• Luoghi di conservazione: frigo, freezer, credenza e i tuoi\n• Riepilogo mattutino e piano settimanale\n• Esportazione CSV e backup\n• Ora disponibile in 10 lingue\n• Nuovo FreshCheck Pro: mensile, annuale con 7 giorni gratis, oppure a vita",
+      "group_name": "FreshCheck Pro",
+      "iap": {
+        "monthly": [
+          "FreshCheck Pro Mensile",
+          "Tutte le funzioni Pro, addebito mensile"
+        ],
+        "yearly": [
+          "FreshCheck Pro Annuale",
+          "Tutto Pro per un anno, 7 giorni gratis"
+        ],
+        "lifetime": [
+          "FreshCheck Pro a vita",
+          "Tutto Pro per sempre, paghi una volta"
+        ]
+      }
+    },
+    "es-ES": {
+      "app_lang": "es",
+      "name": "FreshCheck: Control Caducidad",
+      "subtitle": "Caducidades y cero desperdicio",
+      "promo": "Novedad: lee la fecha de caducidad desde una foto, recetas con lo que se acaba, lista de la compra y estadísticas de ahorro. Todo se queda en tu móvil.",
+      "keywords": "caducidad,consumo preferente,despensa,nevera,comida,lista compra,desperdicio,recordatorio,recetas",
+      "description": "FreshCheck te dice qué hay en tu nevera y qué debes comer primero, antes de que acabe en la basura.\n\nEscanea el código de barras, fotografía la fecha impresa y FreshCheck ordena tu despensa por urgencia: usar hoy, próximos 3 días, esta semana, más adelante. Un aviso discreto llega antes de que algo caduque.\n\nESCANEA, NO ESCRIBAS\n• El lector de códigos de barras encuentra el nombre del producto por ti\n• Lee la fecha de caducidad del envase con la cámara\n• Fechas rápidas y duración típica sugerida para alimentos frescos\n\nSABE QUÉ SE ACABA\n• Despensa ordenada por caducidad, con colores claros\n• Nevera, congelador, armario y tus propios lugares\n• Pasa un producto al congelador y obtén una nueva fecha al instante\n• Marca productos como abiertos, comidos o tirados\n\nCOCINA LO QUE SE ACABA\n• Recetas basadas en lo que caduca primero\n• Filtros para platos rápidos y vegetarianos\n• Añade los ingredientes que faltan a la lista con un toque\n\nLISTA DE LA COMPRA\n• ¿Se ha terminado algo? Añádelo a la lista\n• Comparte la lista con quien quieras\n\nTU IMPACTO\n• Dinero ahorrado y desperdiciado este mes\n• Tasa de desperdicio, racha sin desperdicio e historial de 6 meses\n• Insignias para cada logro\n\nRECORDATORIOS A TU MEDIDA\n• Elige cuándo: una semana antes, el día antes, el mismo día\n• Resumen matinal de lo que caduca hoy\n• Plan semanal cada lunes\n\nPRIVACIDAD ANTE TODO\nSin cuenta, sin servidores, sin rastreo. Tus productos y tu historial se quedan en tu móvil. Exporta un CSV o una copia de seguridad cuando quieras.\n\nFRESHCHECK PRO\nLa versión gratuita incluye hasta 20 productos, 3 lecturas de fecha desde foto y una selección de recetas. Pro desbloquea:\n• Productos ilimitados\n• Lectura ilimitada de fechas desde foto\n• Lugares de almacenamiento propios\n• Historial completo de ahorro, gráficos e insignias\n• Todas las recetas, con filtros\n• Recordatorios personalizados, resumen matinal y plan semanal\n• Exportación CSV y copia de seguridad\n• Temas de color\n\nPro está disponible como suscripción mensual o anual (la anual incluye 7 días de prueba gratis) o como compra única de por vida. El pago se carga en tu cuenta de Apple al confirmar la compra. Las suscripciones se renuevan automáticamente salvo que se cancelen al menos 24 horas antes del final del periodo actual. Puedes gestionarlas o cancelarlas en los ajustes de tu cuenta del App Store.\n\nCondiciones de uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPolítica de privacidad: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+      "whatsNew": "FreshCheck 2.0 se ha rehecho desde cero.\n\n• Un diseño totalmente nuevo, con modo oscuro y temas de color\n• Lee la fecha de caducidad desde una foto del envase\n• Recetas basadas en lo que caduca primero\n• Lista de la compra que puedes compartir\n• Impacto: dinero ahorrado, tasa de desperdicio, rachas e insignias\n• Lugares: nevera, congelador, armario y los tuyos\n• Resumen matinal y plan semanal\n• Exportación CSV y copia de seguridad\n• Ahora disponible en 10 idiomas\n• Nuevo FreshCheck Pro: mensual, anual con 7 días gratis o de por vida",
+      "group_name": "FreshCheck Pro",
+      "iap": {
+        "monthly": [
+          "FreshCheck Pro Mensual",
+          "Todas las funciones Pro, pago mensual"
+        ],
+        "yearly": [
+          "FreshCheck Pro Anual",
+          "Todo Pro durante un año, 7 días gratis"
+        ],
+        "lifetime": [
+          "FreshCheck Pro de por vida",
+          "Todo Pro para siempre, con un único pago"
+        ]
+      }
+    },
+    "fr-FR": {
+      "app_lang": "fr",
+      "name": "FreshCheck: Anti-gaspi Frigo",
+      "subtitle": "Dates limites, zéro gaspillage",
+      "promo": "Nouveau : lisez la date limite sur une photo, des recettes avec ce qui se termine, une liste de courses et vos économies. Tout reste sur votre téléphone.",
+      "keywords": "péremption,DLC,DDM,date limite,frigo,courses,liste de courses,gaspillage,rappel,code-barres,recettes",
+      "description": "FreshCheck vous dit ce qu'il y a dans votre frigo et ce qu'il faut manger en premier, avant que ça finisse à la poubelle.\n\nScannez le code-barres, photographiez la date imprimée et FreshCheck trie vos produits par urgence : à consommer aujourd'hui, dans les 3 jours, cette semaine, plus tard. Un rappel discret arrive avant que quoi que ce soit ne se perde.\n\nSCANNEZ, NE TAPEZ PLUS\n• Le lecteur de code-barres trouve le nom du produit pour vous\n• Lisez la date limite directement sur l'emballage avec l'appareil photo\n• Dates rapides et durée de conservation typique pour les produits frais\n\nSACHEZ CE QUI SE TERMINE\n• Produits triés par date limite, avec des couleurs claires\n• Frigo, congélateur, placard et vos propres emplacements\n• Passez un produit au congélateur et obtenez une nouvelle date automatiquement\n• Marquez vos produits comme ouverts, mangés ou jetés\n\nCUISINEZ CE QUI SE TERMINE\n• Recettes associées aux produits qui expirent en premier\n• Filtres pour les plats rapides et végétariens\n• Ajoutez les ingrédients manquants à la liste en un geste\n\nLISTE DE COURSES\n• Un produit terminé ? Ajoutez-le à la liste\n• Partagez la liste avec qui vous voulez\n\nVOTRE IMPACT\n• Argent économisé et gaspillé ce mois-ci\n• Taux de gaspillage, série sans gaspillage et historique sur 6 mois\n• Badges pour chaque étape franchie\n\nDES RAPPELS À VOTRE RYTHME\n• Choisissez quand : une semaine avant, la veille, le jour même\n• Résumé du matin de ce qui expire aujourd'hui\n• Programme de la semaine chaque lundi\n\nCONFIDENTIEL PAR NATURE\nPas de compte, pas de serveur, pas de pistage. Vos produits et votre historique restent sur votre téléphone. Exportez un CSV ou une sauvegarde quand vous le souhaitez.\n\nFRESHCHECK PRO\nLa version gratuite comprend jusqu'à 20 produits, 3 lectures de date sur photo et une sélection de recettes. Pro débloque :\n• Produits illimités\n• Lecture illimitée des dates sur photo\n• Emplacements de rangement personnalisés\n• Historique complet des économies, graphiques et badges\n• Toutes les recettes, avec filtres\n• Rappels personnalisés, résumé du matin et programme de la semaine\n• Export CSV et sauvegarde\n• Thèmes de couleur\n\nPro est disponible en abonnement mensuel ou annuel (l'annuel inclut 7 jours d'essai gratuit) ou en achat unique à vie. Le paiement est débité sur votre compte Apple à la confirmation de l'achat. Les abonnements se renouvellent automatiquement sauf annulation au moins 24 heures avant la fin de la période en cours. Vous pouvez les gérer ou les résilier dans les réglages de votre compte App Store.\n\nConditions d'utilisation : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPolitique de confidentialité : https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+      "whatsNew": "FreshCheck 2.0 a été entièrement repensée.\n\n• Un tout nouveau design, avec mode sombre et thèmes de couleur\n• Lisez la date limite sur une photo de l'emballage\n• Recettes associées à ce qui expire en premier\n• Une liste de courses à partager\n• Impact : argent économisé, taux de gaspillage, séries et badges\n• Emplacements : frigo, congélateur, placard et les vôtres\n• Résumé du matin et programme de la semaine\n• Export CSV et sauvegarde\n• Désormais disponible en 10 langues\n• Nouveau FreshCheck Pro : mensuel, annuel avec 7 jours gratuits, ou à vie",
+      "group_name": "FreshCheck Pro",
+      "iap": {
+        "monthly": [
+          "FreshCheck Pro Mensuel",
+          "Tout Pro, facturé chaque mois"
+        ],
+        "yearly": [
+          "FreshCheck Pro Annuel",
+          "Tout Pro pendant un an, 7 jours offerts"
+        ],
+        "lifetime": [
+          "FreshCheck Pro à vie",
+          "Tout Pro pour toujours, en un seul achat"
+        ]
+      }
+    },
+    "de-DE": {
+      "app_lang": "de",
+      "name": "FreshCheck: Haltbarkeit & MHD",
+      "subtitle": "Essen retten, Geld sparen",
+      "promo": "Neu: Ablaufdatum per Foto erkennen, Rezepte für das, was bald abläuft, Einkaufsliste und deine Spar-Bilanz. Alles bleibt auf deinem Handy.",
+      "keywords": "mindesthaltbarkeit,ablaufdatum,haltbarkeit,vorrat,kühlschrank,einkaufsliste,lebensmittel,rezepte",
+      "description": "FreshCheck zeigt dir, was in deinem Kühlschrank ist und was zuerst gegessen werden muss, bevor es im Müll landet.\n\nBarcode scannen, aufgedrucktes Datum fotografieren, und FreshCheck sortiert deinen Vorrat nach Dringlichkeit: heute verbrauchen, nächste 3 Tage, diese Woche, später. Eine sanfte Erinnerung kommt, bevor etwas schlecht wird.\n\nSCANNEN STATT TIPPEN\n• Der Barcode-Scanner findet den Produktnamen für dich\n• Lies das Mindesthaltbarkeitsdatum direkt mit der Kamera von der Verpackung\n• Schnellauswahl und typische Haltbarkeit für frische Lebensmittel\n\nWISSEN, WAS BALD ABLÄUFT\n• Vorrat nach Ablaufdatum sortiert, mit klaren Farben\n• Kühlschrank, Gefrierfach, Vorratsschrank und eigene Orte\n• Ins Gefrierfach verschieben und automatisch ein neues Datum erhalten\n• Artikel als geöffnet, gegessen oder weggeworfen markieren\n\nKOCHEN, WAS BALD ABLÄUFT\n• Rezepte passend zu dem, was zuerst abläuft\n• Filter für schnelle und vegetarische Gerichte\n• Fehlende Zutaten mit einem Tipp auf die Einkaufsliste\n\nEINKAUFSLISTE\n• Etwas aufgebraucht? Ab auf die Liste\n• Teile die Liste mit anderen\n\nDEINE BILANZ\n• Gespartes und verschwendetes Geld in diesem Monat\n• Verschwendungsquote, Serie ohne Verschwendung und 6-Monats-Verlauf\n• Abzeichen für jeden Meilenstein\n\nERINNERUNGEN NACH DEINEM TAKT\n• Du entscheidest: eine Woche vorher, am Vortag, am selben Tag\n• Morgenübersicht mit allem, was heute abläuft\n• Wochenplan jeden Montag\n\nPRIVAT VON GRUND AUF\nKein Konto, keine Server, kein Tracking. Deine Artikel und dein Verlauf bleiben auf deinem Handy. Exportiere jederzeit eine CSV-Datei oder ein Backup.\n\nFRESHCHECK PRO\nDie kostenlose Version umfasst bis zu 20 Artikel, 3 Datumserkennungen per Foto und eine Auswahl an Rezepten. Pro schaltet frei:\n• Unbegrenzte Artikel\n• Unbegrenzte Datumserkennung per Foto\n• Eigene Lagerorte\n• Vollständiger Spar-Verlauf, Diagramme und Abzeichen\n• Alle Rezepte, mit Filtern\n• Eigene Erinnerungen, Morgenübersicht und Wochenplan\n• CSV-Export und Backup\n• Farbthemen\n\nPro gibt es als Monats- oder Jahresabo (das Jahresabo enthält eine 7-tägige Gratis-Testphase) oder als einmaligen Kauf auf Lebenszeit. Die Zahlung wird bei Kaufbestätigung über deinen Apple Account abgerechnet. Abos verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ende des aktuellen Zeitraums gekündigt werden. Du kannst sie in den Einstellungen deines App Store-Accounts verwalten oder kündigen.\n\nNutzungsbedingungen: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nDatenschutzerklärung: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+      "whatsNew": "FreshCheck 2.0 wurde komplett neu entwickelt.\n\n• Ganz neues Design, mit Dunkelmodus und Farbthemen\n• Ablaufdatum per Foto von der Verpackung erkennen\n• Rezepte passend zu dem, was zuerst abläuft\n• Einkaufsliste zum Teilen\n• Bilanz: gespartes Geld, Verschwendungsquote, Serien und Abzeichen\n• Lagerorte: Kühlschrank, Gefrierfach, Vorratsschrank und eigene\n• Morgenübersicht und Wochenplan\n• CSV-Export und Backup\n• Jetzt in 10 Sprachen verfügbar\n• Neu: FreshCheck Pro als Monatsabo, Jahresabo mit 7 Tagen gratis oder auf Lebenszeit",
+      "group_name": "FreshCheck Pro",
+      "iap": {
+        "monthly": [
+          "FreshCheck Pro Monatlich",
+          "Alle Pro-Funktionen, monatlich"
+        ],
+        "yearly": [
+          "FreshCheck Pro Jährlich",
+          "Alle Pro-Funktionen, 1 Jahr, 7 Tage gratis"
+        ],
+        "lifetime": [
+          "FreshCheck Pro Lebenslang",
+          "Alle Pro-Funktionen für immer, einmal zahlen"
+        ]
+      }
+    },
+    "pt-BR": {
+      "app_lang": "pt",
+      "name": "FreshCheck: Controle Validade",
+      "subtitle": "Desperdice menos, economize",
+      "promo": "Novidade: leia a validade por uma foto, receitas com o que está acabando, lista de compras e estatísticas de economia. Tudo fica no seu celular.",
+      "keywords": "validade,vencimento,despensa,geladeira,alimentos,lista de compras,desperdício,lembrete,receitas",
+      "description": "O FreshCheck mostra o que tem na sua geladeira e o que precisa ser consumido primeiro, antes que vá parar no lixo.\n\nEscaneie o código de barras, fotografe a data impressa e o FreshCheck organiza sua despensa por urgência: usar hoje, próximos 3 dias, esta semana, mais tarde. Um lembrete gentil chega antes que algo estrague.\n\nESCANEIE, NÃO DIGITE\n• O leitor de código de barras encontra o nome do produto para você\n• Leia a data de validade direto da embalagem com a câmera\n• Datas rápidas e validade típica sugerida para alimentos frescos\n\nSAIBA O QUE ESTÁ ACABANDO\n• Despensa ordenada pela validade, com cores claras\n• Geladeira, freezer, armário e seus próprios locais\n• Mova um item para o freezer e ganhe uma nova data automaticamente\n• Marque itens como abertos, consumidos ou descartados\n\nCOZINHE O QUE ESTÁ ACABANDO\n• Receitas combinadas com o que vence primeiro\n• Filtros para pratos rápidos e vegetarianos\n• Adicione os ingredientes que faltam à lista com um toque\n\nLISTA DE COMPRAS\n• Acabou alguma coisa? Coloque na lista\n• Compartilhe a lista com quem quiser\n\nSEU IMPACTO\n• Dinheiro economizado e desperdiçado neste mês\n• Taxa de desperdício, sequência sem desperdício e histórico de 6 meses\n• Conquistas para cada marco\n\nLEMBRETES DO SEU JEITO\n• Escolha quando: uma semana antes, na véspera, no próprio dia\n• Resumo matinal do que vence hoje\n• Plano semanal toda segunda-feira\n\nPRIVACIDADE EM PRIMEIRO LUGAR\nSem conta, sem servidores, sem rastreamento. Seus itens e seu histórico ficam no seu celular. Exporte um CSV ou um backup quando quiser.\n\nFRESHCHECK PRO\nA versão gratuita inclui até 20 itens, 3 leituras de data por foto e uma seleção de receitas. O Pro libera:\n• Itens ilimitados\n• Leitura ilimitada de datas por foto\n• Locais de armazenamento personalizados\n• Histórico completo de economia, gráficos e conquistas\n• Todas as receitas, com filtros\n• Lembretes personalizados, resumo matinal e plano semanal\n• Exportação CSV e backup\n• Temas de cor\n\nO Pro está disponível como assinatura mensal ou anual (a anual inclui 7 dias de teste grátis) ou como compra única vitalícia. O pagamento é cobrado na sua Conta Apple na confirmação da compra. As assinaturas são renovadas automaticamente, a menos que sejam canceladas pelo menos 24 horas antes do fim do período atual. Você pode gerenciá-las ou cancelá-las nos ajustes da sua conta da App Store.\n\nTermos de uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPolítica de privacidade: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+      "whatsNew": "O FreshCheck 2.0 foi refeito do zero.\n\n• Um design totalmente novo, com modo escuro e temas de cor\n• Leia a validade por uma foto da embalagem\n• Receitas combinadas com o que vence primeiro\n• Lista de compras para compartilhar\n• Impacto: dinheiro economizado, taxa de desperdício, sequências e conquistas\n• Locais: geladeira, freezer, armário e os seus\n• Resumo matinal e plano semanal\n• Exportação CSV e backup\n• Agora disponível em 10 idiomas\n• Novo FreshCheck Pro: mensal, anual com 7 dias grátis ou vitalício",
+      "group_name": "FreshCheck Pro",
+      "iap": {
+        "monthly": [
+          "FreshCheck Pro Mensal",
+          "Todos os recursos Pro, cobrança mensal"
+        ],
+        "yearly": [
+          "FreshCheck Pro Anual",
+          "Todo o Pro por um ano, 7 dias grátis"
+        ],
+        "lifetime": [
+          "FreshCheck Pro Vitalício",
+          "Todo o Pro para sempre, pague uma vez"
+        ]
+      }
+    },
+    "nl-NL": {
+      "app_lang": "nl",
+      "name": "FreshCheck: Houdbaarheid",
+      "subtitle": "Verspil minder, bespaar meer",
+      "promo": "Nieuw: lees de houdbaarheidsdatum van een foto, recepten met wat bijna op is, een boodschappenlijst en je besparingen. Alles blijft op je telefoon.",
+      "keywords": "houdbaarheid,THT,datum,voorraad,koelkast,boodschappenlijst,verspilling,herinnering,barcode,recepten",
+      "description": "FreshCheck laat zien wat er in je koelkast ligt en wat als eerste op moet, voordat het in de prullenbak belandt.\n\nScan de barcode, fotografeer de gedrukte datum en FreshCheck sorteert je voorraad op urgentie: vandaag gebruiken, komende 3 dagen, deze week, later. Een vriendelijke herinnering komt voordat iets bederft.\n\nSCANNEN IN PLAATS VAN TYPEN\n• De barcodescanner vindt de productnaam voor je\n• Lees de houdbaarheidsdatum met je camera direct van de verpakking\n• Snelle keuzes en gangbare houdbaarheid voor vers eten\n\nWETEN WAT BIJNA OP IS\n• Voorraad gesorteerd op datum, met duidelijke kleuren\n• Koelkast, vriezer, voorraadkast en je eigen plekken\n• Zet iets in de vriezer en krijg automatisch een nieuwe datum\n• Markeer producten als geopend, opgegeten of weggegooid\n\nKOKEN MET WAT BIJNA OP IS\n• Recepten die passen bij wat het eerst verloopt\n• Filters voor snelle en vegetarische gerechten\n• Voeg ontbrekende ingrediënten met één tik toe aan je lijst\n\nBOODSCHAPPENLIJST\n• Iets op? Zet het op de lijst\n• Deel de lijst met wie je wilt\n\nJOUW IMPACT\n• Geld bespaard en verspild deze maand\n• Verspillingspercentage, reeks zonder verspilling en 6 maanden historie\n• Badges voor elke mijlpaal\n\nHERINNERINGEN OP JOUW MANIER\n• Kies wanneer: een week vooraf, de dag ervoor, op de dag zelf\n• Ochtendoverzicht van wat vandaag verloopt\n• Weekplanning elke maandag\n\nPRIVÉ VANAF HET BEGIN\nGeen account, geen servers, geen tracking. Je producten en historie blijven op je telefoon. Exporteer een CSV of back-up wanneer je wilt.\n\nFRESHCHECK PRO\nDe gratis versie bevat maximaal 20 producten, 3 keer een datum lezen van een foto en een selectie recepten. Pro ontgrendelt:\n• Onbeperkt producten\n• Onbeperkt datums lezen van foto's\n• Eigen bewaarplekken\n• Volledige bespaarhistorie, grafieken en badges\n• Alle recepten, met filters\n• Eigen herinneringen, ochtendoverzicht en weekplanning\n• CSV-export en back-up\n• Kleurthema's\n\nPro is beschikbaar als maand- of jaarabonnement (het jaarabonnement bevat 7 dagen gratis proberen) of als eenmalige aankoop voor altijd. De betaling wordt bij bevestiging van de aankoop via je Apple Account in rekening gebracht. Abonnementen worden automatisch verlengd, tenzij ze ten minste 24 uur voor het einde van de huidige periode worden opgezegd. Je kunt ze beheren of opzeggen in de instellingen van je App Store-account.\n\nGebruiksvoorwaarden: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPrivacybeleid: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+      "whatsNew": "FreshCheck 2.0 is volledig opnieuw gebouwd.\n\n• Een gloednieuw ontwerp, met donkere modus en kleurthema's\n• Lees de houdbaarheidsdatum van een foto van de verpakking\n• Recepten bij wat het eerst verloopt\n• Een boodschappenlijst om te delen\n• Impact: geld bespaard, verspillingspercentage, reeksen en badges\n• Bewaarplekken: koelkast, vriezer, voorraadkast en je eigen plekken\n• Ochtendoverzicht en weekplanning\n• CSV-export en back-up\n• Nu beschikbaar in 10 talen\n• Nieuw FreshCheck Pro: maandelijks, jaarlijks met 7 dagen gratis, of voor altijd",
+      "group_name": "FreshCheck Pro",
+      "iap": {
+        "monthly": [
+          "FreshCheck Pro Maandelijks",
+          "Alle Pro-functies, per maand betaald"
+        ],
+        "yearly": [
+          "FreshCheck Pro Jaarlijks",
+          "Alle Pro-functies, 1 jaar, 7 dagen gratis"
+        ],
+        "lifetime": [
+          "FreshCheck Pro Voor altijd",
+          "Alles van Pro voor altijd, één keer betalen"
+        ]
+      }
+    },
+    "pl": {
+      "app_lang": "pl",
+      "name": "FreshCheck: Daty Ważności",
+      "subtitle": "Nie marnuj jedzenia",
+      "promo": "Nowość: odczyt daty ważności ze zdjęcia, przepisy z tego, co się kończy, lista zakupów i statystyki oszczędności. Wszystko zostaje w Twoim telefonie.",
+      "keywords": "data ważności,termin,spiżarnia,lodówka,jedzenie,lista zakupów,marnowanie,przypomnienie,przepisy",
+      "description": "FreshCheck pokazuje, co masz w lodówce i co trzeba zjeść najpierw, zanim trafi do kosza.\n\nZeskanuj kod kreskowy, zrób zdjęcie nadrukowanej daty, a FreshCheck uporządkuje Twoje zapasy według pilności: zużyj dziś, najbliższe 3 dni, ten tydzień, później. Delikatne przypomnienie przyjdzie, zanim coś się zepsuje.\n\nSKANUJ, NIE WPISUJ\n• Skaner kodów kreskowych sam znajdzie nazwę produktu\n• Odczytaj datę ważności prosto z opakowania aparatem\n• Szybki wybór dat i typowy czas przechowywania świeżej żywności\n\nWIEDZ, CO SIĘ KOŃCZY\n• Zapasy posortowane według daty, z czytelnymi kolorami\n• Lodówka, zamrażarka, szafka i Twoje własne miejsca\n• Przenieś produkt do zamrażarki i automatycznie otrzymaj nową datę\n• Oznaczaj produkty jako otwarte, zjedzone lub wyrzucone\n\nGOTUJ Z TEGO, CO SIĘ KOŃCZY\n• Przepisy dopasowane do produktów, które tracą ważność najszybciej\n• Filtry dań szybkich i wegetariańskich\n• Dodaj brakujące składniki do listy jednym dotknięciem\n\nLISTA ZAKUPÓW\n• Coś się skończyło? Dodaj to do listy\n• Udostępnij listę, komu chcesz\n\nTWÓJ WPŁYW\n• Pieniądze zaoszczędzone i zmarnowane w tym miesiącu\n• Wskaźnik marnowania, seria bez marnowania i historia z 6 miesięcy\n• Odznaki za każdy kamień milowy\n\nPRZYPOMNIENIA NA TWOICH WARUNKACH\n• Wybierz kiedy: tydzień wcześniej, dzień wcześniej, tego samego dnia\n• Poranne podsumowanie tego, co traci ważność dziś\n• Plan tygodnia w każdy poniedziałek\n\nPRYWATNOŚĆ OD PODSTAW\nBez konta, bez serwerów, bez śledzenia. Twoje produkty i historia zostają w telefonie. Eksportuj plik CSV lub kopię zapasową, kiedy chcesz.\n\nFRESHCHECK PRO\nWersja bezpłatna obejmuje do 20 produktów, 3 odczyty daty ze zdjęcia i wybrane przepisy. Pro odblokowuje:\n• Nieograniczoną liczbę produktów\n• Nieograniczony odczyt dat ze zdjęć\n• Własne miejsca przechowywania\n• Pełną historię oszczędności, wykresy i odznaki\n• Wszystkie przepisy z filtrami\n• Własne przypomnienia, poranne podsumowanie i plan tygodnia\n• Eksport CSV i kopię zapasową\n• Motywy kolorów\n\nPro jest dostępne w subskrypcji miesięcznej lub rocznej (roczna obejmuje 7-dniowy bezpłatny okres próbny) albo jako jednorazowy zakup dożywotni. Płatność jest pobierana z Konta Apple po potwierdzeniu zakupu. Subskrypcje odnawiają się automatycznie, jeśli nie zostaną anulowane co najmniej 24 godziny przed końcem bieżącego okresu. Możesz nimi zarządzać lub je anulować w ustawieniach konta App Store.\n\nWarunki korzystania: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPolityka prywatności: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+      "whatsNew": "FreshCheck 2.0 została zbudowana od nowa.\n\n• Zupełnie nowy wygląd, z trybem ciemnym i motywami kolorów\n• Odczyt daty ważności ze zdjęcia opakowania\n• Przepisy dopasowane do tego, co traci ważność najszybciej\n• Lista zakupów do udostępniania\n• Wpływ: zaoszczędzone pieniądze, wskaźnik marnowania, serie i odznaki\n• Miejsca: lodówka, zamrażarka, szafka i Twoje własne\n• Poranne podsumowanie i plan tygodnia\n• Eksport CSV i kopia zapasowa\n• Teraz w 10 językach\n• Nowe FreshCheck Pro: miesięcznie, rocznie z 7 dniami za darmo lub dożywotnio",
+      "group_name": "FreshCheck Pro",
+      "iap": {
+        "monthly": [
+          "FreshCheck Pro Miesięcznie",
+          "Wszystkie funkcje Pro, płatność co miesiąc"
+        ],
+        "yearly": [
+          "FreshCheck Pro Rocznie",
+          "Pro na rok, 7 dni za darmo"
+        ],
+        "lifetime": [
+          "FreshCheck Pro Dożywotnio",
+          "Pro na zawsze, jednorazowa płatność"
+        ]
+      }
+    },
+    "ja": {
+      "app_lang": "ja",
+      "name": "FreshCheck: 賞味期限管理",
+      "subtitle": "食品ロスを減らして節約",
+      "promo": "新機能：写真から期限を読み取り、期限が近い食品で作れるレシピ、買い物リスト、節約の記録。データはすべてあなたのiPhoneの中だけに保存されます。",
+      "keywords": "賞味期限,消費期限,食品管理,冷蔵庫,在庫,買い物リスト,食品ロス,リマインダー,バーコード,レシピ,節約,期限切れ",
+      "description": "FreshCheckは、冷蔵庫に何があって、どれを先に食べるべきかを教えてくれるアプリです。捨ててしまう前に、気づけます。\n\nバーコードをスキャンして、印字された日付を撮影するだけ。FreshCheckが食品を緊急度順に並べます：今日使う、3日以内、今週中、それ以降。期限が来る前にさりげなくお知らせします。\n\n入力せずにスキャン\n• バーコードスキャナーが商品名を自動で検索\n• カメラでパッケージから期限を直接読み取り\n• クイック選択と、生鮮食品の目安日数を提案\n\n期限が近いものがひと目でわかる\n• 期限順に並び、色で状態がすぐわかる\n• 冷蔵庫・冷凍庫・食品棚、そして自分で作った場所\n• 冷凍庫に移すと新しい期限を自動で設定\n• 開封済み・食べた・捨てたを記録\n\n期限が近い食品で料理\n• 先に期限が来る食品に合わせたレシピ\n• 時短・ベジタリアンのフィルター\n• 足りない材料をワンタップで買い物リストへ\n\n買い物リスト\n• 使い切ったらリストに追加\n• リストを家族や友人と共有\n\nあなたの成果\n• 今月節約した金額と無駄にした金額\n• 廃棄率、ムダなし連続日数、6か月の履歴\n• 節目ごとにバッジを獲得\n\nあなたに合わせた通知\n• タイミングを選択：1週間前、前日、当日\n• 今日期限の食品をまとめた朝のお知らせ\n• 毎週月曜日の週間プラン\n\nプライバシー重視の設計\nアカウント不要、サーバーなし、トラッキングなし。食品と履歴はあなたのiPhoneの中だけに保存されます。CSVやバックアップはいつでも書き出せます。\n\nFRESHCHECK PRO\n無料版では、食品20件まで、写真からの日付読み取り3回、一部のレシピを利用できます。Proでは以下が使えます：\n• 食品数無制限\n• 写真からの日付読み取り無制限\n• 保存場所のカスタマイズ\n• 節約の全履歴、グラフ、バッジ\n• すべてのレシピとフィルター\n• カスタム通知、朝のお知らせ、週間プラン\n• CSV書き出しとバックアップ\n• カラーテーマ\n\nProは月額または年額のサブスクリプション（年額プランは7日間の無料トライアル付き）、または買い切りでご利用いただけます。お支払いは購入確定時にApple Accountに請求されます。サブスクリプションは、現在の期間終了の24時間前までにキャンセルしない限り自動更新されます。App Storeのアカウント設定から管理・キャンセルできます。\n\n利用規約：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nプライバシーポリシー：https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+      "whatsNew": "FreshCheck 2.0は、ゼロから作り直しました。\n\n• まったく新しいデザイン、ダークモードとカラーテーマに対応\n• パッケージの写真から期限を読み取り\n• 先に期限が来る食品に合わせたレシピ\n• 共有できる買い物リスト\n• 成果：節約額、廃棄率、連続記録、バッジ\n• 保存場所：冷蔵庫・冷凍庫・食品棚、そして自分の場所\n• 朝のお知らせと週間プラン\n• CSV書き出しとバックアップ\n• 10言語に対応\n• 新しいFreshCheck Pro：月額、7日間無料の年額、または買い切り",
+      "group_name": "FreshCheck Pro",
+      "iap": {
+        "monthly": [
+          "FreshCheck Pro 月額",
+          "すべてのPro機能を毎月のお支払いで"
+        ],
+        "yearly": [
+          "FreshCheck Pro 年額",
+          "すべてのPro機能を1年間、7日間無料"
+        ],
+        "lifetime": [
+          "FreshCheck Pro 買い切り",
+          "すべてのPro機能をずっと、1回のお支払いで"
+        ]
+      }
+    },
+    "ko": {
+      "app_lang": "ko",
+      "name": "FreshCheck: 유통기한 관리",
+      "subtitle": "음식물 낭비 줄이고 절약하기",
+      "promo": "새 기능: 사진으로 유통기한 읽기, 곧 기한이 끝나는 식품으로 만드는 레시피, 장보기 목록, 절약 통계. 모든 데이터는 내 휴대폰에만 저장됩니다.",
+      "keywords": "유통기한,소비기한,냉장고,식품관리,재고,장보기,쇼핑리스트,음식물쓰레기,알림,바코드,레시피,절약",
+      "description": "FreshCheck는 냉장고에 무엇이 있고 무엇을 먼저 먹어야 하는지 알려 줍니다. 버려지기 전에요.\n\n바코드를 스캔하고 인쇄된 날짜를 찍기만 하면 FreshCheck가 식품을 급한 순서대로 정리합니다: 오늘 사용, 3일 이내, 이번 주, 그 이후. 상하기 전에 부드럽게 알려 드립니다.\n\n입력 대신 스캔\n• 바코드 스캐너가 제품 이름을 찾아 줍니다\n• 카메라로 포장지의 유통기한을 바로 읽기\n• 빠른 날짜 선택과 신선식품 보관 기간 추천\n\n곧 끝나는 식품을 한눈에\n• 유통기한 순 정렬과 알아보기 쉬운 색상\n• 냉장고, 냉동실, 찬장, 그리고 나만의 장소\n• 냉동실로 옮기면 새 날짜가 자동으로 설정\n• 개봉, 먹음, 버림으로 표시\n\n곧 끝나는 식품으로 요리\n• 기한이 가장 먼저 끝나는 식품에 맞춘 레시피\n• 간단 요리와 채식 필터\n• 부족한 재료를 한 번에 장보기 목록에 추가\n\n장보기 목록\n• 다 먹었나요? 목록에 추가하세요\n• 누구와도 목록 공유\n\n나의 성과\n• 이번 달 절약한 금액과 낭비한 금액\n• 낭비율, 낭비 없는 연속 기록, 6개월 기록\n• 단계마다 배지 획득\n\n나에게 맞춘 알림\n• 시점 선택: 일주일 전, 하루 전, 당일\n• 오늘 기한이 끝나는 식품을 알려 주는 아침 요약\n• 매주 월요일 주간 계획\n\n처음부터 프라이버시 중심\n계정, 서버, 추적이 없습니다. 식품과 기록은 내 휴대폰에만 저장됩니다. 언제든지 CSV나 백업으로 내보낼 수 있습니다.\n\nFRESHCHECK PRO\n무료 버전에서는 식품 20개, 사진으로 날짜 읽기 3회, 일부 레시피를 이용할 수 있습니다. Pro에서는:\n• 식품 무제한\n• 사진으로 날짜 읽기 무제한\n• 나만의 보관 장소\n• 전체 절약 기록, 차트, 배지\n• 모든 레시피와 필터\n• 맞춤 알림, 아침 요약, 주간 계획\n• CSV 내보내기 및 백업\n• 컬러 테마\n\nPro는 월간 또는 연간 구독(연간 플랜은 7일 무료 체험 포함), 또는 평생 이용권 일회 구매로 이용할 수 있습니다. 결제는 구매 확인 시 Apple 계정으로 청구됩니다. 구독은 현재 기간이 끝나기 최소 24시간 전에 취소하지 않으면 자동으로 갱신됩니다. App Store 계정 설정에서 관리하거나 취소할 수 있습니다.\n\n이용 약관: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n개인정보 처리방침: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html",
+      "whatsNew": "FreshCheck 2.0을 처음부터 새로 만들었습니다.\n\n• 완전히 새로운 디자인, 다크 모드와 컬러 테마 지원\n• 포장지 사진으로 유통기한 읽기\n• 기한이 가장 먼저 끝나는 식품에 맞춘 레시피\n• 공유할 수 있는 장보기 목록\n• 성과: 절약 금액, 낭비율, 연속 기록, 배지\n• 보관 장소: 냉장고, 냉동실, 찬장, 나만의 장소\n• 아침 요약과 주간 계획\n• CSV 내보내기 및 백업\n• 이제 10개 언어 지원\n• 새로운 FreshCheck Pro: 월간, 7일 무료 체험 연간, 또는 평생 이용권",
+      "group_name": "FreshCheck Pro",
+      "iap": {
+        "monthly": [
+          "FreshCheck Pro 월간",
+          "모든 Pro 기능, 매월 결제"
+        ],
+        "yearly": [
+          "FreshCheck Pro 연간",
+          "1년간 모든 Pro 기능, 7일 무료 체험"
+        ],
+        "lifetime": [
+          "FreshCheck Pro 평생",
+          "모든 Pro 기능을 평생, 한 번만 결제"
+        ]
+      }
+    }
+  }
+}

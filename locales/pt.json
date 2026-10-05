@@ -1,0 +1,4 @@
+{
+  "NSCameraUsageDescription": "O FreshCheck usa a câmera para escanear códigos de barras e ler datas de validade. As fotos são processadas no aparelho e nunca salvas.",
+  "CFBundleDisplayName": "FreshCheck"
+}

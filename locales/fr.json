@@ -1,0 +1,4 @@
+{
+  "NSCameraUsageDescription": "FreshCheck utilise l'appareil photo pour scanner les codes-barres et lire les dates limites. Les photos sont traitées sur l'appareil et jamais enregistrées.",
+  "CFBundleDisplayName": "FreshCheck"
+}

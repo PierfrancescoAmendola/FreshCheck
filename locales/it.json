@@ -1,0 +1,4 @@
+{
+  "NSCameraUsageDescription": "FreshCheck usa la fotocamera per scansionare i codici a barre e leggere le date di scadenza. Le foto sono elaborate sul dispositivo e mai salvate.",
+  "CFBundleDisplayName": "FreshCheck"
+}

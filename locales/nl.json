@@ -1,0 +1,4 @@
+{
+  "NSCameraUsageDescription": "FreshCheck gebruikt de camera om barcodes te scannen en houdbaarheidsdata te lezen. Foto's worden op je apparaat verwerkt en nooit bewaard.",
+  "CFBundleDisplayName": "FreshCheck"
+}

@@ -1,0 +1,4 @@
+{
+  "NSCameraUsageDescription": "FreshCheck używa aparatu do skanowania kodów kreskowych i odczytu dat ważności. Zdjęcia są przetwarzane na urządzeniu i nigdy nie są zapisywane.",
+  "CFBundleDisplayName": "FreshCheck"
+}

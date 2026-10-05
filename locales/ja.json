@@ -1,0 +1,4 @@
+{
+  "NSCameraUsageDescription": "FreshCheckはバーコードの読み取りと賞味期限の読み取りにカメラを使用します。写真は端末内で処理され、保存されません。",
+  "CFBundleDisplayName": "FreshCheck"
+}

@@ -1,0 +1,4 @@
+{
+  "NSCameraUsageDescription": "FreshCheck uses the camera to scan barcodes and read expiry dates. Photos are processed on your device and never saved.",
+  "CFBundleDisplayName": "FreshCheck"
+}

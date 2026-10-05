@@ -1,0 +1,4 @@
+{
+  "NSCameraUsageDescription": "FreshCheck는 바코드 스캔과 유통기한 읽기에 카메라를 사용합니다. 사진은 기기에서 처리되며 저장되지 않습니다.",
+  "CFBundleDisplayName": "FreshCheck"
+}
