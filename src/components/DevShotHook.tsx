@@ -45,6 +45,7 @@ export const DevShotHook = ({ skipOnboarding }: { skipOnboarding: () => void }) 
             if (q.get('theme')) setMode(q.get('theme') as ThemeMode);
             if (q.get('accent')) setAccent(q.get('accent') as AccentId);
             if (q.get('pro') === '1') setDebugPro(true);
+            if (q.get('pro') === '0') setDebugPro(false);
             skipOnboarding();
             if (q.get('demo') === '1') await restoreBackup(buildDemoBackup(lang ?? 'it', currency ?? 'EUR'));
             const screen = q.get('screen');
