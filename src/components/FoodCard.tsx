@@ -55,6 +55,8 @@ export const FoodCard = ({ item, location, showLocation, onPress, onFinish }: Pr
             leftThreshold={70}
             rightThreshold={70}
             overshootFriction={8}
+            // Swipeable clips to a square box by default, which cuts the card's soft shadow into a grey rectangle
+            containerStyle={styles.swipe}
             renderLeftActions={action('consumed')}
             renderRightActions={action('wasted')}
             onSwipeableOpen={(direction) => {
@@ -99,6 +101,9 @@ export const FoodCard = ({ item, location, showLocation, onPress, onFinish }: Pr
 };
 
 const styles = StyleSheet.create({
+    swipe: {
+        overflow: 'visible',
+    },
     card: {
         flexDirection: 'row',
         alignItems: 'center',
