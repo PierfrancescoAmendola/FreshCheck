@@ -28,7 +28,7 @@ FreshCheck 2.0 is volledig opnieuw gebouwd.
 • Ochtendoverzicht en weekplanning
 • CSV-export en back-up
 • Nu beschikbaar in 10 talen
-• Nieuw FreshCheck Pro: maandelijks, jaarlijks met 7 dagen gratis, of voor altijd
+• Nieuw FreshCheck Pro: maand- of jaarabonnement, of voor altijd
 ```
 
 **Description:**
@@ -82,7 +82,7 @@ De gratis versie bevat maximaal 20 producten, 3 keer een datum lezen van een fot
 • CSV-export en back-up
 • Kleurthema's
 
-Pro is beschikbaar als maand- of jaarabonnement (het jaarabonnement bevat 7 dagen gratis proberen) of als eenmalige aankoop voor altijd. De betaling wordt bij bevestiging van de aankoop via je Apple Account in rekening gebracht. Abonnementen worden automatisch verlengd, tenzij ze ten minste 24 uur voor het einde van de huidige periode worden opgezegd. Je kunt ze beheren of opzeggen in de instellingen van je App Store-account.
+Pro is beschikbaar als maand- of jaarabonnement of als eenmalige aankoop voor altijd. De betaling wordt bij bevestiging van de aankoop via je Apple Account in rekening gebracht. Abonnementen worden automatisch verlengd, tenzij ze ten minste 24 uur voor het einde van de huidige periode worden opgezegd. Je kunt ze beheren of opzeggen in de instellingen van je App Store-account.
 
 Gebruiksvoorwaarden: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacybeleid: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html
@@ -93,5 +93,5 @@ Privacybeleid: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html
 **In-app purchases:**
 
 - **monthly** (`com.anonymous.freshcheck.pro.monthly`): FreshCheck Pro Maandelijks / Alle Pro-functies, per maand betaald
-- **yearly** (`com.anonymous.freshcheck.pro.yearly`): FreshCheck Pro Jaarlijks / Alle Pro-functies, 1 jaar, 7 dagen gratis
+- **yearly** (`com.anonymous.freshcheck.pro.yearly`): FreshCheck Pro Jaarlijks / Alle Pro-functies, per jaar betaald
 - **lifetime** (`com.anonymous.freshcheck.pro.lifetime`): FreshCheck Pro Voor altijd / Alles van Pro voor altijd, één keer betalen

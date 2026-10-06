@@ -177,8 +177,6 @@ const pl: Dict = {
     perYear: '/ rok',
     oneTime: 'jednorazowo',
     bestValue: 'Najlepsza cena',
-    freeTrial: '7 dni za darmo',
-    startTrial: 'Rozpocznij darmowy okres',
     subscribe: 'Dalej',
     buyLifetime: 'Kup raz',
     restore: 'Przywróć zakupy',

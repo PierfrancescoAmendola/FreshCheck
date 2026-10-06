@@ -24,15 +24,14 @@ export interface Plan {
     price: string; // localized by the store
     productId: string;
     offerToken?: string; // Google Play only
-    hasTrial: boolean;
     available: boolean; // false until the store returned the product
 }
 
 // Shown only while the store has not answered (Expo Go, simulator without StoreKit config, offline).
 const FALLBACK_PLANS: Plan[] = [
-    { kind: 'annual', price: '€19,99', productId: PRODUCT_IDS.annual, hasTrial: true, available: false },
-    { kind: 'monthly', price: '€2,99', productId: PRODUCT_IDS.monthly, hasTrial: false, available: false },
-    { kind: 'lifetime', price: '€49,99', productId: PRODUCT_IDS.lifetime, hasTrial: false, available: false },
+    { kind: 'annual', price: '€19,99', productId: PRODUCT_IDS.annual, available: false },
+    { kind: 'monthly', price: '€2,99', productId: PRODUCT_IDS.monthly, available: false },
+    { kind: 'lifetime', price: '€49,99', productId: PRODUCT_IDS.lifetime, available: false },
 ];
 
 const KIND_BY_ID: Record<string, PlanKind> = {
@@ -62,14 +61,11 @@ const ownsPro = (purchases: Purchase[]) =>
 const toPlan = (p: Product | ProductSubscription): Plan => {
     const kind = KIND_BY_ID[p.id];
     if (p.platform === 'android' && p.type === 'subs') {
-        // Prefer the offer with a free-trial phase (yearly plan), else the base plan
-        const offers = p.subscriptionOffers ?? [];
-        const trial = offers.find((o) => o.paymentMode === 'free-trial');
-        const offer = trial ?? offers[0];
-        return { kind, price: p.displayPrice, productId: p.id, offerToken: offer?.offerTokenAndroid ?? undefined, hasTrial: !!trial, available: true };
+        // Base plan offer: FreshCheck has no free trials
+        const offer = p.subscriptionOffers?.[0];
+        return { kind, price: p.displayPrice, productId: p.id, offerToken: offer?.offerTokenAndroid ?? undefined, available: true };
     }
-    const hasTrial = p.platform === 'ios' && p.type === 'subs' && p.introductoryPricePaymentModeIOS === 'free-trial';
-    return { kind, price: p.displayPrice, productId: p.id, hasTrial, available: true };
+    return { kind, price: p.displayPrice, productId: p.id, available: true };
 };
 
 export const PremiumProvider = ({ children }: { children: ReactNode }) => {

@@ -28,7 +28,7 @@ FreshCheck 2.0을 처음부터 새로 만들었습니다.
 • 아침 요약과 주간 계획
 • CSV 내보내기 및 백업
 • 이제 10개 언어 지원
-• 새로운 FreshCheck Pro: 월간, 7일 무료 체험 연간, 또는 평생 이용권
+• 새로운 FreshCheck Pro: 월간·연간 구독 또는 평생 이용권
 ```
 
 **Description:**
@@ -82,7 +82,7 @@ FRESHCHECK PRO
 • CSV 내보내기 및 백업
 • 컬러 테마
 
-Pro는 월간 또는 연간 구독(연간 플랜은 7일 무료 체험 포함), 또는 평생 이용권 일회 구매로 이용할 수 있습니다. 결제는 구매 확인 시 Apple 계정으로 청구됩니다. 구독은 현재 기간이 끝나기 최소 24시간 전에 취소하지 않으면 자동으로 갱신됩니다. App Store 계정 설정에서 관리하거나 취소할 수 있습니다.
+Pro는 월간 또는 연간 구독, 또는 평생 이용권 일회 구매로 이용할 수 있습니다. 결제는 구매 확인 시 Apple 계정으로 청구됩니다. 구독은 현재 기간이 끝나기 최소 24시간 전에 취소하지 않으면 자동으로 갱신됩니다. App Store 계정 설정에서 관리하거나 취소할 수 있습니다.
 
 이용 약관: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 개인정보 처리방침: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html
@@ -93,5 +93,5 @@ Pro는 월간 또는 연간 구독(연간 플랜은 7일 무료 체험 포함), 
 **In-app purchases:**
 
 - **monthly** (`com.anonymous.freshcheck.pro.monthly`): FreshCheck Pro 월간 / 모든 Pro 기능, 매월 결제
-- **yearly** (`com.anonymous.freshcheck.pro.yearly`): FreshCheck Pro 연간 / 1년간 모든 Pro 기능, 7일 무료 체험
+- **yearly** (`com.anonymous.freshcheck.pro.yearly`): FreshCheck Pro 연간 / 모든 Pro 기능, 매년 결제
 - **lifetime** (`com.anonymous.freshcheck.pro.lifetime`): FreshCheck Pro 평생 / 모든 Pro 기능을 평생, 한 번만 결제

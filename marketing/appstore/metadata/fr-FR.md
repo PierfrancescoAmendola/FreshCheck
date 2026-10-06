@@ -28,7 +28,7 @@ FreshCheck 2.0 a été entièrement repensée.
 • Résumé du matin et programme de la semaine
 • Export CSV et sauvegarde
 • Désormais disponible en 10 langues
-• Nouveau FreshCheck Pro : mensuel, annuel avec 7 jours gratuits, ou à vie
+• Nouveau FreshCheck Pro : abonnement mensuel ou annuel, ou à vie
 ```
 
 **Description:**
@@ -82,7 +82,7 @@ La version gratuite comprend jusqu'à 20 produits, 3 lectures de date sur photo 
 • Export CSV et sauvegarde
 • Thèmes de couleur
 
-Pro est disponible en abonnement mensuel ou annuel (l'annuel inclut 7 jours d'essai gratuit) ou en achat unique à vie. Le paiement est débité sur votre compte Apple à la confirmation de l'achat. Les abonnements se renouvellent automatiquement sauf annulation au moins 24 heures avant la fin de la période en cours. Vous pouvez les gérer ou les résilier dans les réglages de votre compte App Store.
+Pro est disponible en abonnement mensuel ou annuel ou en achat unique à vie. Le paiement est débité sur votre compte Apple à la confirmation de l'achat. Les abonnements se renouvellent automatiquement sauf annulation au moins 24 heures avant la fin de la période en cours. Vous pouvez les gérer ou les résilier dans les réglages de votre compte App Store.
 
 Conditions d'utilisation : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Politique de confidentialité : https://pierfrancescoamendola.github.io/FreshCheck/privacy.html
@@ -93,5 +93,5 @@ Politique de confidentialité : https://pierfrancescoamendola.github.io/FreshChe
 **In-app purchases:**
 
 - **monthly** (`com.anonymous.freshcheck.pro.monthly`): FreshCheck Pro Mensuel / Tout Pro, facturé chaque mois
-- **yearly** (`com.anonymous.freshcheck.pro.yearly`): FreshCheck Pro Annuel / Tout Pro pendant un an, 7 jours offerts
+- **yearly** (`com.anonymous.freshcheck.pro.yearly`): FreshCheck Pro Annuel / Tout Pro, facturé chaque année
 - **lifetime** (`com.anonymous.freshcheck.pro.lifetime`): FreshCheck Pro à vie / Tout Pro pour toujours, en un seul achat

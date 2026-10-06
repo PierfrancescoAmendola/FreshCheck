@@ -71,7 +71,7 @@ export const PaywallScreen = ({ navigation, route }: RootScreen<'Paywall'>) => {
 
     const periodLabel = (p: Plan) => (p.kind === 'monthly' ? t('perMonth') : p.kind === 'annual' ? t('perYear') : t('oneTime'));
     const planLabel = (p: Plan) => (p.kind === 'monthly' ? t('planMonthly') : p.kind === 'annual' ? t('planAnnual') : t('planLifetime'));
-    const cta = plan?.kind === 'lifetime' ? t('buyLifetime') : plan?.hasTrial ? t('startTrial') : t('subscribe');
+    const cta = plan?.kind === 'lifetime' ? t('buyLifetime') : t('subscribe');
 
     return (
         <View style={{ flex: 1, backgroundColor: INK }}>
@@ -125,11 +125,6 @@ export const PaywallScreen = ({ navigation, route }: RootScreen<'Paywall'>) => {
                                         <T v="bodyStrong" color={PAPER}>
                                             {planLabel(p)}
                                         </T>
-                                        {p.hasTrial && (
-                                            <T v="tiny" color={GOLD}>
-                                                {t('freeTrial')}
-                                            </T>
-                                        )}
                                     </View>
                                     <View style={{ alignItems: 'flex-end' }}>
                                         <T v="bodyStrong" color={PAPER} style={{ fontFamily: FONTS.display, fontSize: 19 }}>

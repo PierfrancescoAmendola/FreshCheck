@@ -188,8 +188,6 @@ const en = {
     perYear: '/ year',
     oneTime: 'one time',
     bestValue: 'Best value',
-    freeTrial: '7 days free',
-    startTrial: 'Start free trial',
     subscribe: 'Continue',
     buyLifetime: 'Buy once',
     restore: 'Restore purchases',

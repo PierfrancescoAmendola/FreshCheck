@@ -177,8 +177,6 @@ const nl: Dict = {
     perYear: '/ jaar',
     oneTime: 'eenmalig',
     bestValue: 'Beste deal',
-    freeTrial: '7 dagen gratis',
-    startTrial: 'Start gratis proef',
     subscribe: 'Doorgaan',
     buyLifetime: 'Eenmalig kopen',
     restore: 'Aankopen herstellen',

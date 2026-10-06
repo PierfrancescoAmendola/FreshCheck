@@ -28,7 +28,7 @@ FreshCheck 2.0 is rebuilt from the ground up.
 • Morning digest and weekly plan
 • CSV export and backup
 • Now available in 10 languages
-• New FreshCheck Pro: monthly, yearly with a 7-day free trial, or lifetime
+• New FreshCheck Pro: monthly or yearly subscription, or lifetime
 ```
 
 **Description:**
@@ -82,7 +82,7 @@ The free version includes up to 20 items, 3 date reads from photos and a selecti
 • CSV export and backup
 • Colour themes
 
-Pro is available as a monthly or yearly subscription (the yearly plan includes a 7-day free trial) or as a one-time lifetime purchase. Payment is charged to your Apple Account at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel them in your App Store account settings.
+Pro is available as a monthly or yearly subscription or as a one-time lifetime purchase. Payment is charged to your Apple Account at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel them in your App Store account settings.
 
 Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacy Policy: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html
@@ -93,5 +93,5 @@ Privacy Policy: https://pierfrancescoamendola.github.io/FreshCheck/privacy.html
 **In-app purchases:**
 
 - **monthly** (`com.anonymous.freshcheck.pro.monthly`): FreshCheck Pro Monthly / All Pro features, billed every month
-- **yearly** (`com.anonymous.freshcheck.pro.yearly`): FreshCheck Pro Yearly / All Pro features for a year, 7 days free
+- **yearly** (`com.anonymous.freshcheck.pro.yearly`): FreshCheck Pro Yearly / All Pro features, billed every year
 - **lifetime** (`com.anonymous.freshcheck.pro.lifetime`): FreshCheck Pro Lifetime / All Pro features forever, pay once

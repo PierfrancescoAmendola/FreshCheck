@@ -12,7 +12,7 @@ SUPPORT_URL = "https://pierfrancescoamendola.github.io/FreshCheck/support.html"
 
 PRODUCTS = {
     "monthly": {"id": "com.anonymous.freshcheck.pro.monthly", "type": "auto-renewable", "duration": "1 month", "price_eur": "2.99"},
-    "yearly": {"id": "com.anonymous.freshcheck.pro.yearly", "type": "auto-renewable", "duration": "1 year", "price_eur": "19.99", "intro_offer": "free trial, 1 week, new subscribers"},
+    "yearly": {"id": "com.anonymous.freshcheck.pro.yearly", "type": "auto-renewable", "duration": "1 year", "price_eur": "19.99"},
     "lifetime": {"id": "com.anonymous.freshcheck.pro.lifetime", "type": "non-consumable", "price_eur": "49.99"},
 }
 SUBSCRIPTION_GROUP = "FreshCheck Pro"
@@ -79,7 +79,7 @@ The free version includes up to 20 items, 3 date reads from photos and a selecti
 • CSV export and backup
 • Colour themes
 
-Pro is available as a monthly or yearly subscription (the yearly plan includes a 7-day free trial) or as a one-time lifetime purchase. Payment is charged to your Apple Account at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel them in your App Store account settings.
+Pro is available as a monthly or yearly subscription or as a one-time lifetime purchase. Payment is charged to your Apple Account at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel them in your App Store account settings.
 
 Terms of Use: {TERMS_URL}
 Privacy Policy: {PRIVACY_URL}""",
@@ -94,11 +94,11 @@ Privacy Policy: {PRIVACY_URL}""",
 • Morning digest and weekly plan
 • CSV export and backup
 • Now available in 10 languages
-• New FreshCheck Pro: monthly, yearly with a 7-day free trial, or lifetime""",
+• New FreshCheck Pro: monthly or yearly subscription, or lifetime""",
     group_name="FreshCheck Pro",
     iap={
         "monthly": ("FreshCheck Pro Monthly", "All Pro features, billed every month"),
-        "yearly": ("FreshCheck Pro Yearly", "All Pro features for a year, 7 days free"),
+        "yearly": ("FreshCheck Pro Yearly", "All Pro features, billed every year"),
         "lifetime": ("FreshCheck Pro Lifetime", "All Pro features forever, pay once"),
     },
 )
@@ -158,7 +158,7 @@ La versione gratuita include fino a 20 prodotti, 3 letture della data da foto e 
 • Esportazione CSV e backup
 • Temi colore
 
-Pro è disponibile con abbonamento mensile o annuale (l'annuale include 7 giorni di prova gratuita) oppure con un acquisto unico a vita. Il pagamento viene addebitato sul tuo Account Apple alla conferma dell'acquisto. Gli abbonamenti si rinnovano automaticamente se non vengono disdetti almeno 24 ore prima della fine del periodo in corso. Puoi gestirli o disdirli nelle impostazioni del tuo account App Store.
+Pro è disponibile con abbonamento mensile o annuale oppure con un acquisto unico a vita. Il pagamento viene addebitato sul tuo Account Apple alla conferma dell'acquisto. Gli abbonamenti si rinnovano automaticamente se non vengono disdetti almeno 24 ore prima della fine del periodo in corso. Puoi gestirli o disdirli nelle impostazioni del tuo account App Store.
 
 Termini d'uso: {TERMS_URL}
 Informativa sulla privacy: {PRIVACY_URL}""",
@@ -173,11 +173,11 @@ Informativa sulla privacy: {PRIVACY_URL}""",
 • Riepilogo mattutino e piano settimanale
 • Esportazione CSV e backup
 • Ora disponibile in 10 lingue
-• Nuovo FreshCheck Pro: mensile, annuale con 7 giorni gratis, oppure a vita""",
+• Nuovo FreshCheck Pro: abbonamento mensile o annuale, oppure a vita""",
     group_name="FreshCheck Pro",
     iap={
         "monthly": ("FreshCheck Pro Mensile", "Tutte le funzioni Pro, addebito mensile"),
-        "yearly": ("FreshCheck Pro Annuale", "Tutto Pro per un anno, 7 giorni gratis"),
+        "yearly": ("FreshCheck Pro Annuale", "Tutte le funzioni Pro, addebito annuale"),
         "lifetime": ("FreshCheck Pro a vita", "Tutto Pro per sempre, paghi una volta"),
     },
 )
@@ -237,7 +237,7 @@ La versión gratuita incluye hasta 20 productos, 3 lecturas de fecha desde foto 
 • Exportación CSV y copia de seguridad
 • Temas de color
 
-Pro está disponible como suscripción mensual o anual (la anual incluye 7 días de prueba gratis) o como compra única de por vida. El pago se carga en tu cuenta de Apple al confirmar la compra. Las suscripciones se renuevan automáticamente salvo que se cancelen al menos 24 horas antes del final del periodo actual. Puedes gestionarlas o cancelarlas en los ajustes de tu cuenta del App Store.
+Pro está disponible como suscripción mensual o anual o como compra única de por vida. El pago se carga en tu cuenta de Apple al confirmar la compra. Las suscripciones se renuevan automáticamente salvo que se cancelen al menos 24 horas antes del final del periodo actual. Puedes gestionarlas o cancelarlas en los ajustes de tu cuenta del App Store.
 
 Condiciones de uso: {TERMS_URL}
 Política de privacidad: {PRIVACY_URL}""",
@@ -252,11 +252,11 @@ Política de privacidad: {PRIVACY_URL}""",
 • Resumen matinal y plan semanal
 • Exportación CSV y copia de seguridad
 • Ahora disponible en 10 idiomas
-• Nuevo FreshCheck Pro: mensual, anual con 7 días gratis o de por vida""",
+• Nuevo FreshCheck Pro: suscripción mensual o anual, o de por vida""",
     group_name="FreshCheck Pro",
     iap={
         "monthly": ("FreshCheck Pro Mensual", "Todas las funciones Pro, pago mensual"),
-        "yearly": ("FreshCheck Pro Anual", "Todo Pro durante un año, 7 días gratis"),
+        "yearly": ("FreshCheck Pro Anual", "Todas las funciones Pro, pago anual"),
         "lifetime": ("FreshCheck Pro de por vida", "Todo Pro para siempre, con un único pago"),
     },
 )
@@ -316,7 +316,7 @@ La version gratuite comprend jusqu'à 20 produits, 3 lectures de date sur photo 
 • Export CSV et sauvegarde
 • Thèmes de couleur
 
-Pro est disponible en abonnement mensuel ou annuel (l'annuel inclut 7 jours d'essai gratuit) ou en achat unique à vie. Le paiement est débité sur votre compte Apple à la confirmation de l'achat. Les abonnements se renouvellent automatiquement sauf annulation au moins 24 heures avant la fin de la période en cours. Vous pouvez les gérer ou les résilier dans les réglages de votre compte App Store.
+Pro est disponible en abonnement mensuel ou annuel ou en achat unique à vie. Le paiement est débité sur votre compte Apple à la confirmation de l'achat. Les abonnements se renouvellent automatiquement sauf annulation au moins 24 heures avant la fin de la période en cours. Vous pouvez les gérer ou les résilier dans les réglages de votre compte App Store.
 
 Conditions d'utilisation : {TERMS_URL}
 Politique de confidentialité : {PRIVACY_URL}""",
@@ -331,11 +331,11 @@ Politique de confidentialité : {PRIVACY_URL}""",
 • Résumé du matin et programme de la semaine
 • Export CSV et sauvegarde
 • Désormais disponible en 10 langues
-• Nouveau FreshCheck Pro : mensuel, annuel avec 7 jours gratuits, ou à vie""",
+• Nouveau FreshCheck Pro : abonnement mensuel ou annuel, ou à vie""",
     group_name="FreshCheck Pro",
     iap={
         "monthly": ("FreshCheck Pro Mensuel", "Tout Pro, facturé chaque mois"),
-        "yearly": ("FreshCheck Pro Annuel", "Tout Pro pendant un an, 7 jours offerts"),
+        "yearly": ("FreshCheck Pro Annuel", "Tout Pro, facturé chaque année"),
         "lifetime": ("FreshCheck Pro à vie", "Tout Pro pour toujours, en un seul achat"),
     },
 )
@@ -395,7 +395,7 @@ Die kostenlose Version umfasst bis zu 20 Artikel, 3 Datumserkennungen per Foto u
 • CSV-Export und Backup
 • Farbthemen
 
-Pro gibt es als Monats- oder Jahresabo (das Jahresabo enthält eine 7-tägige Gratis-Testphase) oder als einmaligen Kauf auf Lebenszeit. Die Zahlung wird bei Kaufbestätigung über deinen Apple Account abgerechnet. Abos verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ende des aktuellen Zeitraums gekündigt werden. Du kannst sie in den Einstellungen deines App Store-Accounts verwalten oder kündigen.
+Pro gibt es als Monats- oder Jahresabo oder als einmaligen Kauf auf Lebenszeit. Die Zahlung wird bei Kaufbestätigung über deinen Apple Account abgerechnet. Abos verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ende des aktuellen Zeitraums gekündigt werden. Du kannst sie in den Einstellungen deines App Store-Accounts verwalten oder kündigen.
 
 Nutzungsbedingungen: {TERMS_URL}
 Datenschutzerklärung: {PRIVACY_URL}""",
@@ -410,11 +410,11 @@ Datenschutzerklärung: {PRIVACY_URL}""",
 • Morgenübersicht und Wochenplan
 • CSV-Export und Backup
 • Jetzt in 10 Sprachen verfügbar
-• Neu: FreshCheck Pro als Monatsabo, Jahresabo mit 7 Tagen gratis oder auf Lebenszeit""",
+• Neu: FreshCheck Pro als Monatsabo, Jahresabo oder auf Lebenszeit""",
     group_name="FreshCheck Pro",
     iap={
         "monthly": ("FreshCheck Pro Monatlich", "Alle Pro-Funktionen, monatlich"),
-        "yearly": ("FreshCheck Pro Jährlich", "Alle Pro-Funktionen, 1 Jahr, 7 Tage gratis"),
+        "yearly": ("FreshCheck Pro Jährlich", "Alle Pro-Funktionen, jährlich"),
         "lifetime": ("FreshCheck Pro Lebenslang", "Alle Pro-Funktionen für immer, einmal zahlen"),
     },
 )
@@ -474,7 +474,7 @@ A versão gratuita inclui até 20 itens, 3 leituras de data por foto e uma sele�
 • Exportação CSV e backup
 • Temas de cor
 
-O Pro está disponível como assinatura mensal ou anual (a anual inclui 7 dias de teste grátis) ou como compra única vitalícia. O pagamento é cobrado na sua Conta Apple na confirmação da compra. As assinaturas são renovadas automaticamente, a menos que sejam canceladas pelo menos 24 horas antes do fim do período atual. Você pode gerenciá-las ou cancelá-las nos ajustes da sua conta da App Store.
+O Pro está disponível como assinatura mensal ou anual ou como compra única vitalícia. O pagamento é cobrado na sua Conta Apple na confirmação da compra. As assinaturas são renovadas automaticamente, a menos que sejam canceladas pelo menos 24 horas antes do fim do período atual. Você pode gerenciá-las ou cancelá-las nos ajustes da sua conta da App Store.
 
 Termos de uso: {TERMS_URL}
 Política de privacidade: {PRIVACY_URL}""",
@@ -489,11 +489,11 @@ Política de privacidade: {PRIVACY_URL}""",
 • Resumo matinal e plano semanal
 • Exportação CSV e backup
 • Agora disponível em 10 idiomas
-• Novo FreshCheck Pro: mensal, anual com 7 dias grátis ou vitalício""",
+• Novo FreshCheck Pro: assinatura mensal ou anual, ou vitalício""",
     group_name="FreshCheck Pro",
     iap={
         "monthly": ("FreshCheck Pro Mensal", "Todos os recursos Pro, cobrança mensal"),
-        "yearly": ("FreshCheck Pro Anual", "Todo o Pro por um ano, 7 dias grátis"),
+        "yearly": ("FreshCheck Pro Anual", "Todos os recursos Pro, cobrança anual"),
         "lifetime": ("FreshCheck Pro Vitalício", "Todo o Pro para sempre, pague uma vez"),
     },
 )
@@ -553,7 +553,7 @@ De gratis versie bevat maximaal 20 producten, 3 keer een datum lezen van een fot
 • CSV-export en back-up
 • Kleurthema's
 
-Pro is beschikbaar als maand- of jaarabonnement (het jaarabonnement bevat 7 dagen gratis proberen) of als eenmalige aankoop voor altijd. De betaling wordt bij bevestiging van de aankoop via je Apple Account in rekening gebracht. Abonnementen worden automatisch verlengd, tenzij ze ten minste 24 uur voor het einde van de huidige periode worden opgezegd. Je kunt ze beheren of opzeggen in de instellingen van je App Store-account.
+Pro is beschikbaar als maand- of jaarabonnement of als eenmalige aankoop voor altijd. De betaling wordt bij bevestiging van de aankoop via je Apple Account in rekening gebracht. Abonnementen worden automatisch verlengd, tenzij ze ten minste 24 uur voor het einde van de huidige periode worden opgezegd. Je kunt ze beheren of opzeggen in de instellingen van je App Store-account.
 
 Gebruiksvoorwaarden: {TERMS_URL}
 Privacybeleid: {PRIVACY_URL}""",
@@ -568,11 +568,11 @@ Privacybeleid: {PRIVACY_URL}""",
 • Ochtendoverzicht en weekplanning
 • CSV-export en back-up
 • Nu beschikbaar in 10 talen
-• Nieuw FreshCheck Pro: maandelijks, jaarlijks met 7 dagen gratis, of voor altijd""",
+• Nieuw FreshCheck Pro: maand- of jaarabonnement, of voor altijd""",
     group_name="FreshCheck Pro",
     iap={
         "monthly": ("FreshCheck Pro Maandelijks", "Alle Pro-functies, per maand betaald"),
-        "yearly": ("FreshCheck Pro Jaarlijks", "Alle Pro-functies, 1 jaar, 7 dagen gratis"),
+        "yearly": ("FreshCheck Pro Jaarlijks", "Alle Pro-functies, per jaar betaald"),
         "lifetime": ("FreshCheck Pro Voor altijd", "Alles van Pro voor altijd, één keer betalen"),
     },
 )
@@ -632,7 +632,7 @@ Wersja bezpłatna obejmuje do 20 produktów, 3 odczyty daty ze zdjęcia i wybran
 • Eksport CSV i kopię zapasową
 • Motywy kolorów
 
-Pro jest dostępne w subskrypcji miesięcznej lub rocznej (roczna obejmuje 7-dniowy bezpłatny okres próbny) albo jako jednorazowy zakup dożywotni. Płatność jest pobierana z Konta Apple po potwierdzeniu zakupu. Subskrypcje odnawiają się automatycznie, jeśli nie zostaną anulowane co najmniej 24 godziny przed końcem bieżącego okresu. Możesz nimi zarządzać lub je anulować w ustawieniach konta App Store.
+Pro jest dostępne w subskrypcji miesięcznej lub rocznej albo jako jednorazowy zakup dożywotni. Płatność jest pobierana z Konta Apple po potwierdzeniu zakupu. Subskrypcje odnawiają się automatycznie, jeśli nie zostaną anulowane co najmniej 24 godziny przed końcem bieżącego okresu. Możesz nimi zarządzać lub je anulować w ustawieniach konta App Store.
 
 Warunki korzystania: {TERMS_URL}
 Polityka prywatności: {PRIVACY_URL}""",
@@ -647,11 +647,11 @@ Polityka prywatności: {PRIVACY_URL}""",
 • Poranne podsumowanie i plan tygodnia
 • Eksport CSV i kopia zapasowa
 • Teraz w 10 językach
-• Nowe FreshCheck Pro: miesięcznie, rocznie z 7 dniami za darmo lub dożywotnio""",
+• Nowe FreshCheck Pro: subskrypcja miesięczna lub roczna albo dożywotnio""",
     group_name="FreshCheck Pro",
     iap={
         "monthly": ("FreshCheck Pro Miesięcznie", "Wszystkie funkcje Pro, płatność co miesiąc"),
-        "yearly": ("FreshCheck Pro Rocznie", "Pro na rok, 7 dni za darmo"),
+        "yearly": ("FreshCheck Pro Rocznie", "Wszystkie funkcje Pro, płatność co rok"),
         "lifetime": ("FreshCheck Pro Dożywotnio", "Pro na zawsze, jednorazowa płatność"),
     },
 )
@@ -711,7 +711,7 @@ FRESHCHECK PRO
 • CSV書き出しとバックアップ
 • カラーテーマ
 
-Proは月額または年額のサブスクリプション（年額プランは7日間の無料トライアル付き）、または買い切りでご利用いただけます。お支払いは購入確定時にApple Accountに請求されます。サブスクリプションは、現在の期間終了の24時間前までにキャンセルしない限り自動更新されます。App Storeのアカウント設定から管理・キャンセルできます。
+Proは月額または年額のサブスクリプション、または買い切りでご利用いただけます。お支払いは購入確定時にApple Accountに請求されます。サブスクリプションは、現在の期間終了の24時間前までにキャンセルしない限り自動更新されます。App Storeのアカウント設定から管理・キャンセルできます。
 
 利用規約：{TERMS_URL}
 プライバシーポリシー：{PRIVACY_URL}""",
@@ -726,11 +726,11 @@ Proは月額または年額のサブスクリプション（年額プランは7�
 • 朝のお知らせと週間プラン
 • CSV書き出しとバックアップ
 • 10言語に対応
-• 新しいFreshCheck Pro：月額、7日間無料の年額、または買い切り""",
+• 新しいFreshCheck Pro：月額・年額のサブスクリプション、または買い切り""",
     group_name="FreshCheck Pro",
     iap={
         "monthly": ("FreshCheck Pro 月額", "すべてのPro機能を毎月のお支払いで"),
-        "yearly": ("FreshCheck Pro 年額", "すべてのPro機能を1年間、7日間無料"),
+        "yearly": ("FreshCheck Pro 年額", "すべてのPro機能を毎年のお支払いで"),
         "lifetime": ("FreshCheck Pro 買い切り", "すべてのPro機能をずっと、1回のお支払いで"),
     },
 )
@@ -790,7 +790,7 @@ FRESHCHECK PRO
 • CSV 내보내기 및 백업
 • 컬러 테마
 
-Pro는 월간 또는 연간 구독(연간 플랜은 7일 무료 체험 포함), 또는 평생 이용권 일회 구매로 이용할 수 있습니다. 결제는 구매 확인 시 Apple 계정으로 청구됩니다. 구독은 현재 기간이 끝나기 최소 24시간 전에 취소하지 않으면 자동으로 갱신됩니다. App Store 계정 설정에서 관리하거나 취소할 수 있습니다.
+Pro는 월간 또는 연간 구독, 또는 평생 이용권 일회 구매로 이용할 수 있습니다. 결제는 구매 확인 시 Apple 계정으로 청구됩니다. 구독은 현재 기간이 끝나기 최소 24시간 전에 취소하지 않으면 자동으로 갱신됩니다. App Store 계정 설정에서 관리하거나 취소할 수 있습니다.
 
 이용 약관: {TERMS_URL}
 개인정보 처리방침: {PRIVACY_URL}""",
@@ -805,11 +805,11 @@ Pro는 월간 또는 연간 구독(연간 플랜은 7일 무료 체험 포함), 
 • 아침 요약과 주간 계획
 • CSV 내보내기 및 백업
 • 이제 10개 언어 지원
-• 새로운 FreshCheck Pro: 월간, 7일 무료 체험 연간, 또는 평생 이용권""",
+• 새로운 FreshCheck Pro: 월간·연간 구독 또는 평생 이용권""",
     group_name="FreshCheck Pro",
     iap={
         "monthly": ("FreshCheck Pro 월간", "모든 Pro 기능, 매월 결제"),
-        "yearly": ("FreshCheck Pro 연간", "1년간 모든 Pro 기능, 7일 무료 체험"),
+        "yearly": ("FreshCheck Pro 연간", "모든 Pro 기능, 매년 결제"),
         "lifetime": ("FreshCheck Pro 평생", "모든 Pro 기능을 평생, 한 번만 결제"),
     },
 )

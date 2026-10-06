@@ -28,7 +28,7 @@ FreshCheck 2.0は、ゼロから作り直しました。
 • 朝のお知らせと週間プラン
 • CSV書き出しとバックアップ
 • 10言語に対応
-• 新しいFreshCheck Pro：月額、7日間無料の年額、または買い切り
+• 新しいFreshCheck Pro：月額・年額のサブスクリプション、または買い切り
 ```
 
 **Description:**
@@ -82,7 +82,7 @@ FRESHCHECK PRO
 • CSV書き出しとバックアップ
 • カラーテーマ
 
-Proは月額または年額のサブスクリプション（年額プランは7日間の無料トライアル付き）、または買い切りでご利用いただけます。お支払いは購入確定時にApple Accountに請求されます。サブスクリプションは、現在の期間終了の24時間前までにキャンセルしない限り自動更新されます。App Storeのアカウント設定から管理・キャンセルできます。
+Proは月額または年額のサブスクリプション、または買い切りでご利用いただけます。お支払いは購入確定時にApple Accountに請求されます。サブスクリプションは、現在の期間終了の24時間前までにキャンセルしない限り自動更新されます。App Storeのアカウント設定から管理・キャンセルできます。
 
 利用規約：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 プライバシーポリシー：https://pierfrancescoamendola.github.io/FreshCheck/privacy.html
@@ -93,5 +93,5 @@ Proは月額または年額のサブスクリプション（年額プランは7�
 **In-app purchases:**
 
 - **monthly** (`com.anonymous.freshcheck.pro.monthly`): FreshCheck Pro 月額 / すべてのPro機能を毎月のお支払いで
-- **yearly** (`com.anonymous.freshcheck.pro.yearly`): FreshCheck Pro 年額 / すべてのPro機能を1年間、7日間無料
+- **yearly** (`com.anonymous.freshcheck.pro.yearly`): FreshCheck Pro 年額 / すべてのPro機能を毎年のお支払いで
 - **lifetime** (`com.anonymous.freshcheck.pro.lifetime`): FreshCheck Pro 買い切り / すべてのPro機能をずっと、1回のお支払いで

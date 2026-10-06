@@ -177,8 +177,6 @@ const ja: Dict = {
     perYear: '/ 年',
     oneTime: '一回のみ',
     bestValue: 'いちばんお得',
-    freeTrial: '7日間無料',
-    startTrial: '無料トライアルを開始',
     subscribe: '続ける',
     buyLifetime: '一回で購入',
     restore: '購入を復元',

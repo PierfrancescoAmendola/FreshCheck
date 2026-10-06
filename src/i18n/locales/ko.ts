@@ -177,8 +177,6 @@ const ko: Dict = {
     perYear: '/ 년',
     oneTime: '1회 결제',
     bestValue: '최고 혜택',
-    freeTrial: '7일 무료',
-    startTrial: '무료 체험 시작',
     subscribe: '계속',
     buyLifetime: '한 번 구매',
     restore: '구매 복원',
