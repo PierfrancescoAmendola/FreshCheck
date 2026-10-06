@@ -1,7 +1,12 @@
 // Builds enhanced variants of a date photo so OCR can read small, faint,
 // embossed or light-on-grey print. Pure image work, no network.
-import { FilterMode, ImageFormat, MipmapMode, Skia, SkImage } from '@shopify/react-native-skia';
+import type { SkImage } from '@shopify/react-native-skia';
 import { File, Paths } from 'expo-file-system';
+
+// Skia is a native module: load it only when a date is read, so a missing or broken
+// Skia can never stop the app from starting (it then just skips the enhanced passes)
+type SkiaModule = typeof import('@shopify/react-native-skia');
+const skia = (): SkiaModule => require('@shopify/react-native-skia');
 
 export interface CropRect {
     x: number;
@@ -56,6 +61,7 @@ const cropFor = (img: SkImage, region?: ScreenRegion): CropRect => {
 };
 
 const render = (img: SkImage, src: CropRect, matrix: number[]): string | null => {
+    const { FilterMode, ImageFormat, MipmapMode, Skia } = skia();
     // Upscale small crops so tiny print gets more pixels, cap big ones to save memory
     const scale = Math.min(2, MAX_SIDE / Math.max(src.width, src.height));
     const w = Math.round(src.width * scale);
@@ -81,6 +87,7 @@ const render = (img: SkImage, src: CropRect, matrix: number[]): string | null =>
 
 // Yields the URIs of enhanced variants one at a time, so the caller can stop early
 export async function* enhancedVariants(uri: string, region?: ScreenRegion): AsyncGenerator<string> {
+    const { Skia } = skia();
     const data = await Skia.Data.fromURI(uri);
     const img = Skia.Image.MakeImageFromEncoded(data);
     if (!img) return;
