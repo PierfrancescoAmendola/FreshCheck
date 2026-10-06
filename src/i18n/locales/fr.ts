@@ -113,6 +113,12 @@ const fr: Dict = {
     openSettings: 'Ouvrir les Réglages',
     ocrTrialsLeft: 'Encore {n} lectures de date gratuites',
     ocrUnavailable: 'Le lecteur de date nécessite la version complète de l\'app.',
+    torchOn: 'Allumer la lampe',
+    torchOff: 'Éteindre la lampe',
+    zoomIn: 'Zoomer',
+    zoomOut: 'Dézoomer',
+    tryTorch: 'Peu de lumière ? Touchez la lampe en haut. Texte minuscule ? Touchez la loupe.',
+    tapToFocus: "Flou ? Touchez l'écran pour faire la mise au point, ou reculez et zoomez.",
 
     recipesTitle: 'Cuisinez ce qui expire',
     recipesSubtitle: 'Selon les produits les plus urgents',

@@ -1,0 +1,90 @@
+diff --git a/node_modules/expo-camera/android/src/main/java/expo/modules/camera/ExpoCameraView.kt b/node_modules/expo-camera/android/src/main/java/expo/modules/camera/ExpoCameraView.kt
+index fc56526..598fa63 100644
+--- a/node_modules/expo-camera/android/src/main/java/expo/modules/camera/ExpoCameraView.kt
++++ b/node_modules/expo-camera/android/src/main/java/expo/modules/camera/ExpoCameraView.kt
+@@ -579,7 +579,8 @@ class ExpoCameraView(
+         previewView.height.toFloat()
+       )
+       val action = FocusMeteringAction.Builder(
+-        meteringPointFactory.createPoint(1f, 1f),
++        // Focus on the center of the preview, where the viewfinder is
++        meteringPointFactory.createPoint(previewView.width / 2f, previewView.height / 2f),
+         FocusMeteringAction.FLAG_AF
+       )
+         .build()
+diff --git a/node_modules/expo-camera/ios/Common/DeviceDiscovery.swift b/node_modules/expo-camera/ios/Common/DeviceDiscovery.swift
+index 193297a..04eb538 100644
+--- a/node_modules/expo-camera/ios/Common/DeviceDiscovery.swift
++++ b/node_modules/expo-camera/ios/Common/DeviceDiscovery.swift
+@@ -75,6 +75,15 @@ class DeviceDiscovery {
+   }
+ 
+   var defaultBackCamera: AVCaptureDevice? {
++    // Prefer a virtual multi-camera device: iOS then switches to the ultra-wide (macro)
++    // lens on its own when the subject is closer than the wide lens can focus.
++    for type in [AVCaptureDevice.DeviceType.builtInTripleCamera, .builtInDualWideCamera] {
++      if let virtual = AVCaptureDevice.default(type, for: .video, position: .back),
++        self.backCameraLenses.contains(virtual) {
++        return virtual
++      }
++    }
++
+     // iOS 17+: Check system preferred camera
+     if #available(iOS 17.0, *) {
+       if let preferred = AVCaptureDevice.systemPreferredCamera, preferred.position == .back {
+diff --git a/node_modules/expo-camera/ios/Current/CameraSessionManager.swift b/node_modules/expo-camera/ios/Current/CameraSessionManager.swift
+index dc2a548..87cc3b6 100644
+--- a/node_modules/expo-camera/ios/Current/CameraSessionManager.swift
++++ b/node_modules/expo-camera/ios/Current/CameraSessionManager.swift
+@@ -180,7 +180,15 @@ class CameraSessionManager: NSObject {
+ 
+     do {
+       try device.lockForConfiguration()
+-      if device.isFocusModeSupported(delegate.autoFocus), device.focusMode != delegate.autoFocus {
++      if device.isAutoFocusRangeRestrictionSupported {
++        // Labels and barcodes are always close: focus searches the near range first
++        device.autoFocusRangeRestriction = .near
++      }
++      if device.isFocusPointOfInterestSupported {
++        device.focusPointOfInterest = CGPoint(x: 0.5, y: 0.5)
++      }
++      if device.isFocusModeSupported(delegate.autoFocus) {
++        // Re-applying .autoFocus triggers a fresh focus scan (used for tap to focus)
+         device.focusMode = delegate.autoFocus
+       }
+     } catch {
+@@ -197,7 +205,7 @@ class CameraSessionManager: NSObject {
+ 
+     do {
+       try device.lockForConfiguration()
+-      let minZoom = 1.0
++      let minZoom = baseZoomFactor(device)
+       device.videoZoomFactor = minZoom * pow(device.activeFormat.videoMaxZoomFactor / minZoom, delegate.zoom)
+     } catch {
+       log.info("\(#function): \(error.localizedDescription)")
+@@ -206,6 +214,17 @@ class CameraSessionManager: NSObject {
+     device.unlockForConfiguration()
+   }
+ 
++  // On virtual devices that start with the ultra-wide lens, factor 1 is the 0.5x view.
++  // Start at the first switch-over factor so zoom 0 looks like the normal 1x camera.
++  private func baseZoomFactor(_ device: AVCaptureDevice) -> Double {
++    if device.isVirtualDevice,
++      device.constituentDevices.first?.deviceType == .builtInUltraWideCamera,
++      let switchOver = device.virtualDeviceSwitchOverVideoZoomFactors.first {
++      return switchOver.doubleValue
++    }
++    return 1.0
++  }
++
+   func getAvailableLenses() -> [String] {
+     guard let delegate else {
+       return []
+@@ -311,6 +330,7 @@ class CameraSessionManager: NSObject {
+         session.addInput(deviceInput)
+         captureDeviceInput = deviceInput
+         updateZoom()
++        setFocusMode()
+       }
+     } catch {
+       delegate.onMountError(["message": "Camera could not be started - \(error.localizedDescription)"])

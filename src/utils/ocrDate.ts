@@ -44,13 +44,23 @@ const PRODUCTION_HINTS = ['prod', 'pack', 'lot', 'fabbr', 'confez', 'elab', 'her
 const fold = (s: string) =>
     s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').normalize('NFC');
 
-// Fix common OCR confusions next to digits (O->0, I/l->1, S->5)
+// Characters OCR often reads instead of digits on dot-matrix, embossed or faint print
+const LOOKALIKES: Record<string, string> = {
+    o: '0', O: '0', Q: '0', D: '0',
+    i: '1', I: '1', l: '1', '|': '1', '!': '1',
+    z: '2', Z: '2', s: '5', S: '5', b: '6', G: '6', B: '8', g: '9', q: '9',
+};
+const BETWEEN_DIGITS = /(\d[./\-, ]?)([oOQDiIl|!zZsSbGBgq])(?=[./\-, ]?\d)/g;
+
+// Fix OCR confusions inside numbers (12.O5.2O26 -> 12.05.2026) without touching words like "OTT"
 const cleanDigits = (s: string) =>
     s
-        .replace(/(\d)[oO]/g, '$10')
-        .replace(/[oO](\d)/g, '0$1')
-        .replace(/(\d)[Il|]/g, '$11')
-        .replace(/[Il|](\d)/g, '1$1');
+        .replace(BETWEEN_DIGITS, (_, a: string, c: string) => a + LOOKALIKES[c])
+        .replace(BETWEEN_DIGITS, (_, a: string, c: string) => a + LOOKALIKES[c])
+        .replace(/(\d)[oO](?![a-zA-Z])/g, '$10')
+        .replace(/(^|[^a-zA-Z])[oO](?=\d)/g, '$10')
+        .replace(/(\d)[Il|](?![a-zA-Z])/g, '$11')
+        .replace(/(^|[^a-zA-Z])[Il|](?=\d)/g, '$11');
 
 const fullYear = (y: number) => (y < 100 ? 2000 + y : y);
 
@@ -94,7 +104,7 @@ export const parseExpiryDates = (text: string, monthFirst = false): DateCandidat
         while ((m = isoRe.exec(l))) push(makeDate(+m[1], +m[2] - 1, +m[3]), m[0], 3);
 
         // dd/mm/yyyy, dd.mm.yy, dd-mm-yy (or mm/dd for US locales)
-        const dmyRe = /(?:^|[^\d])(\d{1,2})\s?[-./]\s?(\d{1,2})\s?[-./]\s?(\d{4}|\d{2})(?!\d)/g;
+        const dmyRe = /(?:^|[^\d])(\d{1,2})\s*[-./,]\s*(\d{1,2})\s*[-./,]\s*(\d{4}|\d{2})(?!\d)/g;
         while ((m = dmyRe.exec(l))) {
             const a = +m[1];
             const b = +m[2];
@@ -114,6 +124,24 @@ export const parseExpiryDates = (text: string, monthFirst = false): DateCandidat
             push(makeDate(+m[4], month, day), m[0].trim(), 2);
         }
 
+        // Next to an expiry label, also accept dates without separators or with spaces
+        // (dot-matrix and laser-etched codes): 12 05 2026, 120526, 12052026, 20260512
+        if (hasExpiry) {
+            const order = (a: number, b: number) => (monthFirst && a <= 12 ? [b, a] : [a, b]);
+            const spacedRe = /(?:^|[^\d])(\d{2})\s+(\d{2})\s+(20\d{2}|\d{2})(?!\d)/g;
+            while ((m = spacedRe.exec(l))) {
+                const [day, month] = order(+m[1], +m[2]);
+                push(makeDate(+m[3], month - 1, day), m[0].trim(), 1);
+            }
+            const compactRe = /(?:^|[^\d])(\d{8}|\d{6})(?!\d)/g;
+            while ((m = compactRe.exec(l))) {
+                const d = m[1];
+                if (d.length === 8 && d.startsWith('20')) push(makeDate(+d.slice(0, 4), +d.slice(4, 6) - 1, +d.slice(6, 8)), d, 1);
+                const [day, month] = order(+d.slice(0, 2), +d.slice(2, 4));
+                push(makeDate(+d.slice(4), month - 1, day), d, 0);
+            }
+        }
+
         // mm/yyyy or mm.yy (no day)
         const myRe = /(?:^|[^\d./-])(\d{1,2})\s?[./-]\s?(20\d{2}|\d{2})(?![\d./-])/g;
         while ((m = myRe.exec(l))) {
@@ -122,7 +150,11 @@ export const parseExpiryDates = (text: string, monthFirst = false): DateCandidat
         }
     });
 
-    // Dedupe by day, keep the best score
+    return dedupe(found);
+};
+
+// Dedupe by day, keep the best score
+const dedupe = (found: DateCandidate[]): DateCandidate[] => {
     const byDay = new Map<string, DateCandidate>();
     for (const c of found) {
         const key = c.date.toDateString();
@@ -130,4 +162,13 @@ export const parseExpiryDates = (text: string, monthFirst = false): DateCandidat
         if (!prev || c.score > prev.score) byDay.set(key, c);
     }
     return [...byDay.values()].sort((a, b) => b.score - a.score || a.date.getTime() - b.date.getTime());
+};
+
+// Combines readings of the same label from several image variants.
+// A date seen in more than one variant is more likely real, so it gets a small bonus.
+export const mergeDateReadings = (readings: DateCandidate[][]): DateCandidate[] => {
+    const seen = new Map<string, number>();
+    readings.forEach((list) => list.forEach((c) => seen.set(c.date.toDateString(), (seen.get(c.date.toDateString()) ?? 0) + 1)));
+    const boosted = readings.flat().map((c) => ({ ...c, score: c.score + Math.min(2, (seen.get(c.date.toDateString()) ?? 1) - 1) }));
+    return dedupe(boosted);
 };

@@ -113,6 +113,12 @@ const ko: Dict = {
     openSettings: '설정 열기',
     ocrTrialsLeft: '무료 날짜 읽기 {n}회 남음',
     ocrUnavailable: '날짜 읽기는 정식 빌드 앱에서만 가능해요.',
+    torchOn: '손전등 켜기',
+    torchOff: '손전등 끄기',
+    zoomIn: '확대',
+    zoomOut: '축소',
+    tryTorch: '어두우면 위쪽 손전등을, 글자가 작으면 돋보기를 누르세요.',
+    tapToFocus: '흐리면 화면을 눌러 초점을 맞추거나, 멀리서 확대하세요.',
 
     recipesTitle: '곧 끝나는 재료로 요리',
     recipesSubtitle: '가장 급한 식품에 맞춰',

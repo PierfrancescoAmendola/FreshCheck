@@ -113,6 +113,12 @@ const it: Dict = {
     openSettings: 'Apri Impostazioni',
     ocrTrialsLeft: '{n} letture data gratuite rimaste',
     ocrUnavailable: 'Il lettore di date richiede la build completa dell\'app.',
+    torchOn: 'Accendi torcia',
+    torchOff: 'Spegni torcia',
+    zoomIn: 'Ingrandisci',
+    zoomOut: 'Riduci',
+    tryTorch: 'Poca luce? Tocca la torcia in alto. Scritte piccole? Tocca la lente.',
+    tapToFocus: 'Sfocato? Tocca lo schermo per mettere a fuoco, o allontanati e ingrandisci.',
 
     recipesTitle: 'Cucina ciò che scade',
     recipesSubtitle: 'In base ai prodotti più urgenti',

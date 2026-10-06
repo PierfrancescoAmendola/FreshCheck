@@ -113,6 +113,12 @@ const ja: Dict = {
     openSettings: '設定を開く',
     ocrTrialsLeft: '無料の日付読取あと {n} 回',
     ocrUnavailable: '日付読取にはフルビルドのアプリが必要です。',
+    torchOn: 'ライトをオン',
+    torchOff: 'ライトをオフ',
+    zoomIn: 'ズームイン',
+    zoomOut: 'ズームアウト',
+    tryTorch: '暗い場合は上のライトを、小さい文字は虫眼鏡をタップ。',
+    tapToFocus: 'ぼやける場合は画面をタップしてピント合わせ、または離れてズーム。',
 
     recipesTitle: '期限が近いものを料理',
     recipesSubtitle: '急ぎの食品に合わせて',

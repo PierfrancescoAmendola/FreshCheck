@@ -113,6 +113,12 @@ const pt: Dict = {
     openSettings: 'Abrir Ajustes',
     ocrTrialsLeft: 'Restam {n} leituras de data grátis',
     ocrUnavailable: 'O leitor de datas precisa da versão completa do app.',
+    torchOn: 'Ligar lanterna',
+    torchOff: 'Desligar lanterna',
+    zoomIn: 'Aproximar',
+    zoomOut: 'Afastar',
+    tryTorch: 'Pouca luz? Toque na lanterna no topo. Letra minúscula? Toque na lupa.',
+    tapToFocus: 'Desfocado? Toque na tela para focar, ou afaste-se e aproxime o zoom.',
 
     recipesTitle: 'Cozinhe o que vence',
     recipesSubtitle: 'Com base nos itens mais urgentes',

@@ -120,6 +120,12 @@ const en = {
     openSettings: 'Open Settings',
     ocrTrialsLeft: '{n} free date reads left',
     ocrUnavailable: 'The date reader needs the full app build.',
+    torchOn: 'Turn on torch',
+    torchOff: 'Turn off torch',
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
+    tryTorch: 'Low light? Tap the torch at the top. For tiny print, tap the magnifier.',
+    tapToFocus: 'Blurry? Tap the screen to focus, or step back and zoom in.',
 
     // Recipes
     recipesTitle: 'Cook what\'s ending',

@@ -113,6 +113,12 @@ const nl: Dict = {
     openSettings: 'Open Instellingen',
     ocrTrialsLeft: 'Nog {n} gratis datumscans',
     ocrUnavailable: 'De datumlezer heeft de volledige app-build nodig.',
+    torchOn: 'Zaklamp aan',
+    torchOff: 'Zaklamp uit',
+    zoomIn: 'Inzoomen',
+    zoomOut: 'Uitzoomen',
+    tryTorch: 'Weinig licht? Tik bovenaan op de zaklamp. Piepkleine letters? Tik op het vergrootglas.',
+    tapToFocus: 'Wazig? Tik op het scherm om scherp te stellen, of ga verder weg en zoom in.',
 
     recipesTitle: 'Kook wat bijna op is',
     recipesSubtitle: 'Op basis van de meest urgente producten',

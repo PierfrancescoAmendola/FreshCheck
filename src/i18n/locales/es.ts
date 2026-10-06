@@ -113,6 +113,12 @@ const es: Dict = {
     openSettings: 'Abrir Ajustes',
     ocrTrialsLeft: 'Quedan {n} lecturas de fecha gratis',
     ocrUnavailable: 'El lector de fechas necesita la app completa.',
+    torchOn: 'Encender linterna',
+    torchOff: 'Apagar linterna',
+    zoomIn: 'Acercar',
+    zoomOut: 'Alejar',
+    tryTorch: '¿Poca luz? Toca la linterna arriba. ¿Letra diminuta? Toca la lupa.',
+    tapToFocus: '¿Borroso? Toca la pantalla para enfocar, o aléjate y acerca el zoom.',
 
     recipesTitle: 'Cocina lo que caduca',
     recipesSubtitle: 'Según lo más urgente',

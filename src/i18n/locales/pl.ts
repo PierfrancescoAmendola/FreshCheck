@@ -113,6 +113,12 @@ const pl: Dict = {
     openSettings: 'Otwórz Ustawienia',
     ocrTrialsLeft: 'Pozostało {n} darmowych odczytów daty',
     ocrUnavailable: 'Czytnik dat wymaga pełnej wersji aplikacji.',
+    torchOn: 'Włącz latarkę',
+    torchOff: 'Wyłącz latarkę',
+    zoomIn: 'Przybliż',
+    zoomOut: 'Oddal',
+    tryTorch: 'Słabe światło? Dotknij latarki u góry. Drobny druk? Dotknij lupy.',
+    tapToFocus: 'Rozmyte? Dotknij ekranu, aby wyostrzyć, lub odsuń się i przybliż.',
 
     recipesTitle: 'Gotuj to, co się kończy',
     recipesSubtitle: 'Dopasowane do najpilniejszych produktów',

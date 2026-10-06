@@ -113,6 +113,12 @@ const de: Dict = {
     openSettings: 'Einstellungen öffnen',
     ocrTrialsLeft: 'Noch {n} kostenlose Datumserkennungen',
     ocrUnavailable: 'Der Datumsleser braucht den vollständigen App-Build.',
+    torchOn: 'Taschenlampe an',
+    torchOff: 'Taschenlampe aus',
+    zoomIn: 'Vergrößern',
+    zoomOut: 'Verkleinern',
+    tryTorch: 'Wenig Licht? Tippe oben auf die Taschenlampe. Winzige Schrift? Tippe auf die Lupe.',
+    tapToFocus: 'Unscharf? Tippe auf den Bildschirm zum Fokussieren, oder geh weiter weg und zoome.',
 
     recipesTitle: 'Koch, was bald abläuft',
     recipesSubtitle: 'Passend zu den dringendsten Artikeln',
