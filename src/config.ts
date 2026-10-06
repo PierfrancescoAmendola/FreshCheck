@@ -19,5 +19,5 @@ export const FREE_LIMITS = {
 // Ask for a store review after this many products are marked as consumed
 export const REVIEW_AFTER_CONSUMED = 3;
 
-export const SUPPORT_URL = 'https://pierfrancescoamendola.github.io/FreshCheck/support.html';
+export const SUPPORT_URL = 'https://pierfrancescoamendola.github.io/FreshCheck/';
 export const PRIVACY_URL = 'https://pierfrancescoamendola.github.io/FreshCheck/privacy.html';

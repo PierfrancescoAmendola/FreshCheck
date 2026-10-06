@@ -1,34 +1,319 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FreshCheck</title>
-  <meta name="description" content="FreshCheck: track food expiry dates, get reminders and waste less. Private, on-device.">
+  <title>FreshCheck · Food expiry tracker</title>
+  <meta name="description" content="FreshCheck tells you what's in your fridge and what to eat first. Scan barcodes, read printed dates, get reminders, cook what's ending. Private, on-device.">
+  <meta name="theme-color" content="#10B26C">
+  <meta property="og:title" content="FreshCheck · Never throw food away again">
+  <meta property="og:description" content="Track expiry dates, get a reminder before anything goes off, cook what's ending. No account, no servers.">
+  <meta property="og:image" content="https://pierfrancescoamendola.github.io/FreshCheck/icon.png">
+  <meta property="og:type" content="website">
+  <meta name="apple-itunes-app" content="app-id=6757205025">
   <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="legal.css">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap">
+  <link rel="stylesheet" href="site.css?v=2">
+  <script>(function(){var l;try{l=localStorage.getItem('fc-lang')}catch(e){}if(l!=='en'&&l!=='it')l=(navigator.language||'en').slice(0,2)==='it'?'it':'en';var r=document.documentElement;r.setAttribute('data-lang',l);r.setAttribute('lang',l);r.classList.add('js')})();</script>
 </head>
 <body>
-<main>
-  <header>
-    <img src="icon.png" alt="">
-    <div>
-      <h1>FreshCheck</h1>
-      <p>Track food dates, waste less</p>
+<a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="it">Vai al contenuto</span></a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="./" aria-current="page"><img src="icon.png" alt="FreshCheck icon">FreshCheck</a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="wide" href="#features"><span data-l="en">Features</span><span data-l="it">Funzioni</span></a>
+      <a class="wide" href="#pro">Pro</a>
+      <a href="#help"><span data-l="en">Help</span><span data-l="it">Aiuto</span></a>
+      <a href="privacy.html">Privacy</a>
+      <a class="btn btn-primary btn-small" href="https://apps.apple.com/app/id6757205025"><span data-l="en">Get the app</span><span data-l="it">Scarica</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" data-set="it" aria-pressed="false">IT</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section>
-    <p>FreshCheck tells you what's in your fridge and what needs eating first. Scan a barcode, read the printed date with your camera, get a reminder before anything goes off, and cook recipes with what's ending. Everything stays on your phone: no account, no servers, no tracking.</p>
-    <p><a href="https://apps.apple.com/app/id6757205025">Download on the App Store</a></p>
-  </section>
+<main id="main">
+  <div class="wrap">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="burst" aria-hidden="true"></span>
+      <span class="sparkle s1" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.5 5.5 11.4 12 12-6.5.6-11.4 5.5-12 12-.6-6.5-5.5-11.4-12-12C6.5 11.4 11.4 6.5 12 0z"/></svg></span>
+      <span class="sparkle s2" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.5 5.5 11.4 12 12-6.5.6-11.4 5.5-12 12-.6-6.5-5.5-11.4-12-12C6.5 11.4 11.4 6.5 12 0z"/></svg></span>
+      <span class="sparkle s3" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.5 5.5 11.4 12 12-6.5.6-11.4 5.5-12 12-.6-6.5-5.5-11.4-12-12C6.5 11.4 11.4 6.5 12 0z"/></svg></span>
 
-  <section>
-    <h2>Links</h2>
-    <p><a href="support.html">Support</a> · <a href="privacy.html">Privacy Policy</a> · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a></p>
-  </section>
+      <div class="hero-copy">
+        <span class="eyebrow intro"><img src="icon.png" alt=""><span data-l="en">Food expiry tracker · iPhone</span><span data-l="it">Scadenze del cibo · iPhone</span></span>
+        <h1 id="hero-title" class="intro d1">
+          <span data-l="en">Never throw food <span class="hl">away</span> again</span>
+          <span data-l="it">Mai più cibo <span class="hl">buttato</span></span>
+        </h1>
+        <div class="underline" aria-hidden="true"></div>
+        <p class="lede intro d2">
+          <span data-l="en">FreshCheck shows what's in your fridge and what to eat first. A quiet reminder arrives before anything goes off.</span>
+          <span data-l="it">FreshCheck ti dice cosa c'è in frigo e cosa consumare per primo. Un promemoria discreto arriva prima che qualcosa scada.</span>
+        </p>
+        <div class="hero-cta intro d3">
+          <a class="btn btn-light" href="https://apps.apple.com/app/id6757205025">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.6c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.34-1.8-1.42-.15-2.77.84-3.5.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.93 1.16 9.2.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.6-.75 3-.75 1.39 0 1.79.75 3.01.73 1.25-.02 2.04-1.13 2.8-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.45-3.71zM14.07 5.85c.64-.78 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.78-.97 2.83 1.03.08 2.07-.52 2.71-1.29z"/></svg>
+            <span data-l="en">Download on the App Store</span><span data-l="it">Scarica dall'App Store</span>
+          </a>
+          <span class="note"><span data-l="en">No account. Works offline. 10 languages.</span><span data-l="it">Nessun account. Funziona offline. 10 lingue.</span></span>
+        </div>
+      </div>
 
-  <footer>© 2026 Pierfrancesco Amendola</footer>
+      <div class="stage" aria-hidden="true">
+        <div class="pill p1"><span data-l="en">No account</span><span data-l="it">Nessun account</span></div>
+        <div class="pill p2"><span data-l="en">Mozzarella · today</span><span data-l="it">Mozzarella · oggi</span></div>
+        <div class="phone">
+          <div class="screen">
+            <div class="status"><span class="num">09:41</span><span class="island"></span><span class="bars"><i></i><i></i><i></i><i></i></span></div>
+            <p class="app-date"><span data-l="en">Monday 5 October</span><span data-l="it">lunedì 5 ottobre</span></p>
+            <p class="app-title"><span data-l="en">Good evening</span><span data-l="it">Buonasera</span></p>
+            <div class="sum">
+              <div class="sum-top">
+                <span class="sum-big num">5</span>
+                <span><b><span data-l="en">Next 3 days</span><span data-l="it">Prossimi 3 giorni</span></b><small><span data-l="en">11 items · 5 to use soon</span><span data-l="it">11 prodotti · 5 da usare presto</span></small></span>
+              </div>
+              <div class="ubar"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="chips"><span><span data-l="en">All</span><span data-l="it">Tutto</span></span><span><span data-l="en">Fridge</span><span data-l="it">Frigo</span></span><span>Freezer</span><span><span data-l="en">Pantry</span><span data-l="it">Dispensa</span></span></div>
+            <p class="group t-today"><span data-l="en">Use today</span><span data-l="it">Da usare oggi</span></p>
+            <div class="food t-today">
+              <div class="food-card"><span class="stub"><b>0</b><small><span data-l="en">today</span><span data-l="it">oggi</span></small></span><span><strong>Mozzarella</strong><span><span data-l="en">Dairy · Fridge</span><span data-l="it">Latticini · Frigo</span></span></span></div>
+            </div>
+            <p class="group t-soon"><span data-l="en">Next 3 days</span><span data-l="it">Prossimi 3 giorni</span></p>
+            <div class="food t-soon swipe">
+              <div class="food-action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">Eaten</span><span data-l="it">Mangiato</span></div>
+              <div class="food-card"><span class="stub"><b>1</b><small><span data-l="en">day</span><span data-l="it">giorno</span></small></span><span><strong><span data-l="en">Spinach</span><span data-l="it">Spinaci</span></strong><span><span data-l="en">Vegetables · Fridge</span><span data-l="it">Verdura · Frigo</span></span></span></div>
+            </div>
+            <div class="food t-soon">
+              <div class="food-card"><span class="stub"><b>2</b><small><span data-l="en">days</span><span data-l="it">giorni</span></small></span><span><strong><span data-l="en">Greek yogurt</span><span data-l="it">Yogurt greco</span></strong><span><span data-l="en">Dairy · Fridge</span><span data-l="it">Latticini · Frigo</span></span></span></div>
+            </div>
+            <div class="food t-week">
+              <div class="food-card"><span class="stub"><b>5</b><small><span data-l="en">days</span><span data-l="it">giorni</span></small></span><span><strong><span data-l="en">Sourdough</span><span data-l="it">Pane</span></strong><span><span data-l="en">Bakery · Pantry</span><span data-l="it">Forno · Dispensa</span></span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Urgency scale -->
+    <section class="section" id="features" aria-labelledby="scale-title">
+      <div class="scale-head reveal">
+        <div>
+          <p class="kicker"><span data-l="en">sorted by urgency</span><span data-l="it">ordinata per urgenza</span></p>
+          <h2 class="h2" id="scale-title"><span data-l="en">One glance tells you what to cook tonight.</span><span data-l="it">Uno sguardo e sai cosa cucinare stasera.</span></h2>
+        </div>
+        <p class="sub"><span data-l="en">Every item gets a colour and a countdown. The pantry reorders itself every morning, so the yogurt at the back of the fridge never surprises you again.</span><span data-l="it">Ogni prodotto ha un colore e un conto alla rovescia. La dispensa si riordina ogni mattina, così lo yogurt in fondo al frigo non ti sorprende più.</span></p>
+      </div>
+      <div class="scale stagger">
+        <div class="tone t-expired"><span class="stub"><b>1</b><small><span data-l="en">exp.</span><span data-l="it">scad.</span></small></span><h3><span data-l="en">Expired</span><span data-l="it">Scaduti</span></h3><p><span data-l="en">Check it, then mark it eaten or wasted.</span><span data-l="it">Controlla, poi segna mangiato o buttato.</span></p></div>
+        <div class="tone t-today"><span class="stub"><b>0</b><small><span data-l="en">today</span><span data-l="it">oggi</span></small></span><h3><span data-l="en">Use today</span><span data-l="it">Da usare oggi</span></h3><p><span data-l="en">Tonight's dinner, sorted.</span><span data-l="it">La cena di stasera, già decisa.</span></p></div>
+        <div class="tone t-soon"><span class="stub"><b>2</b><small><span data-l="en">days</span><span data-l="it">giorni</span></small></span><h3><span data-l="en">Next 3 days</span><span data-l="it">Prossimi 3 giorni</span></h3><p><span data-l="en">Plan the next couple of meals.</span><span data-l="it">Pianifica i prossimi pasti.</span></p></div>
+        <div class="tone t-week"><span class="stub"><b>6</b><small><span data-l="en">days</span><span data-l="it">giorni</span></small></span><h3><span data-l="en">This week</span><span data-l="it">Questa settimana</span></h3><p><span data-l="en">On the radar, no rush.</span><span data-l="it">Sotto controllo, senza fretta.</span></p></div>
+        <div class="tone t-later"><span class="stub"><b>23</b><small><span data-l="en">days</span><span data-l="it">giorni</span></small></span><h3><span data-l="en">Later</span><span data-l="it">Più avanti</span></h3><p><span data-l="en">Safe. Out of sight until it matters.</span><span data-l="it">Al sicuro. Lontano dagli occhi finché serve.</span></p></div>
+      </div>
+    </section>
+
+    <!-- Scan -->
+    <section class="feature" aria-labelledby="scan-title">
+      <div class="feature-copy reveal">
+        <p class="kicker"><span data-l="en">scan, don't type</span><span data-l="it">scansiona, non scrivere</span></p>
+        <h2 class="h2" id="scan-title"><span data-l="en">Point the camera. FreshCheck reads the rest.</span><span data-l="it">Inquadra. Al resto pensa FreshCheck.</span></h2>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">The barcode finds the product name for you.</span><span data-l="it">Il codice a barre trova il nome del prodotto.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">The printed expiry date is read from the pack, on your phone.</span><span data-l="it">La data stampata viene letta dalla confezione, sul telefono.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">Fresh food without a label gets a typical shelf life.</span><span data-l="it">Per i freschi senza etichetta suggerisce la durata tipica.</span></li>
+        </ul>
+      </div>
+      <div class="visual reveal" aria-hidden="true">
+        <div class="scan">
+          <div class="pack"><div class="barcode"></div><span class="digits">8 001234 567895</span><span class="exp">EXP 12/10/26</span></div>
+          <div class="frame"><i></i><i></i><i></i><i></i></div>
+          <div class="scanline"></div>
+          <div class="result t-week"><span class="stub"><b>6</b><small><span data-l="en">days</span><span data-l="it">giorni</span></small></span><span><strong><span data-l="en">Greek yogurt</span><span data-l="it">Yogurt greco</span></strong><span><span data-l="en">12 Oct · Fridge</span><span data-l="it">12 ott · Frigo</span></span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recipes -->
+    <section class="feature flip" aria-labelledby="recipes-title">
+      <div class="feature-copy reveal">
+        <p class="kicker"><span data-l="en">cook what's ending</span><span data-l="it">cucina ciò che sta finendo</span></p>
+        <h2 class="h2" id="recipes-title"><span data-l="en">Recipes that start from your fridge.</span><span data-l="it">Ricette che partono dal tuo frigo.</span></h2>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">Matched to the items that expire first.</span><span data-l="it">Abbinate ai prodotti che scadono per primi.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">Filters for quick and vegetarian dishes.</span><span data-l="it">Filtri per piatti veloci e vegetariani.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">Missing ingredients go to the list in one tap.</span><span data-l="it">Gli ingredienti mancanti vanno in lista con un tocco.</span></li>
+        </ul>
+      </div>
+      <div class="visual reveal" aria-hidden="true">
+        <div class="recipes">
+          <div class="banner"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.46.32-.85.74-1.03A4 4 0 0 0 16.4 6a4 4 0 0 0-8.8 0 4 4 0 0 0-2.34 7.62c.42.18.74.57.74 1.03V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></svg></span><span><span data-l="en">24 recipes use what ends soon</span><span data-l="it">24 ricette usano ciò che scade presto</span></span></div>
+          <div class="recipe">
+            <div class="recipe-img"><span class="time">15 min</span></div>
+            <div class="recipe-body">
+              <strong><span data-l="en">Spinach &amp; mozzarella frittata</span><span data-l="it">Frittata spinaci e mozzarella</span></strong>
+              <div class="ings">
+                <span class="t-today">Mozzarella</span>
+                <span class="t-soon"><span data-l="en">Spinach</span><span data-l="it">Spinaci</span></span>
+                <span class="t-later"><span data-l="en">Eggs</span><span data-l="it">Uova</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento -->
+    <section class="section" aria-labelledby="more-title">
+      <div class="reveal">
+        <p class="kicker"><span data-l="en">and the small things</span><span data-l="it">e le piccole cose</span></p>
+        <h2 class="h2" id="more-title"><span data-l="en">Built for the way you actually shop.</span><span data-l="it">Pensata per come fai davvero la spesa.</span></h2>
+      </div>
+      <div class="bento stagger">
+        <div class="cell c-list">
+          <h3><span data-l="en">Shopping list</span><span data-l="it">Lista della spesa</span></h3>
+          <p><span data-l="en">Finished something? It goes on the list. Share it with whoever does the shopping.</span><span data-l="it">Finito qualcosa? Va in lista. Condividila con chi fa la spesa.</span></p>
+          <ul class="checks" aria-hidden="true">
+            <li><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><span data-l="en">Oat milk</span><span data-l="it">Latte d'avena</span></span></li>
+            <li><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><span data-l="en">Cherry tomatoes</span><span data-l="it">Pomodorini</span></span></li>
+            <li><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><span data-l="en">Eggs (6)</span><span data-l="it">Uova (6)</span></span></li>
+          </ul>
+        </div>
+        <div class="cell c-impact">
+          <h3><span data-l="en">Your impact</span><span data-l="it">Il tuo impatto</span></h3>
+          <p><span data-l="en">Money saved, waste rate, streaks and badges. Watch the bin get lighter.</span><span data-l="it">Soldi risparmiati, tasso di spreco, serie e medaglie. Il secchio si alleggerisce.</span></p>
+          <div class="impact">
+            <div class="ring" aria-hidden="true">
+              <svg viewBox="0 0 120 120"><defs><linearGradient id="g-accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10B26C"/><stop offset="1" stop-color="#00D4A6"/></linearGradient></defs><circle class="track" cx="60" cy="60" r="50"/><circle class="val" cx="60" cy="60" r="50"/></svg>
+              <span class="lbl"><b class="num">92.8%</b><small><span data-l="en">eaten</span><span data-l="it">consumato</span></small></span>
+            </div>
+            <div class="stats">
+              <div><b class="num">€38.40</b><span><span data-l="en">saved this month</span><span data-l="it">risparmiati questo mese</span></span></div>
+              <div><b class="num">12</b><span><span data-l="en">days without waste</span><span data-l="it">giorni senza sprechi</span></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cell c-remind">
+          <h3><span data-l="en">Reminders that know when to speak</span><span data-l="it">Promemoria che sanno quando parlare</span></h3>
+          <p><span data-l="en">A morning digest and a weekly plan, scheduled on your phone. No push server.</span><span data-l="it">Un riepilogo mattutino e un piano settimanale, programmati sul telefono. Nessun server.</span></p>
+          <div class="notif" aria-hidden="true">
+            <img src="icon.png" alt="">
+            <div><div class="top"><span>FreshCheck</span><span>08:30</span></div><strong><span data-l="en">Use today: Mozzarella</span><span data-l="it">Da usare oggi: Mozzarella</span></strong><p><span data-l="en">Plus 2 items in the next 3 days. Frittata tonight?</span><span data-l="it">E altri 2 prodotti nei prossimi 3 giorni. Frittata stasera?</span></p></div>
+          </div>
+          <div class="notif" aria-hidden="true">
+            <img src="icon.png" alt="">
+            <div><div class="top"><span>FreshCheck</span><span><span data-l="en">Sun</span><span data-l="it">dom</span></span></div><strong><span data-l="en">Your week ahead</span><span data-l="it">La tua settimana</span></strong></div>
+          </div>
+        </div>
+        <div class="cell c-theme">
+          <h3><span data-l="en">Your colours</span><span data-l="it">I tuoi colori</span></h3>
+          <p><span data-l="en">Five themes, light and dark.</span><span data-l="it">Cinque temi, chiaro e scuro.</span></p>
+          <div class="swatches" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="modes" aria-hidden="true"><span></span><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="private" aria-labelledby="private-title">
+      <div class="reveal">
+        <p class="kicker"><span data-l="en">private by design</span><span data-l="it">privata per scelta</span></p>
+        <h2 class="h2" id="private-title"><span data-l="en">Your fridge stays on your phone.</span><span data-l="it">Il tuo frigo resta sul tuo telefono.</span></h2>
+        <p class="sub"><span data-l="en">FreshCheck has no servers to send your data to. Photos are read on the device and thrown away.</span><span data-l="it">FreshCheck non ha server a cui mandare i tuoi dati. Le foto vengono lette sul dispositivo e scartate.</span></p>
+        <p class="more"><a class="link-arrow" href="privacy.html"><span data-l="en">Read the privacy policy</span><span data-l="it">Leggi l'informativa</span> <span aria-hidden="true">→</span></a></p>
+      </div>
+      <div class="private-list stagger">
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 9.5-4.9"/><path d="m17 17 4 4m0-4-4 4"/></svg></span><span><b><span data-l="en">No account</span><span data-l="it">Nessun account</span></b><span><span data-l="en">Open the app and start. Nothing to sign up for.</span><span data-l="it">Apri l'app e inizia. Niente da registrare.</span></span></span></div>
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 18h.01"/></svg></span><span><b><span data-l="en">Stored on device</span><span data-l="it">Salvato sul dispositivo</span></b><span><span data-l="en">Export a CSV or a backup whenever you like.</span><span data-l="it">Esporta CSV o backup quando vuoi.</span></span></span></div>
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7c2 0 3.7.6 5.1 1.5M22 12s-3.5 7-10 7c-2 0-3.7-.6-5.1-1.5"/><path d="m3 3 18 18"/></svg></span><span><b><span data-l="en">No ads, no tracking</span><span data-l="it">Niente pubblicità né tracciamento</span></b><span><span data-l="en">No analytics SDK. Nothing follows you around.</span><span data-l="it">Nessun SDK di analisi. Nessuno ti segue.</span></span></span></div>
+      </div>
+    </section>
+
+    <!-- Pro -->
+    <section class="section pro" id="pro" aria-labelledby="pro-title">
+      <div class="reveal">
+        <p class="kicker">FreshCheck Pro</p>
+        <h2 class="h2" id="pro-title"><span data-l="en">Free to start. Pro when your pantry grows.</span><span data-l="it">Gratis per iniziare. Pro quando la dispensa cresce.</span></h2>
+        <div class="plans">
+          <span><span data-l="en">Monthly</span><span data-l="it">Mensile</span> <b class="num">€2.99</b></span>
+          <span class="best"><span data-l="en">Yearly</span><span data-l="it">Annuale</span> <b class="num">€19.99</b></span>
+          <span><span data-l="en">Lifetime</span><span data-l="it">A vita</span> <b class="num">€49.99</b></span>
+        </div>
+        <p class="fine"><span data-l="en">Prices in euro, they may vary by country. Cancel anytime from your App Store account.</span><span data-l="it">Prezzi in euro, possono variare per paese. Disdici quando vuoi dal tuo account App Store.</span></p>
+      </div>
+      <ul class="pro-list stagger">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">Unlimited items</span><span data-l="it">Prodotti illimitati</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">Unlimited date reading</span><span data-l="it">Lettura date illimitata</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">Every recipe</span><span data-l="it">Tutte le ricette</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">Custom storage places</span><span data-l="it">Luoghi personalizzati</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">Full savings history</span><span data-l="it">Storico risparmi completo</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-l="en">CSV export, backup, themes</span><span data-l="it">CSV, backup e temi</span></li>
+      </ul>
+    </section>
+
+    <!-- Help: this page is the App Store support URL -->
+    <section class="section" id="help" aria-labelledby="help-title">
+      <div class="reveal">
+        <p class="kicker"><span data-l="en">help and support</span><span data-l="it">aiuto e supporto</span></p>
+        <h2 class="h2" id="help-title"><span data-l="en">Need a hand?</span><span data-l="it">Serve una mano?</span></h2>
+        <p class="sub"><span data-l="en">Most answers are one tap away. If not, write to us and a real person replies, usually within 2 working days.</span><span data-l="it">Quasi tutte le risposte sono a un tocco. Altrimenti scrivici: risponde una persona vera, di solito entro 2 giorni lavorativi.</span></p>
+      </div>
+      <div class="contact reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg></span>
+        <span>
+          <b>checcofran717@gmail.com</b>
+          <span data-l="en">Include your device model, iOS or Android version and a short description.</span>
+          <span data-l="it">Indica modello del dispositivo, versione di iOS o Android e una breve descrizione.</span>
+        </span>
+        <a class="btn btn-primary" data-l="en" href="mailto:checcofran717@gmail.com?subject=FreshCheck%20support">Write to us</a>
+        <a class="btn btn-primary" data-l="it" href="mailto:checcofran717@gmail.com?subject=Supporto%20FreshCheck">Scrivici</a>
+      </div>
+      <div class="help-grid stagger">
+        <a class="help" href="support.html#en-data" data-l="en"><span class="n">01</span><b>Is my data safe?</b><span class="go" aria-hidden="true">→</span></a>
+        <a class="help" href="support.html#it-data" data-l="it"><span class="n">01</span><b>I miei dati sono al sicuro?</b><span class="go" aria-hidden="true">→</span></a>
+        <a class="help" href="support.html#en-move" data-l="en"><span class="n">02</span><b>Moving to a new phone</b><span class="go" aria-hidden="true">→</span></a>
+        <a class="help" href="support.html#it-move" data-l="it"><span class="n">02</span><b>Passare a un nuovo telefono</b><span class="go" aria-hidden="true">→</span></a>
+        <a class="help" href="support.html#en-cancel" data-l="en"><span class="n">03</span><b>Restore or cancel Pro</b><span class="go" aria-hidden="true">→</span></a>
+        <a class="help" href="support.html#it-cancel" data-l="it"><span class="n">03</span><b>Ripristinare o disdire Pro</b><span class="go" aria-hidden="true">→</span></a>
+        <a class="help" href="support.html#en-reminder" data-l="en"><span class="n">04</span><b>I did not get a reminder</b><span class="go" aria-hidden="true">→</span></a>
+        <a class="help" href="support.html#it-reminder" data-l="it"><span class="n">04</span><b>Non ho ricevuto un promemoria</b><span class="go" aria-hidden="true">→</span></a>
+        <a class="help" href="support.html"><span class="n">FAQ</span><b><span data-l="en">All questions</span><span data-l="it">Tutte le domande</span></b><span class="go" aria-hidden="true">→</span></a>
+        <a class="help" href="privacy.html"><span class="n">§</span><b><span data-l="en">Privacy Policy</span><span data-l="it">Informativa privacy</span></b><span class="go" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta reveal" aria-labelledby="cta-title">
+      <img class="app" src="icon.png" alt="FreshCheck app icon">
+      <h2 id="cta-title"><span data-l="en">Eat it before it ends.</span><span data-l="it">Mangialo prima che scada.</span></h2>
+      <p><span data-l="en">Add your first ten items in two minutes. FreshCheck takes it from there.</span><span data-l="it">Aggiungi i primi dieci prodotti in due minuti. Al resto pensa FreshCheck.</span></p>
+      <a class="btn btn-light" href="https://apps.apple.com/app/id6757205025">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.6c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.34-1.8-1.42-.15-2.77.84-3.5.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.93 1.16 9.2.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.6-.75 3-.75 1.39 0 1.79.75 3.01.73 1.25-.02 2.04-1.13 2.8-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.45-3.71zM14.07 5.85c.64-.78 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.78-.97 2.83 1.03.08 2.07-.52 2.71-1.29z"/></svg>
+        <span data-l="en">Download on the App Store</span><span data-l="it">Scarica dall'App Store</span>
+      </a>
+    </section>
+  </div>
 </main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Pierfrancesco Amendola</span>
+    <nav aria-label="Footer">
+      <a href="support.html"><span data-l="en">Support</span><span data-l="it">Supporto</span></a>
+      <a href="privacy.html"><span data-l="en">Privacy Policy</span><span data-l="it">Informativa privacy</span></a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"><span data-l="en">Terms of Use</span><span data-l="it">Termini d'uso</span></a>
+    </nav>
+  </div>
+</footer>
+<script src="site.js?v=2" defer></script>
 </body>
 </html>

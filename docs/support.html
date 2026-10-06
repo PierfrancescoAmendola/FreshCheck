@@ -1,77 +1,118 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FreshCheck · Support</title>
-  <meta name="description" content="Help and support for the FreshCheck app.">
+  <meta name="description" content="Help and support for the FreshCheck app: contact, data, camera, backups, Pro subscriptions and reminders.">
+  <meta name="theme-color" content="#10B26C">
+  <meta property="og:title" content="FreshCheck · Support">
+  <meta property="og:image" content="https://pierfrancescoamendola.github.io/FreshCheck/icon.png">
   <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="legal.css">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap">
+  <link rel="stylesheet" href="site.css?v=2">
+  <script>(function(){var l;try{l=localStorage.getItem('fc-lang')}catch(e){}if(l!=='en'&&l!=='it')l=(navigator.language||'en').slice(0,2)==='it'?'it':'en';var r=document.documentElement;r.setAttribute('data-lang',l);r.setAttribute('lang',l);r.classList.add('js')})();</script>
 </head>
 <body>
-<main>
-  <header>
-    <img src="icon.png" alt="">
-    <div>
-      <h1>FreshCheck Support</h1>
-      <p>Food expiry tracker for iPhone and Android</p>
+<a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="it">Vai al contenuto</span></a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.png" alt="FreshCheck icon">FreshCheck</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="support.html" aria-current="page"><span data-l="en">Support</span><span data-l="it">Supporto</span></a>
+      <a href="privacy.html">Privacy</a>
+      <a class="btn btn-primary btn-small" href="https://apps.apple.com/app/id6757205025"><span data-l="en">Get the app</span><span data-l="it">Scarica</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" data-set="it" aria-pressed="false">IT</button>
     </div>
-  </header>
-  <nav class="lang"><a href="#en">English</a><a href="#it">Italiano</a><a href="privacy.html">Privacy</a></nav>
+  </div>
+</header>
 
-  <section id="en">
-    <h2>Contact</h2>
-    <p>Write to <a href="mailto:checcofran717@gmail.com?subject=FreshCheck%20support">checcofran717@gmail.com</a>. Please include your device model, iOS or Android version, and a short description of the problem. We usually answer within 2 working days.</p>
+<main id="main">
+  <div class="wrap">
+    <section class="doc-hero" aria-labelledby="title">
+      <span class="burst" aria-hidden="true"></span>
+      <span class="sparkle s1" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.5 5.5 11.4 12 12-6.5.6-11.4 5.5-12 12-.6-6.5-5.5-11.4-12-12C6.5 11.4 11.4 6.5 12 0z"/></svg></span>
+      <span class="eyebrow intro"><img src="icon.png" alt=""><span data-l="en">FreshCheck support</span><span data-l="it">Supporto FreshCheck</span></span>
+      <h1 id="title" class="intro d1"><span data-l="en">How can we help?</span><span data-l="it">Come possiamo aiutarti?</span></h1>
+      <div class="underline" aria-hidden="true"></div>
+      <p class="lede intro d2"><span data-l="en">Quick answers below. If something is still off, write to us and a real person replies.</span><span data-l="it">Risposte rapide qui sotto. Se qualcosa non va ancora, scrivici: risponde una persona vera.</span></p>
+    </section>
 
-    <h3>Is my data safe?</h3>
-    <p>Yes. Everything is stored only on your phone. There is no account and no server. Read the <a href="privacy.html">Privacy Policy</a>.</p>
+    <div class="contact reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg></span>
+      <span>
+        <b>checcofran717@gmail.com</b>
+        <span data-l="en">Include your device model, iOS or Android version and a short description. We usually answer within 2 working days.</span>
+        <span data-l="it">Indica modello del dispositivo, versione di iOS o Android e una breve descrizione. Di solito rispondiamo entro 2 giorni lavorativi.</span>
+      </span>
+      <a class="btn btn-primary" data-l="en" href="mailto:checcofran717@gmail.com?subject=FreshCheck%20support">Write to us</a>
+      <a class="btn btn-primary" data-l="it" href="mailto:checcofran717@gmail.com?subject=Supporto%20FreshCheck">Scrivici</a>
+    </div>
 
-    <h3>Why does FreshCheck need the camera?</h3>
-    <p>Only to scan barcodes and read printed expiry dates. Photos are processed on the device and never saved.</p>
+    <div class="doc">
+      <nav class="toc" aria-label="Questions">
+        <p><span data-l="en">questions</span><span data-l="it">domande</span></p>
+        <ol data-l="en">
+          <li><a href="#en-data">Is my data safe?</a></li>
+          <li><a href="#en-camera">Why the camera?</a></li>
+          <li><a href="#en-offline">Does it work offline?</a></li>
+          <li><a href="#en-move">Moving to a new phone</a></li>
+          <li><a href="#en-pro">What Pro includes</a></li>
+          <li><a href="#en-cancel">Restore or cancel Pro</a></li>
+          <li><a href="#en-reminder">Missing reminders</a></li>
+        </ol>
+        <ol data-l="it">
+          <li><a href="#it-data">I miei dati sono al sicuro?</a></li>
+          <li><a href="#it-camera">Perché la fotocamera?</a></li>
+          <li><a href="#it-offline">Funziona offline?</a></li>
+          <li><a href="#it-move">Passare a un nuovo telefono</a></li>
+          <li><a href="#it-pro">Cosa include Pro</a></li>
+          <li><a href="#it-cancel">Ripristinare o disdire Pro</a></li>
+          <li><a href="#it-reminder">Promemoria mancanti</a></li>
+        </ol>
+      </nav>
 
-    <h3>Does it work offline?</h3>
-    <p>Yes. Only the barcode name lookup needs a connection. You can always type the name yourself.</p>
-
-    <h3>How do I move my data to a new phone?</h3>
-    <p>Open Settings › Data › Back up (JSON), save the file, then on the new phone choose Restore backup.</p>
-
-    <h3>What does FreshCheck Pro include?</h3>
-    <p>Unlimited items, unlimited date reading from photos, custom storage places, full savings history and badges, every recipe, custom reminders and digests, CSV export and backup, and colour themes. Pro is available as a monthly or yearly subscription, or as a one-time lifetime purchase.</p>
-
-    <h3>How do I restore or cancel Pro?</h3>
-    <p>To restore, open the Pro screen and tap Restore purchases. To cancel a subscription on iPhone, open Settings › your name › Subscriptions › FreshCheck. On Android, open Google Play › Payments &amp; subscriptions › Subscriptions. Cancel at least 24 hours before renewal.</p>
-
-    <h3>I did not get a reminder</h3>
-    <p>Check that notifications for FreshCheck are allowed in your phone settings and that reminders are on in FreshCheck › Settings › Reminders.</p>
-  </section>
-
-  <section id="it">
-    <h2>Contatti</h2>
-    <p>Scrivi a <a href="mailto:checcofran717@gmail.com?subject=Supporto%20FreshCheck">checcofran717@gmail.com</a>. Indica modello del dispositivo, versione di iOS o Android e una breve descrizione del problema. Di solito rispondiamo entro 2 giorni lavorativi.</p>
-
-    <h3>I miei dati sono al sicuro?</h3>
-    <p>Sì. Tutto resta solo sul tuo telefono. Non ci sono account né server. Leggi l'<a href="privacy.html">Informativa sulla privacy</a>.</p>
-
-    <h3>Perché serve la fotocamera?</h3>
-    <p>Solo per leggere codici a barre e date di scadenza stampate. Le foto sono elaborate sul dispositivo e mai salvate.</p>
-
-    <h3>Funziona offline?</h3>
-    <p>Sì. Solo la ricerca del nome dal codice a barre richiede la connessione. Puoi sempre scrivere il nome a mano.</p>
-
-    <h3>Come sposto i dati su un nuovo telefono?</h3>
-    <p>Apri Impostazioni › Dati › Backup (JSON), salva il file e sul nuovo telefono scegli Ripristina backup.</p>
-
-    <h3>Cosa include FreshCheck Pro?</h3>
-    <p>Prodotti illimitati, lettura illimitata delle date da foto, luoghi personalizzati, storico completo dei risparmi e medaglie, tutte le ricette, promemoria e riepiloghi su misura, esportazione CSV e backup, temi colore. Pro è disponibile con abbonamento mensile o annuale, oppure con acquisto unico a vita.</p>
-
-    <h3>Come ripristino o disdico Pro?</h3>
-    <p>Per ripristinare, apri la schermata Pro e tocca Ripristina acquisti. Per disdire su iPhone apri Impostazioni › il tuo nome › Abbonamenti › FreshCheck. Su Android apri Google Play › Pagamenti e abbonamenti › Abbonamenti. Disdici almeno 24 ore prima del rinnovo.</p>
-
-    <h3>Non ho ricevuto un promemoria</h3>
-    <p>Controlla che le notifiche di FreshCheck siano consentite nelle impostazioni del telefono e che i promemoria siano attivi in FreshCheck › Impostazioni › Promemoria.</p>
-  </section>
-
-  <footer>© 2026 Pierfrancesco Amendola · <a href="./">FreshCheck</a></footer>
+      <div class="prose">
+        <div data-l="en">
+          <article id="en-data" class="reveal"><h2><span class="n">01</span>Is my data safe?</h2><p>Yes. Everything is stored only on your phone. There is no account and no server. Read the <a href="privacy.html">Privacy Policy</a>.</p></article>
+          <article id="en-camera" class="reveal"><h2><span class="n">02</span>Why does FreshCheck need the camera?</h2><p>Only to scan barcodes and read printed expiry dates. Photos are processed on the device and never saved.</p></article>
+          <article id="en-offline" class="reveal"><h2><span class="n">03</span>Does it work offline?</h2><p>Yes. Only the barcode name lookup needs a connection. You can always type the name yourself.</p></article>
+          <article id="en-move" class="reveal"><h2><span class="n">04</span>How do I move my data to a new phone?</h2><p>Open <span class="path">Settings › Data › Back up (JSON)</span>, save the file, then on the new phone choose <span class="path">Restore backup</span>.</p></article>
+          <article id="en-pro" class="reveal"><h2><span class="n">05</span>What does FreshCheck Pro include?</h2><p>Unlimited items, unlimited date reading from photos, custom storage places, full savings history and badges, every recipe, custom reminders and digests, CSV export and backup, and colour themes. Pro is available as a monthly or yearly subscription, or as a one-time lifetime purchase.</p></article>
+          <article id="en-cancel" class="reveal"><h2><span class="n">06</span>How do I restore or cancel Pro?</h2><p>To restore, open the Pro screen and tap <span class="path">Restore purchases</span>. To cancel a subscription on iPhone, open <span class="path">Settings › your name › Subscriptions › FreshCheck</span>. On Android, open <span class="path">Google Play › Payments &amp; subscriptions › Subscriptions</span>. Cancel at least 24 hours before renewal.</p></article>
+          <article id="en-reminder" class="reveal"><h2><span class="n">07</span>I did not get a reminder</h2><p>Check that notifications for FreshCheck are allowed in your phone settings and that reminders are on in <span class="path">FreshCheck › Settings › Reminders</span>.</p></article>
+        </div>
+        <div data-l="it">
+          <article id="it-data" class="reveal"><h2><span class="n">01</span>I miei dati sono al sicuro?</h2><p>Sì. Tutto resta solo sul tuo telefono. Non ci sono account né server. Leggi l'<a href="privacy.html">Informativa sulla privacy</a>.</p></article>
+          <article id="it-camera" class="reveal"><h2><span class="n">02</span>Perché serve la fotocamera?</h2><p>Solo per leggere codici a barre e date di scadenza stampate. Le foto sono elaborate sul dispositivo e mai salvate.</p></article>
+          <article id="it-offline" class="reveal"><h2><span class="n">03</span>Funziona offline?</h2><p>Sì. Solo la ricerca del nome dal codice a barre richiede la connessione. Puoi sempre scrivere il nome a mano.</p></article>
+          <article id="it-move" class="reveal"><h2><span class="n">04</span>Come sposto i dati su un nuovo telefono?</h2><p>Apri <span class="path">Impostazioni › Dati › Backup (JSON)</span>, salva il file e sul nuovo telefono scegli <span class="path">Ripristina backup</span>.</p></article>
+          <article id="it-pro" class="reveal"><h2><span class="n">05</span>Cosa include FreshCheck Pro?</h2><p>Prodotti illimitati, lettura illimitata delle date da foto, luoghi personalizzati, storico completo dei risparmi e medaglie, tutte le ricette, promemoria e riepiloghi su misura, esportazione CSV e backup, temi colore. Pro è disponibile con abbonamento mensile o annuale, oppure con acquisto unico a vita.</p></article>
+          <article id="it-cancel" class="reveal"><h2><span class="n">06</span>Come ripristino o disdico Pro?</h2><p>Per ripristinare, apri la schermata Pro e tocca <span class="path">Ripristina acquisti</span>. Per disdire su iPhone apri <span class="path">Impostazioni › il tuo nome › Abbonamenti › FreshCheck</span>. Su Android apri <span class="path">Google Play › Pagamenti e abbonamenti › Abbonamenti</span>. Disdici almeno 24 ore prima del rinnovo.</p></article>
+          <article id="it-reminder" class="reveal"><h2><span class="n">07</span>Non ho ricevuto un promemoria</h2><p>Controlla che le notifiche di FreshCheck siano consentite nelle impostazioni del telefono e che i promemoria siano attivi in <span class="path">FreshCheck › Impostazioni › Promemoria</span>.</p></article>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Pierfrancesco Amendola</span>
+    <nav aria-label="Footer">
+      <a href="./">FreshCheck</a>
+      <a href="privacy.html"><span data-l="en">Privacy Policy</span><span data-l="it">Informativa privacy</span></a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"><span data-l="en">Terms of Use</span><span data-l="it">Termini d'uso</span></a>
+    </nav>
+  </div>
+</footer>
+<script src="site.js?v=2" defer></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 # FreshCheck Support
 
-Support page: https://pierfrancescoamendola.github.io/FreshCheck/support.html (source: docs/support.html).
+Support URL (App Store and in-app): https://pierfrancescoamendola.github.io/FreshCheck/ (source: docs/index.html). The FAQ lives at support.html.
 
 Contact: checcofran717@gmail.com

@@ -8,7 +8,7 @@ import pathlib
 
 TERMS_URL = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
 PRIVACY_URL = "https://pierfrancescoamendola.github.io/FreshCheck/privacy.html"
-SUPPORT_URL = "https://pierfrancescoamendola.github.io/FreshCheck/support.html"
+SUPPORT_URL = "https://pierfrancescoamendola.github.io/FreshCheck/"
 
 PRODUCTS = {
     "monthly": {"id": "com.anonymous.freshcheck.pro.monthly", "type": "auto-renewable", "duration": "1 month", "price_eur": "2.99"},
