@@ -73,7 +73,11 @@ const LEGACY_CATEGORY: Record<string, CategoryId> = {
     Altro: 'other',
 };
 
-const migrateItem = (raw: any): FoodItem => {
+// An item without a readable expiry date would break sorting, reminders and recipes
+export const isValidItem = (raw: any): boolean =>
+    !!raw && typeof raw.expirationDate === 'string' && !Number.isNaN(new Date(raw.expirationDate).getTime());
+
+export const migrateItem = (raw: any): FoodItem => {
     const category: CategoryId = CATEGORY_IDS.includes(raw.category)
         ? raw.category
         : LEGACY_CATEGORY[raw.category] ?? 'other';
@@ -88,13 +92,12 @@ const migrateItem = (raw: any): FoodItem => {
         price: typeof raw.price === 'number' ? raw.price : undefined,
         barcode: raw.barcode,
         tags: Array.isArray(raw.tags) ? raw.tags : detectTags(String(raw.name ?? '')),
-        notificationIds: raw.notificationIds,
     };
 };
 
 export const loadItems = async (): Promise<FoodItem[]> => {
     const raw = await readJSON<any[]>(KEYS.items, []);
-    return Array.isArray(raw) ? raw.filter((r) => r && r.expirationDate).map(migrateItem) : [];
+    return Array.isArray(raw) ? raw.filter(isValidItem).map(migrateItem) : [];
 };
 export const saveItems = (items: FoodItem[]) => writeJSON(KEYS.items, items);
 

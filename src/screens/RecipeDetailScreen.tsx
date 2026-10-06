@@ -8,6 +8,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { usePantry } from '../contexts/PantryContext';
 import { Button, IconButton, SectionLabel, T } from '../components/ui';
 import { RECIPES, recipeText } from '../data/recipes';
+import { missingIngredients } from '../utils/recipeMatcher';
 import { FONTS, RADIUS, SPACE, shadow } from '../theme/tokens';
 
 export const RecipeDetailScreen = ({ navigation, route }: RootScreen<'RecipeDetail'>) => {
@@ -26,9 +27,7 @@ export const RecipeDetailScreen = ({ navigation, route }: RootScreen<'RecipeDeta
     const text = recipeText(recipe, language);
 
     const addMissing = () => {
-        const haveNames = have.map((h) => h.name.toLowerCase());
-        const missing = text.ingredients.filter((ing) => !haveNames.some((n) => ing.toLowerCase().includes(n.split(' ')[0])));
-        addShopping(missing);
+        addShopping(missingIngredients(text.ingredients, have));
         Alert.alert(t('addedToList'));
     };
 

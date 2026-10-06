@@ -55,7 +55,8 @@ export const PaywallScreen = ({ navigation, route }: RootScreen<'Paywall'>) => {
             haptic('success');
             Alert.alert(t('purchaseDone'));
             navigation.goBack();
-        } else if (res === 'unavailable') Alert.alert(t('error'), t('storeUnavailable'));
+        } else if (res === 'pending') Alert.alert(t('purchasePending'));
+        else if (res === 'unavailable') Alert.alert(t('error'), t('storeUnavailable'));
         else if (res === 'error') Alert.alert(t('error'), t('storeUnavailable'));
     };
 

@@ -1,6 +1,7 @@
 import { FoodItem } from '../types';
 import { Recipe, RECIPES } from '../data/recipes';
 import { daysUntil } from './dateUtils';
+import { detectTags, normalize } from '../data/ingredients';
 
 export interface RecipeMatch {
     recipe: Recipe;
@@ -44,4 +45,15 @@ export const matchRecipes = (items: FoodItem[]): RecipeMatch[] => {
     })
         .filter((m) => m.score > 0)
         .sort((a, b) => b.score - a.score || a.recipe.minutes - b.recipe.minutes);
+};
+
+// Recipe ingredient lines the user does not have yet. A line counts as covered when it names an
+// ingredient tag of an item in the pantry, or contains a whole word (3+ letters) of an item's name.
+const SEPARATORS = /[\s,.;:()/'’"!?·+\-]+/;
+const wordsOf = (s: string) => normalize(s).trim().split(SEPARATORS).filter(Boolean);
+
+export const missingIngredients = (lines: string[], have: FoodItem[]): string[] => {
+    const tags = new Set(have.flatMap((i) => i.tags));
+    const names = new Set(have.flatMap((i) => wordsOf(i.name).filter((w) => w.length >= 3)));
+    return lines.filter((line) => !detectTags(line).some((t) => tags.has(t)) && !wordsOf(line).some((w) => names.has(w)));
 };

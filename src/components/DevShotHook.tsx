@@ -1,9 +1,10 @@
 // Development-only deep link used to stage App Store screenshots without tapping around.
 // Example (Expo Go): exp://127.0.0.1:8081/--/shot?lang=it&theme=light&accent=forest&demo=1&pro=1&screen=Recipes
+// remind=HH:MM asks for notification permission and moves the reminder time, to check real delivery.
 // When Metro is started with EXPO_PUBLIC_SHOT_SERVER=http://127.0.0.1:8099 the app also polls
 // <server>/cmd_<iphone|ipad>.json ({ "id": 1, "url": "shot?..." }), which avoids the
 // "Open in Expo Go?" prompt that iPadOS shows for every deep link.
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Linking, LogBox, Platform } from 'react-native';
 import { createNavigationContainerRef, StackActions } from '@react-navigation/native';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -15,6 +16,7 @@ import { AccentId } from '../types';
 import { ThemeMode } from '../theme/tokens';
 import { Language } from '../i18n';
 import { buildDemoBackup } from '../utils/demoData';
+import { requestPermission } from '../utils/notifications';
 
 export const navigationRef = createNavigationContainerRef<RootStackParamList>();
 
@@ -29,7 +31,9 @@ const go = (screen: string, arg?: string) => {
 
 export const DevShotHook = ({ skipOnboarding }: { skipOnboarding: () => void }) => {
     const { setLanguage, setCurrency } = useLanguage();
-    const { restoreBackup } = usePantry();
+    const { restoreBackup, notifPrefs, setNotifPrefs } = usePantry();
+    const prefsRef = useRef(notifPrefs);
+    prefsRef.current = notifPrefs;
     const { setDebugPro } = usePremium();
     const { setMode, setAccent } = useTheme();
 
@@ -48,6 +52,11 @@ export const DevShotHook = ({ skipOnboarding }: { skipOnboarding: () => void }) 
             if (q.get('pro') === '0') setDebugPro(false);
             skipOnboarding();
             if (q.get('demo') === '1') await restoreBackup(buildDemoBackup(lang ?? 'it', currency ?? 'EUR'));
+            const remind = q.get('remind')?.match(/^(\d{1,2}):(\d{2})$/);
+            if (remind) {
+                await requestPermission();
+                await setNotifPrefs({ ...prefsRef.current, enabled: true, hour: +remind[1], minute: +remind[2] });
+            }
             const screen = q.get('screen');
             if (screen) {
                 // Pop back to the tabs first so every shot starts from a clean stack
@@ -84,7 +93,7 @@ export const DevShotHook = ({ skipOnboarding }: { skipOnboarding: () => void }) 
             sub.remove();
             if (poll) clearInterval(poll);
         };
-    }, [setLanguage, setCurrency, restoreBackup, setDebugPro, setMode, setAccent, skipOnboarding]);
+    }, [setLanguage, setCurrency, restoreBackup, setNotifPrefs, setDebugPro, setMode, setAccent, skipOnboarding]);
 
     return null;
 };

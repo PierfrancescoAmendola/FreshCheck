@@ -39,8 +39,6 @@ export const exportCsv = async (items: FoodItem[], history: HistoryEntry[]) => {
 
 export const exportBackup = async (data: Omit<Backup, 'app' | 'version' | 'exportedAt'>) => {
     const backup: Backup = { app: 'freshcheck', version: 2, exportedAt: new Date().toISOString(), ...data };
-    // Notification ids are device-specific, drop them
-    backup.items = backup.items.map(({ notificationIds, ...rest }) => rest);
     await shareFile(`freshcheck-backup-${stamp()}.json`, JSON.stringify(backup), 'application/json');
 };
 

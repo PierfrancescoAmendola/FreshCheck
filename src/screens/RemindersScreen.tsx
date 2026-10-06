@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Platform, Pressable, ScrollView, StyleSheet, Switch, View } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react';
+import { AppState, Linking, Platform, Pressable, ScrollView, StyleSheet, Switch, View } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { RootScreen } from '../navigation/types';
@@ -8,10 +8,10 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { usePantry } from '../contexts/PantryContext';
 import { usePremium } from '../contexts/PremiumContext';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { Card, Chip, Divider, ProBadge, SectionLabel, T } from '../components/ui';
+import { Button, Card, Chip, Divider, ProBadge, SectionLabel, T } from '../components/ui';
 import { NotificationPrefs } from '../types';
 import { formatTime, TKey } from '../i18n';
-import { requestPermission } from '../utils/notifications';
+import { isPermissionDenied, requestPermission } from '../utils/notifications';
 import { SPACE } from '../theme/tokens';
 
 const LEADS: { days: number; key: TKey }[] = [
@@ -30,9 +30,23 @@ export const RemindersScreen = ({ navigation }: RootScreen<'Reminders'>) => {
     const { isPro } = usePremium();
     const { notifPrefs, setNotifPrefs } = usePantry();
     const [showTime, setShowTime] = useState(false);
+    const [denied, setDenied] = useState(false);
+
+    // Re-checked when the user comes back from the system settings
+    const checkPermission = useCallback(() => {
+        isPermissionDenied().then(setDenied);
+    }, []);
+    useEffect(() => {
+        checkPermission();
+        const sub = AppState.addEventListener('change', (state) => state === 'active' && checkPermission());
+        return () => sub.remove();
+    }, [checkPermission]);
 
     const update = async (patch: Partial<NotificationPrefs>) => {
-        if (patch.enabled) await requestPermission();
+        if (patch.enabled) {
+            await requestPermission();
+            checkPermission();
+        }
         setNotifPrefs({ ...notifPrefs, ...patch });
     };
 
@@ -61,6 +75,15 @@ export const RemindersScreen = ({ navigation }: RootScreen<'Reminders'>) => {
                         <Switch value={notifPrefs.enabled} onValueChange={(v) => update({ enabled: v })} trackColor={{ true: colors.accent }} />
                     </View>
                 </Card>
+
+                {notifPrefs.enabled && denied && (
+                    <Card style={{ borderWidth: 1, borderColor: colors.today }}>
+                        <T v="small" style={{ marginBottom: SPACE.md }}>
+                            {t('notifDeniedBody')}
+                        </T>
+                        <Button small label={t('openSettings')} onPress={() => Linking.openSettings()} />
+                    </Card>
+                )}
 
                 {notifPrefs.enabled && (
                     <>

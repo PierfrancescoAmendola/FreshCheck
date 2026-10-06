@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { Platform } from 'react-native';
+import { AppState, Platform } from 'react-native';
 import {
     ErrorCode,
     fetchProducts,
@@ -41,7 +41,7 @@ const KIND_BY_ID: Record<string, PlanKind> = {
 };
 const ORDER: PlanKind[] = ['annual', 'monthly', 'lifetime'];
 
-type PurchaseResult = 'success' | 'cancelled' | 'unavailable' | 'error';
+type PurchaseResult = 'success' | 'pending' | 'cancelled' | 'unavailable' | 'error';
 
 interface PremiumContextType {
     isPro: boolean;
@@ -90,7 +90,14 @@ export const PremiumProvider = ({ children }: { children: ReactNode }) => {
         const listen = () => {
             const updated = purchaseUpdatedListener(async (purchase: Purchase) => {
                 if (!PRO_PRODUCT_IDS.includes(purchase.productId)) return;
-                if (purchase.purchaseState === 'pending') return; // Ask to Buy / deferred: wait for the final update
+                if (purchase.purchaseState === 'pending') {
+                    // Ask to Buy / deferred payment: free the paywall now, the final update unlocks Pro later
+                    if (pending.current?.productId === purchase.productId) {
+                        pending.current.resolve('pending');
+                        pending.current = null;
+                    }
+                    return;
+                }
                 try {
                     await finishTransaction({ purchase, isConsumable: false });
                 } catch (e) {
@@ -137,7 +144,14 @@ export const PremiumProvider = ({ children }: { children: ReactNode }) => {
                 console.warn('Store init', e);
             }
         })();
-        return () => subscriptions.forEach((s) => s.remove());
+        // Renewals, expiries and refunds that happen while the app is in the background
+        const appState = AppState.addEventListener('change', (state) => {
+            if (state === 'active' && connected.current) refreshEntitlement().catch((e) => console.warn('Store refresh', e));
+        });
+        return () => {
+            subscriptions.forEach((s) => s.remove());
+            appState.remove();
+        };
     }, [refreshEntitlement]);
 
     const purchase = useCallback(async (plan: Plan): Promise<PurchaseResult> => {

@@ -88,11 +88,10 @@ export const formatMonth = (lang: Language, d: Date): string => {
 
 export const formatMoney = (lang: Language, amount: number, currency: string): string => {
     try {
-        return new Intl.NumberFormat(localeTag(lang), {
-            style: 'currency',
-            currency,
-            maximumFractionDigits: amount % 1 === 0 ? 0 : 2,
-        }).format(amount);
+        // Whole amounts drop the decimals; others keep the currency's own digits (2 for EUR, 0 for JPY).
+        // Both bounds are set because some engines reject a maximum below the currency's minimum.
+        const whole = amount % 1 === 0 ? { minimumFractionDigits: 0, maximumFractionDigits: 0 } : {};
+        return new Intl.NumberFormat(localeTag(lang), { style: 'currency', currency, ...whole }).format(amount);
     } catch {
         return `${amount.toFixed(2)} ${currency}`;
     }

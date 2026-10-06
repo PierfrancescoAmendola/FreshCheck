@@ -45,7 +45,6 @@ export interface FoodItem {
     price?: number;
     barcode?: string;
     tags: string[]; // ingredient tags used by recipes and shelf-life table
-    notificationIds?: string[];
 }
 
 export type Outcome = 'consumed' | 'wasted';

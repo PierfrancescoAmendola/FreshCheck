@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
     ActivityIndicator,
     Alert,
@@ -92,6 +92,7 @@ export const ItemEditorScreen = ({ navigation, route }: RootScreen<'ItemEditor'>
 
     const onDates = async (dates: DateCandidate[]) => {
         setScanMode(null);
+        if (dates.length === 0) return;
         if (!isPro) {
             const used = ocrUsed + 1;
             setOcrUsedState(used);
@@ -116,24 +117,32 @@ export const ItemEditorScreen = ({ navigation, route }: RootScreen<'ItemEditor'>
         setDateTouched(true);
     };
 
+    // A quick double tap on save must not add the item twice
+    const saving = useRef(false);
     const save = async () => {
+        if (saving.current) return;
         if (!name.trim()) {
             Alert.alert(t('nameRequired'));
             return;
         }
+        saving.current = true;
         const price = parseFloat(priceText.replace(',', '.'));
         const draft: ItemDraft = {
             name,
             category,
             locationId: isPro ? locationId : editing?.locationId ?? 'fridge',
             expirationDate: expiry,
-            price: Number.isFinite(price) ? price : undefined,
+            price: Number.isFinite(price) && price >= 0 ? price : undefined,
             barcode,
         };
         haptic('success');
-        if (editing) await updateItem(editing.id, draft);
-        else await addItem(draft);
-        navigation.goBack();
+        try {
+            if (editing) await updateItem(editing.id, draft);
+            else await addItem(draft);
+            navigation.goBack();
+        } finally {
+            saving.current = false;
+        }
     };
 
     const finish = async (outcome: 'consumed' | 'wasted') => {
