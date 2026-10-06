@@ -17,7 +17,7 @@
         "NSCameraUsageDescription": "FreshCheck uses the camera to scan barcodes and read expiry dates. Photos are processed on your device and never saved.",
         "CFBundleAllowMixedLocalizations": true
       },
-      "buildNumber": "5",
+      "buildNumber": "6",
       "appleTeamId": "9JFPPZ56V8",
       "privacyManifests": {
         "NSPrivacyAccessedAPITypes": [
