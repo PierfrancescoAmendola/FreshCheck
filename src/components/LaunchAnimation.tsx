@@ -4,8 +4,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../contexts/ThemeContext';
 import { FONTS } from '../theme/tokens';
 
-// Plays once at cold start, on top of the first real screen. It starts from the exact
-// native splash frame (icon fitted to the screen width), so the hand-off is invisible.
+// Plays once at cold start, on top of the first real screen. The native splash is just the
+// plain background colour (no static logo), so this animation is the only logo the user sees.
 const SPLASH_ICON = require('../../assets/splash-icon.png');
 const ICON = 150; // final on-screen size of the icon tile
 const TILE = 0.71; // the rounded tile spans ~71% of splash-icon.png
@@ -15,7 +15,8 @@ export const LaunchAnimation = ({ onDone }: { onDone: () => void }) => {
     const { width, height } = useWindowDimensions();
     const { colors } = useTheme();
 
-    const iconScale = useRef(new Animated.Value(1)).current; // relative to screen width
+    const iconScale = useRef(new Animated.Value(0.4)).current; // relative to screen width
+    const iconOpacity = useRef(new Animated.Value(0)).current;
     const iconY = useRef(new Animated.Value(0)).current;
     const burst = useRef(new Animated.Value(0)).current;
     const title = useRef(new Animated.Value(0)).current;
@@ -30,12 +31,17 @@ export const LaunchAnimation = ({ onDone }: { onDone: () => void }) => {
         AccessibilityInfo.isReduceMotionEnabled().then((reduce) => {
             if (cancelled) return;
             if (reduce) {
+                iconScale.setValue(small);
+                iconOpacity.setValue(1);
                 Animated.timing(exit, { toValue: 1, duration: 250, ...native }).start(finish);
                 return;
             }
             Animated.sequence([
                 // Icon settles from the native splash size into a crisp app icon
-                Animated.timing(iconScale, { toValue: small * 0.88, duration: 420, easing: Easing.bezier(0.6, 0, 0.2, 1), ...native }),
+                Animated.parallel([
+                    Animated.timing(iconScale, { toValue: small * 0.88, duration: 420, easing: Easing.bezier(0.6, 0, 0.2, 1), ...native }),
+                    Animated.timing(iconOpacity, { toValue: 1, duration: 300, ...native }),
+                ]),
                 Animated.parallel([
                     Animated.spring(iconScale, { toValue: small, friction: 4, tension: 140, ...native }),
                     // Colour bursts out from behind the icon
@@ -56,7 +62,7 @@ export const LaunchAnimation = ({ onDone }: { onDone: () => void }) => {
         return () => {
             cancelled = true;
         };
-    }, [width, onDone, iconScale, iconY, burst, title, exit]);
+    }, [width, onDone, iconScale, iconOpacity, iconY, burst, title, exit]);
 
     const diameter = Math.hypot(width, height) * 1.1;
     const burstScale = burst.interpolate({ inputRange: [0, 1], outputRange: [0.01, 1] });
@@ -85,7 +91,7 @@ export const LaunchAnimation = ({ onDone }: { onDone: () => void }) => {
                 style={[
                     styles.tile,
                     { width: width * TILE, height: width * TILE, borderRadius: width * TILE * 0.23 },
-                    { transform: [{ translateY: iconY }, { scale: iconScale }] },
+                    { opacity: iconOpacity, transform: [{ translateY: iconY }, { scale: iconScale }] },
                 ]}
             >
                 <Animated.Image source={SPLASH_ICON} style={{ width, height: width }} resizeMode="contain" />
