@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FreshCheck creative asset</title>
+<style>
+@font-face { font-family: 'Jakarta'; font-weight: 800; src: url('fonts/PlusJakartaSans_800ExtraBold.ttf'); }
+@font-face { font-family: 'Jakarta'; font-weight: 600; src: url('fonts/PlusJakartaSans_600SemiBold.ttf'); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow: hidden; background: #12B877; }
+#stage {
+    position: relative; overflow: hidden;
+    background:
+        radial-gradient(ellipse 42% 55% at 50% 46%, rgba(255,255,255,.22), rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 8% 10%, rgba(255,255,255,.16), rgba(255,255,255,0) 30%),
+        radial-gradient(circle at 96% 96%, rgba(0,90,60,.28), rgba(0,90,60,0) 40%),
+        linear-gradient(135deg, #0E9F62 0%, #15BE7C 42%, #12C79A 100%);
+    font-family: 'Jakarta', 'Hiragino Sans', 'Apple SD Gothic Neo', sans-serif;
+}
+.ring { position: absolute; border-radius: 50%; border: calc(var(--u) * .35) solid rgba(255,255,255,.12); transform: translate(-50%, -50%); }
+.item { position: absolute; transform: translate(-50%, -50%) rotate(var(--r)); filter: drop-shadow(0 calc(var(--u) * 1.4) calc(var(--u) * 1.8) rgba(0, 70, 40, .30)); }
+.item svg { display: block; width: 100%; height: 100%; }
+.spark { position: absolute; transform: translate(-50%, -50%); }
+#copy { position: absolute; left: 50%; transform: translate(-50%, -50%); text-align: center; white-space: nowrap; }
+#h1 { color: #fff; font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; text-shadow: 0 .03em .08em rgba(0, 70, 40, .18); }
+#h1 .hl { color: #FFE14D; }
+#sub { color: rgba(255,255,255,.92); font-weight: 600; letter-spacing: -0.01em; margin-top: .55em; }
+.cjk #h1 { letter-spacing: 0; line-height: 1.12; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+const COPY = {
+    it: ['Mai più cibo', 'buttato', 'Zero sprechi, più risparmio'],
+    en: ['Stop wasting', 'food', 'Track food dates, waste less'],
+    es: ['Deja de tirar', 'comida', 'Caducidades y cero desperdicio'],
+    fr: ['Finis le', 'gaspillage', 'Dates limites, zéro gaspillage'],
+    de: ['Nie wieder Essen', 'wegwerfen', 'Essen retten, Geld sparen'],
+    pt: ['Chega de jogar', 'comida fora', 'Desperdice menos, economize'],
+    nl: ['Nooit meer eten', 'weggooien', 'Verspil minder, bespaar meer'],
+    pl: ['Koniec z wyrzucaniem', 'jedzenia', 'Nie marnuj jedzenia'],
+    ja: ['食品ロスを', 'ゼロに', '食品ロスを減らして節約'],
+    ko: ['버리는 음식', '이제 그만', '음식물 낭비 줄이고 절약하기'],
+};
+
+// Canvas sizes accepted by App Store Connect for creative assets
+const FORMATS = {
+    universal: { w: 5244, h: 2950, font: 10.6, maxW: .43, copyY: 45 },
+    header: { w: 3840, h: 1646, font: 13.5, maxW: .41, copyY: 44 },
+};
+
+// Food artwork, drawn on a 200 x 200 grid
+const ART = {
+    tomato: `<defs><radialGradient id="tg" cx=".35" cy=".35" r=".75"><stop offset="0" stop-color="#FF7A66"/><stop offset="1" stop-color="#E5352A"/></radialGradient></defs>
+        <ellipse cx="100" cy="112" rx="82" ry="74" fill="url(#tg)"/>
+        <path d="M70 52 Q100 66 130 52" stroke="#C42A21" stroke-width="5" fill="none" opacity=".35"/>
+        <ellipse cx="66" cy="88" rx="20" ry="11" fill="#fff" opacity=".38" transform="rotate(-35 66 88)"/>
+        <path d="M100 58 L84 36 L100 46 L114 30 L112 50 L138 48 L116 60 L104 72 L94 61 L64 54 L88 50 Z" fill="#1FA45B"/>
+        <rect x="96" y="24" width="8" height="24" rx="4" fill="#178A4B"/>`,
+    lemon: `<defs><radialGradient id="lg" cx=".38" cy=".35" r=".8"><stop offset="0" stop-color="#FFF08A"/><stop offset="1" stop-color="#F6BF16"/></radialGradient></defs>
+        <circle cx="20" cy="100" r="12" fill="#F6C622"/><circle cx="180" cy="100" r="12" fill="#F6C622"/>
+        <ellipse cx="100" cy="100" rx="80" ry="62" fill="url(#lg)"/>
+        <ellipse cx="72" cy="76" rx="24" ry="9" fill="#fff" opacity=".45" transform="rotate(-18 72 76)"/>
+        <path d="M150 52 Q172 30 192 38 Q178 62 150 60 Z" fill="#2DB86A"/>`,
+    avocado: `<defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9F7A8"/><stop offset="1" stop-color="#B8DC58"/></linearGradient></defs>
+        <path d="M100 12 C134 12 142 52 154 82 C176 128 164 190 100 192 C36 190 24 128 46 82 C58 52 66 12 100 12 Z" fill="#2F6B2C"/>
+        <path d="M100 26 C126 26 133 60 142 86 C160 126 151 178 100 180 C49 178 40 126 58 86 C67 60 74 26 100 26 Z" fill="url(#ag)"/>
+        <circle cx="100" cy="128" r="32" fill="#8A5634"/>
+        <ellipse cx="90" cy="117" rx="10" ry="7" fill="#fff" opacity=".35" transform="rotate(-30 90 117)"/>`,
+    carrot: `<path d="M44 58 Q62 40 86 52 L176 168 Q182 180 168 176 Z" fill="#FF8A2A"/>
+        <path d="M44 58 Q62 40 86 52 L176 168 Q182 180 168 176 L60 74 Q48 68 44 58 Z" fill="#E86E14" opacity=".55"/>
+        <path d="M86 84 L100 80 M108 112 L122 106 M128 138 L140 134" stroke="#D45F0C" stroke-width="5" stroke-linecap="round"/>
+        <path d="M54 54 Q22 34 14 8 Q42 18 58 48 Z" fill="#2DB86A"/>
+        <path d="M58 50 Q50 18 66 0 Q78 26 66 52 Z" fill="#1FA45B"/>
+        <path d="M50 60 Q20 62 2 44 Q30 36 52 54 Z" fill="#178A4B"/>`,
+    milk: `<path d="M64 62 L136 62 L148 92 L148 178 Q148 190 136 190 L64 190 Q52 190 52 178 L52 92 Z" fill="#FFFFFF"/>
+        <path d="M120 62 L136 62 L148 92 L148 178 Q148 190 136 190 L128 190 Q136 186 136 176 L136 92 Z" fill="#E4ECE8"/>
+        <rect x="72" y="36" width="56" height="30" rx="6" fill="#F5F8F6"/>
+        <rect x="68" y="14" width="64" height="26" rx="9" fill="#0B7A4B"/>
+        <rect x="52" y="112" width="96" height="50" fill="#DDF5EA"/>
+        <path d="M86 150 Q86 124 116 120 Q116 148 90 150 Z" fill="#12B877"/>`,
+    egg: `<defs><radialGradient id="eg" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F0E2C8"/></radialGradient></defs>
+        <path d="M100 14 C150 14 170 100 170 128 C170 170 138 192 100 192 C62 192 30 170 30 128 C30 100 50 14 100 14 Z" fill="url(#eg)"/>
+        <ellipse cx="76" cy="70" rx="12" ry="22" fill="#fff" opacity=".8" transform="rotate(20 76 70)"/>`,
+    cheese: `<path d="M18 104 L128 40 L184 104 Z" fill="#FFE27A"/>
+        <path d="M18 104 L184 104 L184 166 L18 166 Z" fill="#FFC83A"/>
+        <circle cx="58" cy="132" r="13" fill="#EDA912"/><circle cx="112" cy="146" r="9" fill="#EDA912"/>
+        <circle cx="150" cy="124" r="11" fill="#EDA912"/><circle cx="96" cy="76" r="8" fill="#F2C33E"/>`,
+    apple: `<defs><radialGradient id="pg" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#B8F06A"/><stop offset="1" stop-color="#5FBF2C"/></radialGradient></defs>
+        <path d="M100 52 C130 30 182 44 182 104 C182 160 140 194 116 186 Q100 180 84 186 C60 194 18 160 18 104 C18 44 70 30 100 52 Z" fill="url(#pg)"/>
+        <rect x="96" y="20" width="8" height="34" rx="4" fill="#7A4B2A" transform="rotate(12 100 37)"/>
+        <path d="M106 36 Q124 6 156 14 Q140 44 106 36 Z" fill="#1FA45B"/>
+        <ellipse cx="62" cy="88" rx="16" ry="10" fill="#fff" opacity=".4" transform="rotate(-40 62 88)"/>`,
+    leaf: `<path d="M24 176 C24 90 80 28 180 20 C176 120 120 176 24 176 Z" fill="#FFFFFF"/>
+        <path d="M30 170 Q90 110 150 50" stroke="#12B877" stroke-width="9" stroke-linecap="round" fill="none"/>`,
+    // Urgency chips echo the app's colour cues (expired, today, soon, fine)
+    chipRed: chip('#F43F5E'), chipOrange: chip('#FB7A1E'), chipGreen: chip('#16B66E'),
+    bell: `<rect x="10" y="10" width="180" height="180" rx="48" fill="#fff"/>
+        <path d="M100 48 C72 48 62 70 62 92 L62 118 L50 136 L150 136 L138 118 L138 92 C138 70 128 48 100 48 Z" fill="#12B877"/>
+        <circle cx="100" cy="152" r="14" fill="#12B877"/><circle cx="140" cy="56" r="18" fill="#F43F5E"/>`,
+    check: `<rect x="10" y="10" width="180" height="180" rx="48" fill="#fff"/>
+        <circle cx="100" cy="100" r="58" fill="#12B877"/>
+        <path d="M72 102 L92 122 L130 82" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+};
+function chip(c) {
+    return `<rect x="4" y="62" width="192" height="76" rx="38" fill="#fff"/>
+        <circle cx="44" cy="100" r="16" fill="${c}"/>
+        <rect x="72" y="86" width="96" height="12" rx="6" fill="#1D2B36" opacity=".85"/>
+        <rect x="72" y="108" width="62" height="10" rx="5" fill="#1D2B36" opacity=".3"/>`;
+}
+
+// [art, x %, y %, size (units of 1% height), rotation]
+const LAYOUT = {
+    universal: [
+        ['tomato', 14, 29, 31, -12], ['leaf', 28, 15, 13, 18], ['avocado', 18, 71, 35, 14],
+        ['egg', 5, 52, 19, -16], ['chipRed', 25, 45, 15, -6], ['bell', 34, 82, 12, -10],
+        ['carrot', 73, 19, 24, 38], ['milk', 86, 31, 36, 8], ['chipGreen', 74, 47, 15, 5],
+        ['lemon', 81, 72, 30, -18], ['cheese', 96, 55, 21, 12], ['apple', 64, 85, 19, -8],
+        ['chipOrange', 92, 88, 15, -4], ['check', 6, 16, 11, 10],
+    ],
+    header: [
+        ['tomato', 11, 30, 36, -12], ['leaf', 24, 13, 15, 18], ['avocado', 16, 74, 40, 14],
+        ['egg', 3, 58, 22, -16], ['chipRed', 25, 50, 17, -6], ['bell', 31, 86, 13, -10],
+        ['carrot', 75, 19, 26, 38], ['milk', 88, 32, 40, 8], ['chipGreen', 75, 52, 17, 5],
+        ['lemon', 83, 76, 34, -18], ['cheese', 97, 58, 24, 12], ['apple', 69, 88, 21, -8],
+        ['check', 5, 14, 12, 10],
+    ],
+};
+const SPARKS = { universal: [[40, 12, 3], [61, 76, 2.4], [58, 10, 2], [45, 88, 2.6], [96, 12, 3]], header: [[40, 10, 3.4], [62, 82, 2.6], [58, 9, 2.2], [42, 90, 2.8], [96, 10, 3.2]] };
+const RINGS = { universal: [[14, 29, 46], [86, 31, 50]], header: [[11, 30, 52], [88, 32, 56]] };
+
+const q = new URLSearchParams(location.search);
+const lang = q.get('lang') || 'it';
+const fmt = FORMATS[q.get('fmt') || 'universal'];
+const fmtName = q.get('fmt') || 'universal';
+const stage = document.getElementById('stage');
+stage.style.width = fmt.w + 'px';
+stage.style.height = fmt.h + 'px';
+const u = fmt.h / 100;
+stage.style.setProperty('--u', u + 'px');
+if (lang === 'ja' || lang === 'ko') stage.classList.add('cjk');
+document.documentElement.lang = lang;
+
+for (const [x, y, d] of RINGS[fmtName]) {
+    const r = document.createElement('div');
+    r.className = 'ring';
+    Object.assign(r.style, { left: x + '%', top: y + '%', width: d * u + 'px', height: d * u + 'px' });
+    stage.appendChild(r);
+}
+for (const [x, y, s] of SPARKS[fmtName]) {
+    const el = document.createElement('div');
+    el.className = 'spark';
+    Object.assign(el.style, { left: x + '%', top: y + '%', width: s * u + 'px', height: s * u + 'px' });
+    el.innerHTML = '<svg viewBox="0 0 100 100" width="100%" height="100%"><path d="M50 0 Q56 44 100 50 Q56 56 50 100 Q44 56 0 50 Q44 44 50 0 Z" fill="#fff" opacity=".9"/></svg>';
+    stage.appendChild(el);
+}
+for (const [art, x, y, s, r] of LAYOUT[fmtName]) {
+    const el = document.createElement('div');
+    el.className = 'item';
+    Object.assign(el.style, { left: x + '%', top: y + '%', width: s * u + 'px', height: s * u + 'px' });
+    el.style.setProperty('--r', r + 'deg');
+    el.innerHTML = `<svg viewBox="0 0 200 200">${ART[art]}</svg>`;
+    stage.appendChild(el);
+}
+
+const [l1, l2, sub] = COPY[lang];
+const copy = document.createElement('div');
+copy.id = 'copy';
+copy.style.top = fmt.copyY + '%';
+copy.innerHTML = `<div id="h1">${l1}<br><span class="hl">${l2}</span></div><div id="sub">${sub}</div>`;
+stage.appendChild(copy);
+
+// Shrink long headlines until they fit between the two food clusters
+document.fonts.ready.then(() => {
+    let size = fmt.font * u;
+    const h1 = document.getElementById('h1');
+    const subEl = document.getElementById('sub');
+    const apply = () => { h1.style.fontSize = size + 'px'; subEl.style.fontSize = size * 0.36 + 'px'; };
+    apply();
+    while (copy.offsetWidth > fmt.w * fmt.maxW && size > 20) { size *= 0.97; apply(); }
+    document.title = 'ready';
+});
+</script>
+</body>
+</html>
