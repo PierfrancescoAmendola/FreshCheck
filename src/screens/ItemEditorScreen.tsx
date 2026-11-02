@@ -53,6 +53,8 @@ export const ItemEditorScreen = ({ navigation, route }: RootScreen<'ItemEditor'>
     const [candidates, setCandidates] = useState<DateCandidate[]>([]);
     const [ocrUsed, setOcrUsedState] = useState(0);
     const [dateTouched, setDateTouched] = useState(!!editing);
+    // Free users cannot rename a saved item, or one item could track any number of products
+    const nameLocked = !!editing && !isPro;
 
     useEffect(() => {
         getOcrUsed().then(setOcrUsedState);
@@ -63,6 +65,10 @@ export const ItemEditorScreen = ({ navigation, route }: RootScreen<'ItemEditor'>
     const suggestion = name.trim().length > 1 ? suggestedShelfLife(name, category) : null;
 
     const openScanner = (mode: ScanMode) => {
+        if (mode === 'barcode' && nameLocked) {
+            navigation.navigate('Paywall', { reason: 'items' });
+            return;
+        }
         if (mode === 'date' && !isPro && ocrLeft === 0) {
             navigation.navigate('Paywall', { reason: 'ocr' });
             return;
@@ -232,16 +238,20 @@ export const ItemEditorScreen = ({ navigation, route }: RootScreen<'ItemEditor'>
                 </View>
 
                 {/* Name */}
-                <SectionLabel>{t('name')}</SectionLabel>
-                <TextInput
-                    value={name}
-                    onChangeText={setName}
-                    placeholder={t('namePlaceholder')}
-                    placeholderTextColor={colors.muted}
-                    style={[styles.nameInput, { color: colors.ink, borderColor: colors.line }]}
-                    returnKeyType="done"
-                    autoFocus={!editing && !route.params?.startScan}
-                />
+                <SectionLabel right={nameLocked ? <ProBadge /> : undefined}>{t('name')}</SectionLabel>
+                <Pressable disabled={!nameLocked} onPress={() => navigation.navigate('Paywall', { reason: 'items' })}>
+                    <TextInput
+                        value={name}
+                        onChangeText={setName}
+                        editable={!nameLocked}
+                        pointerEvents={nameLocked ? 'none' : 'auto'}
+                        placeholder={t('namePlaceholder')}
+                        placeholderTextColor={colors.muted}
+                        style={[styles.nameInput, { color: nameLocked ? colors.muted : colors.ink, borderColor: colors.line }]}
+                        returnKeyType="done"
+                        autoFocus={!editing && !route.params?.startScan}
+                    />
+                </Pressable>
 
                 {/* Expiry */}
                 <View style={{ marginTop: SPACE.xl }}>

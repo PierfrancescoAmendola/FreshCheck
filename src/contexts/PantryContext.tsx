@@ -188,18 +188,20 @@ export const PantryProvider = ({ children }: { children: ReactNode }) => {
 
     const updateItem = useCallback(
         async (id: string, d: ItemDraft) => {
+            // Free users keep the name: renaming would turn one item into an endless free slot
+            const name = isPro ? d.name.trim() : undefined;
             await replaceItem(id, (prev) => ({
                 ...prev,
-                name: d.name.trim(),
+                name: name ?? prev.name,
                 category: d.category,
                 locationId: d.locationId,
                 expirationDate: toExpiryISO(d.expirationDate),
                 price: d.price,
-                barcode: d.barcode ?? prev.barcode,
-                tags: detectTags(d.name),
+                barcode: isPro ? d.barcode ?? prev.barcode : prev.barcode,
+                tags: name !== undefined ? detectTags(name) : prev.tags,
             }));
         },
-        [replaceItem],
+        [replaceItem, isPro],
     );
 
     const maybeAskReview = useCallback(async (consumedCount: number) => {

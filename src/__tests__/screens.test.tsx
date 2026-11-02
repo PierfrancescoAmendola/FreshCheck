@@ -20,7 +20,7 @@ import { PrivacyScreen } from '../screens/PrivacyScreen';
 import { OnboardingScreen } from '../screens/OnboardingScreen';
 import { RECIPES } from '../data/recipes';
 import { addDays, startOfDay, toExpiryISO } from '../utils/dateUtils';
-import { NOW } from './helpers';
+import { NOW, makeItem } from './helpers';
 
 const N = Notifications as any;
 
@@ -198,6 +198,24 @@ describe('item editor', () => {
         await waitFor(() => expect(screen.getByText('0 letture data gratuite rimaste')).toBeTruthy());
         await fireEvent.press(screen.getByText('Leggi data'));
         expect(nav.navigate).toHaveBeenCalledWith('Paywall', { reason: 'ocr' });
+    });
+
+    it('free users cannot rename a saved item or rescan its barcode', async () => {
+        await AsyncStorage.setItem('@ecoshelf_food_items', JSON.stringify([makeItem('Latte', 5, { id: 'saved' })]));
+        await setup({ itemId: 'saved' });
+        const input = await waitFor(() => screen.getByDisplayValue('Latte'));
+        expect(input.props.editable).toBe(false);
+        await fireEvent.press(screen.getByText('Codice a barre'));
+        expect(nav.navigate).toHaveBeenCalledWith('Paywall', { reason: 'items' });
+    });
+
+    it('Pro users can rename a saved item', async () => {
+        mockPro = true;
+        await AsyncStorage.setItem('@ecoshelf_food_items', JSON.stringify([makeItem('Latte', 5, { id: 'saved' })]));
+        const seen = await setup({ itemId: 'saved' });
+        await fireEvent.changeText(await waitFor(() => screen.getByDisplayValue('Latte')), 'Yogurt');
+        await fireEvent.press(screen.getByLabelText('Salva'));
+        await waitFor(() => expect(seen.names).toEqual(['Yogurt']));
     });
 });
 

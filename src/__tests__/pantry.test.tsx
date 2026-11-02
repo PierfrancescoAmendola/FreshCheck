@@ -65,6 +65,7 @@ describe('adding and editing items', () => {
     });
 
     it('changing the date moves the reminders, changing the name retitles them', async () => {
+        mockPro = true;
         const { result } = await setup();
         await act(() => result.current.pantry.addItem(draft('Latte', 5)));
         const id = result.current.pantry.items[0].id;
@@ -217,6 +218,18 @@ describe('free plan limits', () => {
         mockPro = true;
         await hook.rerender({});
         expect(hook.result.current.pantry.canAddItem).toBe(true);
+    });
+
+    it('free users cannot rename a saved item to reuse it, but can fix its date', async () => {
+        const { result } = await setup();
+        await act(() => result.current.pantry.addItem(draft('Latte', 5, { barcode: '111' })));
+        const id = result.current.pantry.items[0].id;
+        await act(() => result.current.pantry.updateItem(id, draft('Yogurt', 9, { barcode: '222' })));
+        const item = result.current.pantry.items[0];
+        expect(item.name).toBe('Latte');
+        expect(item.barcode).toBe('111');
+        expect(item.tags).toEqual(['milk']);
+        expect(daysUntil(item.expirationDate)).toBe(9);
     });
 
     it('eating or deleting items does not give the free slots back', async () => {
