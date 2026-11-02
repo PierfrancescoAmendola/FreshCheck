@@ -69,7 +69,7 @@ PRIVATE BY DESIGN
 No account, no servers, no tracking. Your items and history stay on your phone. Export a CSV or a backup whenever you want.
 
 FRESHCHECK PRO
-The free version includes up to 20 items, 3 date reads from photos and a selection of recipes. Pro unlocks:
+The free version lets you add your first 3 items and includes 3 date reads from photos and a selection of recipes. Pro unlocks:
 • Unlimited items
 • Unlimited date reading from photos
 • Custom storage places
@@ -148,7 +148,7 @@ PRIVACY PRIMA DI TUTTO
 Nessun account, nessun server, nessun tracciamento. Prodotti e storico restano sul tuo telefono. Esporta un CSV o un backup quando vuoi.
 
 FRESHCHECK PRO
-La versione gratuita include fino a 20 prodotti, 3 letture della data da foto e una selezione di ricette. Pro sblocca:
+La versione gratuita ti permette di aggiungere i primi 3 prodotti e include 3 letture della data da foto e una selezione di ricette. Pro sblocca:
 • Prodotti illimitati
 • Lettura illimitata della data da foto
 • Luoghi di conservazione personalizzati
@@ -227,7 +227,7 @@ PRIVACIDAD ANTE TODO
 Sin cuenta, sin servidores, sin rastreo. Tus productos y tu historial se quedan en tu móvil. Exporta un CSV o una copia de seguridad cuando quieras.
 
 FRESHCHECK PRO
-La versión gratuita incluye hasta 20 productos, 3 lecturas de fecha desde foto y una selección de recetas. Pro desbloquea:
+La versión gratuita te permite añadir tus primeros 3 productos e incluye 3 lecturas de fecha desde foto y una selección de recetas. Pro desbloquea:
 • Productos ilimitados
 • Lectura ilimitada de fechas desde foto
 • Lugares de almacenamiento propios
@@ -306,7 +306,7 @@ CONFIDENTIEL PAR NATURE
 Pas de compte, pas de serveur, pas de pistage. Vos produits et votre historique restent sur votre téléphone. Exportez un CSV ou une sauvegarde quand vous le souhaitez.
 
 FRESHCHECK PRO
-La version gratuite comprend jusqu'à 20 produits, 3 lectures de date sur photo et une sélection de recettes. Pro débloque :
+La version gratuite vous permet d'ajouter vos 3 premiers produits et comprend 3 lectures de date sur photo et une sélection de recettes. Pro débloque :
 • Produits illimités
 • Lecture illimitée des dates sur photo
 • Emplacements de rangement personnalisés
@@ -385,7 +385,7 @@ PRIVAT VON GRUND AUF
 Kein Konto, keine Server, kein Tracking. Deine Artikel und dein Verlauf bleiben auf deinem Handy. Exportiere jederzeit eine CSV-Datei oder ein Backup.
 
 FRESHCHECK PRO
-Die kostenlose Version umfasst bis zu 20 Artikel, 3 Datumserkennungen per Foto und eine Auswahl an Rezepten. Pro schaltet frei:
+Mit der kostenlosen Version fügst du deine ersten 3 Artikel hinzu, dazu 3 Datumserkennungen per Foto und eine Auswahl an Rezepten. Pro schaltet frei:
 • Unbegrenzte Artikel
 • Unbegrenzte Datumserkennung per Foto
 • Eigene Lagerorte
@@ -464,7 +464,7 @@ PRIVACIDADE EM PRIMEIRO LUGAR
 Sem conta, sem servidores, sem rastreamento. Seus itens e seu histórico ficam no seu celular. Exporte um CSV ou um backup quando quiser.
 
 FRESHCHECK PRO
-A versão gratuita inclui até 20 itens, 3 leituras de data por foto e uma seleção de receitas. O Pro libera:
+A versão gratuita permite adicionar os seus 3 primeiros itens e inclui 3 leituras de data por foto e uma seleção de receitas. O Pro libera:
 • Itens ilimitados
 • Leitura ilimitada de datas por foto
 • Locais de armazenamento personalizados
@@ -543,7 +543,7 @@ PRIVÉ VANAF HET BEGIN
 Geen account, geen servers, geen tracking. Je producten en historie blijven op je telefoon. Exporteer een CSV of back-up wanneer je wilt.
 
 FRESHCHECK PRO
-De gratis versie bevat maximaal 20 producten, 3 keer een datum lezen van een foto en een selectie recepten. Pro ontgrendelt:
+Met de gratis versie voeg je je eerste 3 producten toe, plus 3 keer een datum lezen van een foto en een selectie recepten. Pro ontgrendelt:
 • Onbeperkt producten
 • Onbeperkt datums lezen van foto's
 • Eigen bewaarplekken
@@ -622,7 +622,7 @@ PRYWATNOŚĆ OD PODSTAW
 Bez konta, bez serwerów, bez śledzenia. Twoje produkty i historia zostają w telefonie. Eksportuj plik CSV lub kopię zapasową, kiedy chcesz.
 
 FRESHCHECK PRO
-Wersja bezpłatna obejmuje do 20 produktów, 3 odczyty daty ze zdjęcia i wybrane przepisy. Pro odblokowuje:
+Wersja bezpłatna pozwala dodać pierwsze 3 produkty i obejmuje 3 odczyty daty ze zdjęcia i wybrane przepisy. Pro odblokowuje:
 • Nieograniczoną liczbę produktów
 • Nieograniczony odczyt dat ze zdjęć
 • Własne miejsca przechowywania
@@ -701,7 +701,7 @@ L["ja"] = dict(
 アカウント不要、サーバーなし、トラッキングなし。食品と履歴はあなたのiPhoneの中だけに保存されます。CSVやバックアップはいつでも書き出せます。
 
 FRESHCHECK PRO
-無料版では、食品20件まで、写真からの日付読み取り3回、一部のレシピを利用できます。Proでは以下が使えます：
+無料版では、最初の食品3件の登録、写真からの日付読み取り3回、一部のレシピを利用できます。Proでは以下が使えます：
 • 食品数無制限
 • 写真からの日付読み取り無制限
 • 保存場所のカスタマイズ
@@ -780,7 +780,7 @@ L["ko"] = dict(
 계정, 서버, 추적이 없습니다. 식품과 기록은 내 휴대폰에만 저장됩니다. 언제든지 CSV나 백업으로 내보낼 수 있습니다.
 
 FRESHCHECK PRO
-무료 버전에서는 식품 20개, 사진으로 날짜 읽기 3회, 일부 레시피를 이용할 수 있습니다. Pro에서는:
+무료 버전에서는 처음 식품 3개 등록, 사진으로 날짜 읽기 3회, 일부 레시피를 이용할 수 있습니다. Pro에서는:
 • 식품 무제한
 • 사진으로 날짜 읽기 무제한
 • 나만의 보관 장소

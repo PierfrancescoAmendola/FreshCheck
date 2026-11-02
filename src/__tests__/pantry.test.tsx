@@ -7,7 +7,7 @@ import * as StoreReview from 'expo-store-review';
 import { LanguageProvider, useLanguage } from '../contexts/LanguageContext';
 import { PantryProvider, usePantry } from '../contexts/PantryContext';
 import { addDays, daysUntil, startOfDay } from '../utils/dateUtils';
-import { NOW, localParts } from './helpers';
+import { NOW, entry, localParts, makeItem } from './helpers';
 
 const N = Notifications as any;
 
@@ -207,13 +207,47 @@ describe('reminder settings, plan and language', () => {
 });
 
 describe('free plan limits', () => {
-    it('free users can hold 20 items, Pro users more', async () => {
+    it('free users can add 3 items, Pro users more', async () => {
         const hook = await setup();
-        for (let i = 0; i < 20; i++) await act(() => hook.result.current.pantry.addItem(draft(`P${i}`, 5)));
+        for (let i = 0; i < 2; i++) await act(() => hook.result.current.pantry.addItem(draft(`P${i}`, 5)));
+        expect(hook.result.current.pantry.canAddItem).toBe(true);
+        await act(() => hook.result.current.pantry.addItem(draft('P2', 5)));
+        expect(hook.result.current.pantry.itemsAdded).toBe(3);
         expect(hook.result.current.pantry.canAddItem).toBe(false);
         mockPro = true;
         await hook.rerender({});
         expect(hook.result.current.pantry.canAddItem).toBe(true);
+    });
+
+    it('eating or deleting items does not give the free slots back', async () => {
+        const { result } = await setup();
+        for (let i = 0; i < 3; i++) await act(() => result.current.pantry.addItem(draft(`P${i}`, 5)));
+        await act(async () => {
+            await result.current.pantry.finishItem(result.current.pantry.items[0].id, 'consumed');
+        });
+        await act(() => result.current.pantry.deleteItem(result.current.pantry.items[0].id));
+        expect(result.current.pantry.items).toHaveLength(1);
+        expect(result.current.pantry.canAddItem).toBe(false);
+    });
+
+    it('the count survives a restart, and older installs start from what they tracked', async () => {
+        const first = await setup();
+        await act(() => first.result.current.pantry.addItem(draft('Latte', 5)));
+        await act(async () => {
+            await first.result.current.pantry.finishItem(first.result.current.pantry.items[0].id, 'consumed');
+        });
+        await waitFor(async () => expect(await AsyncStorage.getItem('@fc_items_added')).toBe('1'));
+        await first.unmount();
+        const second = await setup();
+        expect(second.result.current.pantry.itemsAdded).toBe(1);
+        await second.unmount();
+
+        await AsyncStorage.clear();
+        await AsyncStorage.setItem('@ecoshelf_food_items', JSON.stringify([makeItem('A', 3), makeItem('B', 4)]));
+        await AsyncStorage.setItem('@fc_history', JSON.stringify([entry('consumed', NOW)]));
+        const legacy = await setup();
+        expect(legacy.result.current.pantry.itemsAdded).toBe(3);
+        expect(legacy.result.current.pantry.canAddItem).toBe(false);
     });
 });
 

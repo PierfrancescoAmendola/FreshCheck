@@ -72,7 +72,7 @@ PRIVÉ VANAF HET BEGIN
 Geen account, geen servers, geen tracking. Je producten en historie blijven op je telefoon. Exporteer een CSV of back-up wanneer je wilt.
 
 FRESHCHECK PRO
-De gratis versie bevat maximaal 20 producten, 3 keer een datum lezen van een foto en een selectie recepten. Pro ontgrendelt:
+Met de gratis versie voeg je je eerste 3 producten toe, plus 3 keer een datum lezen van een foto en een selectie recepten. Pro ontgrendelt:
 • Onbeperkt producten
 • Onbeperkt datums lezen van foto's
 • Eigen bewaarplekken

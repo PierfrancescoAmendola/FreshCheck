@@ -31,7 +31,7 @@ export const PantryScreen = ({ navigation }: TabScreen<'Pantry'>) => {
     const { colors, isDark } = useTheme();
     const { t, date } = useLanguage();
     const { isPro } = usePremium();
-    const { items, locations, finishItem, addShopping, canAddItem } = usePantry();
+    const { items, locations, finishItem, addShopping, canAddItem, itemsAdded } = usePantry();
     const [locationFilter, setLocationFilter] = useState<string | 'all'>('all');
     const [query, setQuery] = useState('');
     const [searching, setSearching] = useState(false);
@@ -174,13 +174,13 @@ export const PantryScreen = ({ navigation }: TabScreen<'Pantry'>) => {
                 </Pressable>
             )}
 
-            {!isPro && items.length >= FREE_LIMITS.items - 5 && (
+            {!isPro && (
                 <Pressable
                     onPress={() => navigation.navigate('Paywall', { reason: 'items' })}
                     style={[styles.limit, { backgroundColor: `${colors.gold}26` }]}
                 >
                     <T v="small" style={{ flex: 1 }}>
-                        {t('limitBanner', { n: items.length, max: FREE_LIMITS.items })}
+                        {t('limitBanner', { n: Math.min(itemsAdded, FREE_LIMITS.items), max: FREE_LIMITS.items })}
                     </T>
                     <T v="small" color={isDark ? colors.gold : '#B36B00'} style={{ fontFamily: FONTS.bodyHeavy }}>
                         {t('upgrade')}

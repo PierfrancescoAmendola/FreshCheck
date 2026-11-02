@@ -21,6 +21,7 @@ import { FREE_LIMITS, REVIEW_AFTER_CONSUMED } from '../config';
 import {
     DEFAULT_LOCATIONS,
     DEFAULT_NOTIF_PREFS,
+    getItemsAdded,
     getReviewAsked,
     loadHistory,
     loadItems,
@@ -34,6 +35,7 @@ import {
     saveLocations,
     saveNotifPrefs,
     saveShopping,
+    setItemsAdded,
     setReviewAsked,
 } from '../utils/storage';
 import { ensureChannel, syncNotifications } from '../utils/notifications';
@@ -58,6 +60,7 @@ interface PantryContextType {
     shopping: ShoppingItem[];
     locations: StorageLocation[];
     notifPrefs: NotificationPrefs;
+    itemsAdded: number;
     canAddItem: boolean;
     addItem: (d: ItemDraft) => Promise<void>;
     updateItem: (id: string, d: ItemDraft) => Promise<void>;
@@ -89,6 +92,7 @@ export const PantryProvider = ({ children }: { children: ReactNode }) => {
     const [shopping, setShopping] = useState<ShoppingItem[]>([]);
     const [locations, setLocations] = useState<StorageLocation[]>(DEFAULT_LOCATIONS);
     const [notifPrefs, setNotifPrefsState] = useState<NotificationPrefs | null>(null);
+    const [itemsAdded, setItemsAddedState] = useState(0);
 
     // Refs let async actions read the latest state without stale closures
     const itemsRef = useRef(items);
@@ -98,18 +102,21 @@ export const PantryProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         (async () => {
-            const [i, h, s, l, p] = await Promise.all([
+            const [i, h, s, l, p, added] = await Promise.all([
                 loadItems(),
                 loadHistory(),
                 loadShopping(),
                 loadLocations(),
                 loadNotifPrefs(),
+                getItemsAdded(),
             ]);
             setItems(i);
             setHistory(h);
             setShopping(s);
             setLocations(l.length ? l : DEFAULT_LOCATIONS);
             setNotifPrefsState(p);
+            // Installs from before the counter existed start from what they already tracked
+            setItemsAddedState(Math.max(added, i.length + h.length));
             setLoaded(true);
         })();
     }, []);
@@ -123,6 +130,7 @@ export const PantryProvider = ({ children }: { children: ReactNode }) => {
     useEffect(() => { if (loaded) saveHistory(history); }, [history, loaded]);
     useEffect(() => { if (loaded) saveShopping(shopping); }, [shopping, loaded]);
     useEffect(() => { if (loaded) saveLocations(locations); }, [locations, loaded]);
+    useEffect(() => { if (loaded) setItemsAdded(itemsAdded); }, [itemsAdded, loaded]);
 
     // One plan for every reminder and digest, rebuilt whenever the pantry, the settings,
     // the plan or the language change. Debounced so a burst of edits schedules once.
@@ -146,7 +154,7 @@ export const PantryProvider = ({ children }: { children: ReactNode }) => {
 
     const prefs = notifPrefs ?? DEFAULT_NOTIF_PREFS;
 
-    const canAddItem = isPro || items.length < FREE_LIMITS.items;
+    const canAddItem = isPro || itemsAdded < FREE_LIMITS.items;
 
     const addItem = useCallback(
         async (d: ItemDraft) => {
@@ -162,6 +170,7 @@ export const PantryProvider = ({ children }: { children: ReactNode }) => {
                 tags: detectTags(d.name),
             };
             setItems((prev) => [...prev, base]);
+            setItemsAddedState((n) => n + 1);
         },
         [],
     );
@@ -321,6 +330,7 @@ export const PantryProvider = ({ children }: { children: ReactNode }) => {
             shopping,
             locations,
             notifPrefs: prefs,
+            itemsAdded,
             canAddItem,
             addItem,
             updateItem,
@@ -337,7 +347,7 @@ export const PantryProvider = ({ children }: { children: ReactNode }) => {
             setNotifPrefs,
             restoreBackup,
         }),
-        [loaded, items, history, shopping, locations, prefs, canAddItem, addItem, updateItem, finishItem, deleteItem, markOpened, moveToFreezer, addShopping, toggleShopping, removeShopping, clearCheckedShopping, addLocation, removeLocation, setNotifPrefs, restoreBackup],
+        [loaded, items, history, shopping, locations, prefs, itemsAdded, canAddItem, addItem, updateItem, finishItem, deleteItem, markOpened, moveToFreezer, addShopping, toggleShopping, removeShopping, clearCheckedShopping, addLocation, removeLocation, setNotifPrefs, restoreBackup],
     );
 
     return <PantryContext.Provider value={value}>{children}</PantryContext.Provider>;

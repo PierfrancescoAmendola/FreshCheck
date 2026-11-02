@@ -72,7 +72,7 @@ CONFIDENTIEL PAR NATURE
 Pas de compte, pas de serveur, pas de pistage. Vos produits et votre historique restent sur votre téléphone. Exportez un CSV ou une sauvegarde quand vous le souhaitez.
 
 FRESHCHECK PRO
-La version gratuite comprend jusqu'à 20 produits, 3 lectures de date sur photo et une sélection de recettes. Pro débloque :
+La version gratuite vous permet d'ajouter vos 3 premiers produits et comprend 3 lectures de date sur photo et une sélection de recettes. Pro débloque :
 • Produits illimités
 • Lecture illimitée des dates sur photo
 • Emplacements de rangement personnalisés

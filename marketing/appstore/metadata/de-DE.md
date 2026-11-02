@@ -72,7 +72,7 @@ PRIVAT VON GRUND AUF
 Kein Konto, keine Server, kein Tracking. Deine Artikel und dein Verlauf bleiben auf deinem Handy. Exportiere jederzeit eine CSV-Datei oder ein Backup.
 
 FRESHCHECK PRO
-Die kostenlose Version umfasst bis zu 20 Artikel, 3 Datumserkennungen per Foto und eine Auswahl an Rezepten. Pro schaltet frei:
+Mit der kostenlosen Version fügst du deine ersten 3 Artikel hinzu, dazu 3 Datumserkennungen per Foto und eine Auswahl an Rezepten. Pro schaltet frei:
 • Unbegrenzte Artikel
 • Unbegrenzte Datumserkennung per Foto
 • Eigene Lagerorte

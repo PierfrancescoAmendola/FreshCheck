@@ -72,7 +72,7 @@ PRIVATE BY DESIGN
 No account, no servers, no tracking. Your items and history stay on your phone. Export a CSV or a backup whenever you want.
 
 FRESHCHECK PRO
-The free version includes up to 20 items, 3 date reads from photos and a selection of recipes. Pro unlocks:
+The free version lets you add your first 3 items and includes 3 date reads from photos and a selection of recipes. Pro unlocks:
 • Unlimited items
 • Unlimited date reading from photos
 • Custom storage places

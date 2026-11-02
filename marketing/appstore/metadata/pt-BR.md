@@ -72,7 +72,7 @@ PRIVACIDADE EM PRIMEIRO LUGAR
 Sem conta, sem servidores, sem rastreamento. Seus itens e seu histórico ficam no seu celular. Exporte um CSV ou um backup quando quiser.
 
 FRESHCHECK PRO
-A versão gratuita inclui até 20 itens, 3 leituras de data por foto e uma seleção de receitas. O Pro libera:
+A versão gratuita permite adicionar os seus 3 primeiros itens e inclui 3 leituras de data por foto e uma seleção de receitas. O Pro libera:
 • Itens ilimitados
 • Leitura ilimitada de datas por foto
 • Locais de armazenamento personalizados

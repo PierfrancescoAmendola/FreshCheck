@@ -9,9 +9,9 @@ export const PRODUCT_IDS = {
 export const SUBSCRIPTION_IDS = [PRODUCT_IDS.monthly, PRODUCT_IDS.annual];
 export const PRO_PRODUCT_IDS: string[] = [PRODUCT_IDS.monthly, PRODUCT_IDS.annual, PRODUCT_IDS.lifetime];
 
-// Free tier limits
+// Free tier limits. `items` counts every item ever added, not the ones in the pantry now.
 export const FREE_LIMITS = {
-    items: 20,
+    items: 3,
     ocrScans: 3,
     recipes: 3,
 };

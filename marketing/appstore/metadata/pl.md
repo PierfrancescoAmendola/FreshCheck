@@ -72,7 +72,7 @@ PRYWATNOŚĆ OD PODSTAW
 Bez konta, bez serwerów, bez śledzenia. Twoje produkty i historia zostają w telefonie. Eksportuj plik CSV lub kopię zapasową, kiedy chcesz.
 
 FRESHCHECK PRO
-Wersja bezpłatna obejmuje do 20 produktów, 3 odczyty daty ze zdjęcia i wybrane przepisy. Pro odblokowuje:
+Wersja bezpłatna pozwala dodać pierwsze 3 produkty i obejmuje 3 odczyty daty ze zdjęcia i wybrane przepisy. Pro odblokowuje:
 • Nieograniczoną liczbę produktów
 • Nieograniczony odczyt dat ze zdjęć
 • Własne miejsca przechowywania

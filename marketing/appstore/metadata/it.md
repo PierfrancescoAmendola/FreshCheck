@@ -72,7 +72,7 @@ PRIVACY PRIMA DI TUTTO
 Nessun account, nessun server, nessun tracciamento. Prodotti e storico restano sul tuo telefono. Esporta un CSV o un backup quando vuoi.
 
 FRESHCHECK PRO
-La versione gratuita include fino a 20 prodotti, 3 letture della data da foto e una selezione di ricette. Pro sblocca:
+La versione gratuita ti permette di aggiungere i primi 3 prodotti e include 3 letture della data da foto e una selezione di ricette. Pro sblocca:
 • Prodotti illimitati
 • Lettura illimitata della data da foto
 • Luoghi di conservazione personalizzati

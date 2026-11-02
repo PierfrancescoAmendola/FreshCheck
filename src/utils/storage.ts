@@ -23,6 +23,7 @@ const KEYS = {
     locations: '@fc_locations',
     notifPrefs: '@fc_notif_prefs',
     ocrUsed: '@fc_ocr_used',
+    itemsAdded: '@fc_items_added',
     accent: '@fc_accent',
     currency: '@fc_currency',
     debugPro: '@fc_debug_pro',
@@ -155,6 +156,10 @@ export const setHasSeenOnboarding = (seen = true) => writeString(KEYS.onboarding
 
 export const getOcrUsed = async () => Number((await readString(KEYS.ocrUsed)) ?? 0);
 export const setOcrUsed = (n: number) => writeString(KEYS.ocrUsed, String(n));
+
+// Every item ever added, so the free limit is not refilled by eating or deleting items
+export const getItemsAdded = async () => Number((await readString(KEYS.itemsAdded)) ?? 0);
+export const setItemsAdded = (n: number) => writeString(KEYS.itemsAdded, String(n));
 
 export const getDebugPro = async () => (await readString(KEYS.debugPro)) === 'true';
 export const setDebugPro = (v: boolean) => writeString(KEYS.debugPro, String(v));
