@@ -2,7 +2,7 @@
   "expo": {
     "name": "FreshCheck",
     "slug": "freshcheck",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
@@ -17,7 +17,7 @@
         "NSCameraUsageDescription": "FreshCheck uses the camera to scan barcodes and read expiry dates. Photos are processed on your device and never saved.",
         "CFBundleAllowMixedLocalizations": true
       },
-      "buildNumber": "8",
+      "buildNumber": "9",
       "appleTeamId": "9JFPPZ56V8",
       "privacyManifests": {
         "NSPrivacyAccessedAPITypes": [
