@@ -1,0 +1,62 @@
+{
+  "_comment": "Custom Product Pages for FreshCheck (app 6757205025). order = which of the 01..08 product page screenshots to show, in display order (iPhone 6.9 and iPad 13 use the same order). keywords = app keywords assigned to the page so it shows in search for them. Built from Asset Library images of version 2.0.1, no new uploads.",
+  "pages": [
+    {
+      "name": "Scansione codice a barre",
+      "order": [2, 1, 5, 3, 4, 6, 7, 8],
+      "keywords": {
+        "it": ["codice a barre"], "en-US": ["barcode"], "fr-FR": ["code-barres"], "nl-NL": ["barcode"], "ja": ["バーコード"], "ko": ["바코드"]
+      },
+      "promo": {
+        "it": "Scansiona il codice a barre e leggi la scadenza dalla foto della confezione. FreshCheck aggiunge il prodotto in 3 secondi e ti avvisa prima che scada.",
+        "en-US": "Scan the barcode and read the expiry date from a photo of the pack. FreshCheck adds the item in 3 seconds and reminds you before it goes off.",
+        "de-DE": "Scanne den Barcode und lies das Ablaufdatum per Foto von der Verpackung. FreshCheck legt das Produkt in 3 Sekunden an und erinnert dich rechtzeitig.",
+        "fr-FR": "Scannez le code-barres et lisez la date sur l'emballage en photo. FreshCheck ajoute le produit en 3 secondes et vous prévient avant qu'il expire.",
+        "es-ES": "Escanea el código de barras y lee la fecha de caducidad con una foto del envase. FreshCheck añade el producto en 3 segundos y te avisa antes de que caduque.",
+        "pt-BR": "Escaneie o código de barras e leia a validade com uma foto da embalagem. O FreshCheck adiciona o produto em 3 segundos e avisa antes de vencer.",
+        "nl-NL": "Scan de barcode en lees de houdbaarheidsdatum van een foto van de verpakking. FreshCheck voegt het product in 3 seconden toe en waarschuwt je op tijd.",
+        "pl": "Zeskanuj kod kreskowy i odczytaj datę ważności ze zdjęcia opakowania. FreshCheck doda produkt w 3 sekundy i przypomni, zanim się przeterminuje.",
+        "ja": "バーコードをスキャンし、パッケージの写真から期限を読み取り。FreshCheckなら3秒で食品を登録し、期限が切れる前にお知らせします。",
+        "ko": "바코드를 스캔하고 포장 사진에서 유통기한을 읽어요. FreshCheck는 3초 만에 식품을 추가하고 기한이 지나기 전에 알려드려요."
+      }
+    },
+    {
+      "name": "Ricette con ciò che scade",
+      "order": [3, 1, 2, 4, 5, 6, 7, 8],
+      "keywords": {
+        "it": ["ricette"], "en-US": ["recipes"], "de-DE": ["rezepte"], "fr-FR": ["recettes"], "es-ES": ["recetas"], "pt-BR": ["receitas"], "nl-NL": ["recepten"], "pl": ["przepisy"], "ja": ["レシピ"], "ko": ["레시피"]
+      },
+      "promo": {
+        "it": "Cosa cucino stasera? FreshCheck ti propone ricette con gli ingredienti che stanno per scadere, con filtri per piatti veloci e vegetariani. Niente più avanzi buttati.",
+        "en-US": "What's for dinner? FreshCheck suggests recipes built on the food that's about to expire, with filters for quick and vegetarian meals. No more leftovers in the bin.",
+        "de-DE": "Was koche ich heute? FreshCheck schlägt Rezepte mit Zutaten vor, die bald ablaufen, mit Filtern für schnelle und vegetarische Gerichte. Keine Reste mehr im Müll.",
+        "fr-FR": "Qu'est-ce qu'on mange ce soir ? FreshCheck propose des recettes avec les aliments qui vont bientôt expirer, avec des filtres rapides et végétariens. Fini le gaspillage.",
+        "es-ES": "¿Qué cocino hoy? FreshCheck te sugiere recetas con los ingredientes que están a punto de caducar, con filtros para platos rápidos y vegetarianos. Adiós a tirar comida.",
+        "pt-BR": "O que fazer no jantar? O FreshCheck sugere receitas com os alimentos que estão para vencer, com filtros para pratos rápidos e vegetarianos. Chega de jogar comida fora.",
+        "nl-NL": "Wat eten we vandaag? FreshCheck stelt recepten voor met wat bijna over datum is, met filters voor snelle en vegetarische gerechten. Geen restjes meer in de prullenbak.",
+        "pl": "Co dziś ugotować? FreshCheck podpowiada przepisy z produktów, którym kończy się termin, z filtrami dań szybkich i wegetariańskich. Koniec z wyrzucaniem jedzenia.",
+        "ja": "今日の献立に迷ったら。FreshCheckが期限の近い食材で作れるレシピを提案。時短やベジタリアンで絞り込みも。食品ロスをなくしましょう。",
+        "ko": "오늘 뭐 먹지? FreshCheck가 유통기한이 임박한 재료로 만들 수 있는 레시피를 추천해요. 간편식, 채식 필터도 있어요. 이제 음식 버리지 마세요."
+      }
+    },
+    {
+      "name": "Risparmio e lista della spesa",
+      "order": [4, 6, 1, 2, 3, 5, 7, 8],
+      "keywords": {
+        "it": ["spesa", "lista spesa", "spreco"], "en-US": ["grocery", "shopping list", "waste"], "de-DE": ["einkaufsliste"], "fr-FR": ["courses", "liste de courses", "gaspillage"], "es-ES": ["lista compra", "desperdicio"], "pt-BR": ["lista de compras", "desperdício"], "nl-NL": ["boodschappenlijst", "verspilling"], "pl": ["lista zakupów", "marnowanie"], "ja": ["買い物リスト", "食品ロス", "節約"], "ko": ["장보기", "쇼핑리스트", "음식물쓰레기", "절약"]
+      },
+      "promo": {
+        "it": "Smetti di buttare soldi nella spazzatura. FreshCheck ti mostra quanto risparmi ogni mese e il tuo tasso di spreco, e compila la lista della spesa quando finisci qualcosa.",
+        "en-US": "Stop throwing money in the bin. FreshCheck shows how much you save each month and your waste rate, and fills your shopping list when you run out of something.",
+        "de-DE": "Schluss mit Geld in der Tonne. FreshCheck zeigt, wie viel du jeden Monat sparst und wie viel du wegwirfst, und füllt die Einkaufsliste, wenn etwas leer ist.",
+        "fr-FR": "Arrêtez de jeter votre argent à la poubelle. FreshCheck montre ce que vous économisez chaque mois, votre taux de gaspillage, et remplit la liste de courses.",
+        "es-ES": "Deja de tirar dinero a la basura. FreshCheck te muestra cuánto ahorras cada mes y tu tasa de desperdicio, y completa la lista de la compra cuando se acaba algo.",
+        "pt-BR": "Pare de jogar dinheiro no lixo. O FreshCheck mostra quanto você economiza por mês e sua taxa de desperdício, e preenche a lista de compras quando algo acaba.",
+        "nl-NL": "Stop met geld weggooien. FreshCheck laat zien hoeveel je elke maand bespaart en hoeveel je verspilt, en vult je boodschappenlijst als iets op is.",
+        "pl": "Przestań wyrzucać pieniądze do kosza. FreshCheck pokazuje, ile oszczędzasz co miesiąc i ile marnujesz, a gdy coś się skończy, dopisuje to do listy zakupów.",
+        "ja": "食品と一緒にお金を捨てるのはもう終わり。FreshCheckは毎月の節約額と廃棄率を表示し、使い切った食品を買い物リストに追加します。",
+        "ko": "음식과 함께 돈을 버리지 마세요. FreshCheck는 매달 아낀 금액과 낭비율을 보여주고, 다 떨어진 식품은 장보기 목록에 추가해요."
+      }
+    }
+  ]
+}

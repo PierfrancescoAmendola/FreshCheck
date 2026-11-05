@@ -1,0 +1,194 @@
+{
+  "_comment": "In-app events for FreshCheck (app 6757205025). Each locale is [name (30), short description (50), long description (120)]. Art: <scene>/card-1920x1080.png and <scene>/details-1080x1920.png, the same for every locale. Recipes are a Pro feature, so the holiday event declares a purchase requirement.",
+  "events": [
+    {
+      "scene": "zerowaste",
+      "referenceName": "Settimana zero sprechi 2026",
+      "badge": "CHALLENGE",
+      "purchaseRequirement": "NO_COST_ASSOCIATED",
+      "schedule": {
+        "publishStart": "2026-11-07T08:00:00Z",
+        "eventStart": "2026-11-21T07:00:00Z",
+        "eventEnd": "2026-11-29T22:00:00Z"
+      },
+      "localizations": {
+        "it": [
+          "Settimana zero sprechi",
+          "Sette giorni senza buttare cibo",
+          "Segna cosa hai in frigo, ricevi un avviso prima della scadenza e mangia prima ciò che sta finendo. Zero sprechi."
+        ],
+        "en-US": [
+          "Zero Waste Week",
+          "Seven days without throwing food away",
+          "Log what's in your fridge, get a reminder before it expires and eat what's ending first. One week, zero waste."
+        ],
+        "de-DE": [
+          "Woche ohne Verschwendung",
+          "Sieben Tage, kein Essen im Müll",
+          "Erfasse deinen Kühlschrank, lass dich vor dem Ablauf erinnern und iss zuerst, was bald abläuft. Null Abfall."
+        ],
+        "fr-FR": [
+          "Semaine zéro gaspi",
+          "Sept jours sans jeter de nourriture",
+          "Notez ce qu'il y a au frigo, recevez un rappel avant la date et mangez d'abord ce qui expire. Zéro gaspi."
+        ],
+        "es-ES": [
+          "Semana sin desperdicio",
+          "Siete días sin tirar comida",
+          "Apunta lo que hay en la nevera, recibe un aviso antes de que caduque y come primero lo que se acaba."
+        ],
+        "pt-BR": [
+          "Semana desperdício zero",
+          "Sete dias sem jogar comida fora",
+          "Anote o que tem na geladeira, receba um aviso antes de vencer e coma primeiro o que está acabando."
+        ],
+        "nl-NL": [
+          "Week zonder verspilling",
+          "Zeven dagen geen eten weggooien",
+          "Noteer wat er in je koelkast ligt, krijg een seintje voor de datum en eet eerst wat bijna op is."
+        ],
+        "pl": [
+          "Tydzień bez marnowania",
+          "Siedem dni bez wyrzucania jedzenia",
+          "Zapisz, co masz w lodówce, dostań przypomnienie przed terminem i jedz najpierw to, co się kończy."
+        ],
+        "ja": [
+          "食品ロスゼロ週間",
+          "7日間、食品を捨てずに過ごそう",
+          "冷蔵庫の中身を記録し、期限前に通知を受け取り、期限の近いものから食べましょう。1週間、食品ロスゼロに挑戦。"
+        ],
+        "ko": [
+          "음식 낭비 제로 주간",
+          "7일 동안 음식 버리지 않기",
+          "냉장고 속 식품을 기록하고 기한 전에 알림을 받아 임박한 것부터 먹어요. 일주일 동안 낭비 제로에 도전하세요."
+        ]
+      }
+    },
+    {
+      "scene": "feste",
+      "referenceName": "Avanzi delle feste 2026",
+      "badge": "SPECIAL_EVENT",
+      "purchaseRequirement": "IN_APP_PURCHASE",
+      "schedule": {
+        "publishStart": "2026-12-08T08:00:00Z",
+        "eventStart": "2026-12-22T07:00:00Z",
+        "eventEnd": "2027-01-06T22:00:00Z"
+      },
+      "localizations": {
+        "it": [
+          "Avanzi delle feste",
+          "Ricette per non buttare nulla dopo le feste",
+          "Dopo pranzi e cene il frigo è pieno: FreshCheck ti dice cosa scade prima e ti propone ricette per usarlo."
+        ],
+        "en-US": [
+          "Holiday Leftovers",
+          "Recipes so nothing goes to waste this season",
+          "After the holiday meals the fridge is full: FreshCheck shows what expires first and suggests recipes to use it up."
+        ],
+        "de-DE": [
+          "Reste der Feiertage",
+          "Rezepte, damit nach den Festen nichts verdirbt",
+          "Nach den Festessen ist der Kühlschrank voll: FreshCheck zeigt, was zuerst abläuft, und schlägt passende Rezepte vor."
+        ],
+        "fr-FR": [
+          "Les restes des fêtes",
+          "Des recettes pour ne rien jeter après les fêtes",
+          "Après les repas de fête, le frigo déborde : FreshCheck montre ce qui expire en premier et propose des recettes."
+        ],
+        "es-ES": [
+          "Sobras de las fiestas",
+          "Recetas para no tirar nada tras las fiestas",
+          "Tras las comidas de fiesta la nevera está llena: FreshCheck te dice qué caduca antes y te propone recetas."
+        ],
+        "pt-BR": [
+          "Sobras das festas",
+          "Receitas para não jogar nada fora nas festas",
+          "Depois das ceias a geladeira fica cheia: o FreshCheck mostra o que vence primeiro e sugere receitas para usar."
+        ],
+        "nl-NL": [
+          "Restjes van de feestdagen",
+          "Recepten zodat er na de feestdagen niets weg hoeft",
+          "Na de feestmaaltijden zit de koelkast vol: FreshCheck toont wat eerst over datum gaat en stelt recepten voor."
+        ],
+        "pl": [
+          "Resztki po świętach",
+          "Przepisy, by po świętach nic się nie zmarnowało",
+          "Po świątecznych posiłkach lodówka jest pełna: FreshCheck pokaże, co kończy się najpierw, i podpowie przepisy."
+        ],
+        "ja": [
+          "年末年始の残り物レシピ",
+          "年末年始の食材を最後まで使い切ろう",
+          "ごちそうの後は冷蔵庫がいっぱい。FreshCheckが期限の近い食材を知らせ、使い切りレシピを提案します。"
+        ],
+        "ko": [
+          "연말연시 남은 음식 레시피",
+          "연휴가 끝나도 음식을 버리지 않도록",
+          "연휴 식사 후 꽉 찬 냉장고, FreshCheck가 먼저 상할 식품을 알려주고 활용 레시피를 추천해요."
+        ]
+      }
+    },
+    {
+      "scene": "gennaio",
+      "referenceName": "Dispensa in ordine gennaio 2027",
+      "badge": "CHALLENGE",
+      "purchaseRequirement": "NO_COST_ASSOCIATED",
+      "schedule": {
+        "publishStart": "2027-01-01T08:00:00Z",
+        "eventStart": "2027-01-07T07:00:00Z",
+        "eventEnd": "2027-01-31T22:00:00Z"
+      },
+      "localizations": {
+        "it": [
+          "Dispensa in ordine",
+          "Inizia l'anno con frigo e dispensa sotto controllo",
+          "Segna cosa hai in frigo, freezer e credenza, ricevi un avviso prima delle scadenze e inizia l'anno senza sprechi."
+        ],
+        "en-US": [
+          "Fresh Start Pantry",
+          "Start the year with a fridge under control",
+          "Log what's in your fridge, freezer and cupboard, get reminders before dates pass and start the year with zero waste."
+        ],
+        "de-DE": [
+          "Vorrat im Griff",
+          "Starte das Jahr mit aufgeräumtem Kühlschrank",
+          "Erfasse Kühlschrank, Gefrierfach und Vorrat, lass dich vor dem Ablauf erinnern und starte ohne Verschwendung ins Jahr."
+        ],
+        "fr-FR": [
+          "Garde-manger en ordre",
+          "Commencez l'année avec un frigo bien rangé",
+          "Notez ce qu'il y a au frigo, au congélateur et au placard, recevez des rappels et commencez l'année sans gaspillage."
+        ],
+        "es-ES": [
+          "Despensa en orden",
+          "Empieza el año con la nevera bajo control",
+          "Apunta lo que hay en nevera, congelador y despensa, recibe avisos antes de que caduque y empieza el año sin desperdicio."
+        ],
+        "pt-BR": [
+          "Despensa em ordem",
+          "Comece o ano com a geladeira sob controle",
+          "Anote o que tem na geladeira, no freezer e no armário, receba avisos antes de vencer e comece o ano sem desperdício."
+        ],
+        "nl-NL": [
+          "Voorraad op orde",
+          "Begin het jaar met een opgeruimde koelkast",
+          "Noteer wat er in koelkast, vriezer en kast ligt, krijg een seintje voor de datum en begin het jaar zonder verspilling."
+        ],
+        "pl": [
+          "Porządek w spiżarni",
+          "Zacznij rok z lodówką pod kontrolą",
+          "Zapisz, co masz w lodówce, zamrażarce i szafce, dostawaj przypomnienia przed terminem i zacznij rok bez marnowania."
+        ],
+        "ja": [
+          "新年の冷蔵庫リセット",
+          "冷蔵庫をすっきり整えて新年をスタート",
+          "冷蔵庫・冷凍庫・棚の食品を記録し、期限前に通知を受け取りましょう。食品ロスゼロで新しい一年を。"
+        ],
+        "ko": [
+          "새해 냉장고 정리",
+          "깔끔한 냉장고로 새해를 시작하세요",
+          "냉장고, 냉동실, 찬장 속 식품을 기록하고 기한 전에 알림을 받아요. 낭비 없이 새해를 시작하세요."
+        ]
+      }
+    }
+  ]
+}

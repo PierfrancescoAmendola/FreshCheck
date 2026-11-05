@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FreshCheck in-app event art</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow: hidden; background: #12B877; }
+/* No text and no amounts: the App Store draws the event name and descriptions over the
+   lower part of the image, so everything important sits in the upper 60% of the canvas. */
+#stage { position: relative; overflow: hidden; }
+.zerowaste {
+    background:
+        radial-gradient(ellipse 50% 42% at 50% 36%, rgba(255,255,255,.26), rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 96% 96%, rgba(0,90,60,.32), rgba(0,90,60,0) 45%),
+        linear-gradient(140deg, #0E9F62 0%, #15BE7C 45%, #12C79A 100%);
+}
+.feste {
+    background:
+        radial-gradient(ellipse 50% 42% at 50% 36%, rgba(255,214,120,.30), rgba(255,214,120,0) 70%),
+        radial-gradient(circle at 4% 96%, rgba(20,90,50,.55), rgba(20,90,50,0) 40%),
+        linear-gradient(150deg, #C8283C 0%, #A3172E 50%, #6E0E22 100%);
+}
+.gennaio {
+    background:
+        radial-gradient(ellipse 50% 42% at 50% 36%, rgba(255,255,255,.28), rgba(255,255,255,0) 70%),
+        radial-gradient(circle at 96% 96%, rgba(20,40,120,.35), rgba(20,40,120,0) 45%),
+        linear-gradient(150deg, #2BB7E8 0%, #2C8CE6 50%, #3A5BD9 100%);
+}
+.ring { position: absolute; border-radius: 50%; border: calc(var(--u) * .35) solid rgba(255,255,255,.13); transform: translate(-50%, -50%); }
+.item { position: absolute; transform: translate(-50%, -50%) rotate(var(--r)); filter: drop-shadow(0 calc(var(--u) * 1.4) calc(var(--u) * 1.8) rgba(0, 40, 30, .32)); }
+.item svg { display: block; width: 100%; height: 100%; }
+.spark { position: absolute; transform: translate(-50%, -50%); }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+// Food artwork is shared with ../creative/template.html: read its ART table so both stay in sync.
+async function loadArt() {
+    const src = await (await fetch('../creative/template.html')).text();
+    const start = src.indexOf('const ART = {');
+    const end = src.indexOf('const LAYOUT = {');
+    return new Function(src.slice(start, end) + '; return ART;')();
+}
+
+const EXTRA = {
+    // Seven-day streak: one ticked day per circle, the last one glowing
+    streak: `<rect x="0" y="70" width="200" height="60" rx="30" fill="#fff"/>
+        ${[0, 1, 2, 3, 4, 5, 6].map(i => `<circle cx="${22 + i * 26}" cy="100" r="10" fill="${i < 6 ? '#12B877' : '#FFC83A'}"/>`).join('')}`,
+    medal: `<path d="M64 4 L100 70 L136 4 L160 4 L118 82 L82 82 L40 4 Z" fill="#0B7A4B"/>
+        <path d="M74 4 L100 52 L126 4 Z" fill="#12B877"/>
+        <circle cx="100" cy="126" r="70" fill="#FFC83A"/>
+        <circle cx="100" cy="126" r="56" fill="#FFE27A"/>
+        <path d="M70 128 L92 150 L132 106" stroke="#0B7A4B" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <ellipse cx="72" cy="96" rx="14" ry="8" fill="#fff" opacity=".55" transform="rotate(-35 72 96)"/>`,
+    pot: `<path d="M100 8 Q86 24 100 40 Q114 56 100 72" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none" opacity=".75"/>
+        <path d="M66 18 Q54 32 66 46 Q78 60 66 72" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity=".55"/>
+        <path d="M134 18 Q122 32 134 46 Q146 60 134 72" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity=".55"/>
+        <rect x="18" y="92" width="164" height="16" rx="8" fill="#2B3440"/>
+        <path d="M28 106 L172 106 L162 178 Q160 192 146 192 L54 192 Q40 192 38 178 Z" fill="#3B4654"/>
+        <path d="M44 106 L60 106 L66 186 L54 186 Q46 186 44 178 Z" fill="#fff" opacity=".12"/>
+        <rect x="2" y="116" width="26" height="14" rx="7" fill="#2B3440"/><rect x="172" y="116" width="26" height="14" rx="7" fill="#2B3440"/>
+        <circle cx="62" cy="96" r="14" fill="#FF5A4E"/><circle cx="96" cy="92" r="12" fill="#FFC83A"/>
+        <circle cx="128" cy="96" r="14" fill="#2DB86A"/><circle cx="150" cy="98" r="9" fill="#FF8A2A"/>`,
+    star: `<path d="M100 8 L124 72 L192 76 L138 118 L156 186 L100 148 L44 186 L62 118 L8 76 L76 72 Z" fill="#FFD45C"/>`,
+    fridge: `<rect x="34" y="4" width="132" height="192" rx="22" fill="#F3F8FB"/>
+        <rect x="34" y="4" width="132" height="192" rx="22" fill="none" stroke="#D5E3EC" stroke-width="4"/>
+        <rect x="48" y="20" width="104" height="160" rx="12" fill="#DDEEF7"/>
+        <rect x="48" y="70" width="104" height="6" fill="#B9D6E6"/><rect x="48" y="124" width="104" height="6" fill="#B9D6E6"/>
+        <rect x="58" y="36" width="20" height="34" rx="5" fill="#fff"/><rect x="58" y="30" width="20" height="10" rx="3" fill="#0B7A4B"/>
+        <circle cx="100" cy="56" r="13" fill="#FF5A4E"/><circle cx="132" cy="58" r="11" fill="#FFC83A"/>
+        <rect x="60" y="94" width="34" height="30" rx="6" fill="#FFC83A"/><ellipse cx="124" cy="112" rx="18" ry="12" fill="#5FBF2C"/>
+        <rect x="60" y="146" width="80" height="22" rx="8" fill="#FF8A2A" opacity=".85"/>
+        <circle cx="166" cy="34" r="28" fill="#12B877"/>
+        <path d="M152 34 L162 44 L180 24" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+    snow: `<g stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".9">
+        <path d="M100 14 L100 186"/><path d="M26 57 L174 143"/><path d="M26 143 L174 57"/>
+        <path d="M76 30 L100 50 L124 30"/><path d="M76 170 L100 150 L124 170"/></g>`,
+};
+
+// [art, x %, y %, size (units of 1% of the short side), rotation]
+const SCENES = {
+    zerowaste: {
+        card: [['medal', 50, 35, 40, -4], ['streak', 50, 66, 30, 0],
+            ['tomato', 22, 26, 20, -12], ['avocado', 13, 58, 22, 14], ['leaf', 32, 10, 10, 18], ['egg', 31, 52, 12, -16],
+            ['carrot', 75, 20, 17, 38], ['milk', 86, 44, 22, 8], ['apple', 69, 52, 12, -8], ['chipGreen', 88, 14, 12, 6], ['check', 7, 20, 9, 10]],
+        details: [['medal', 50, 25, 52, -4], ['streak', 50, 45, 50, 0],
+            ['tomato', 17, 12, 22, -12], ['carrot', 84, 13, 20, 38], ['avocado', 13, 36, 22, 14], ['milk', 88, 34, 22, 8],
+            ['leaf', 30, 4, 10, 18], ['apple', 76, 51, 13, -8], ['egg', 22, 54, 13, -16]],
+        rings: { card: [[50, 35, 62], [50, 35, 86]], details: [[50, 25, 76], [50, 25, 104]] },
+        sparks: { card: [[38, 12, 3], [64, 10, 2.4], [42, 60, 2], [60, 74, 2.6], [95, 30, 3]], details: [[30, 22, 3], [72, 30, 2.4], [52, 6, 2.6], [90, 54, 2.2], [8, 48, 2.4]] },
+    },
+    feste: {
+        card: [['pot', 50, 38, 40, 0],
+            ['cheese', 24, 30, 18, -10], ['egg', 14, 58, 14, -16], ['carrot', 30, 58, 14, 30], ['tomato', 76, 26, 17, 10],
+            ['lemon', 86, 54, 17, -18], ['apple', 70, 58, 12, -8], ['star', 10, 18, 9, 10], ['star', 92, 14, 7, -14], ['star', 38, 12, 5, 6]],
+        details: [['pot', 50, 28, 56, 0],
+            ['cheese', 18, 12, 20, -10], ['tomato', 84, 12, 18, 10], ['egg', 12, 38, 15, -16], ['lemon', 88, 38, 18, -18],
+            ['carrot', 26, 52, 16, 30], ['apple', 74, 53, 13, -8], ['star', 50, 5, 8, 6], ['star', 8, 24, 6, 10], ['star', 92, 25, 6, -14]],
+        rings: { card: [[50, 38, 62], [50, 38, 86]], details: [[50, 28, 78], [50, 28, 106]] },
+        sparks: { card: [[60, 10, 3], [42, 72, 2.4], [96, 34, 2.2], [4, 40, 2.6], [62, 70, 2]], details: [[32, 24, 3], [70, 20, 2.6], [50, 48, 2.2], [6, 52, 2.4], [94, 52, 2.4]] },
+    },
+    gennaio: {
+        card: [['fridge', 50, 37, 44, -3],
+            ['check', 26, 22, 12, -10], ['milk', 18, 50, 20, -8], ['egg', 30, 60, 12, 14], ['apple', 76, 22, 15, 10],
+            ['lemon', 84, 52, 17, -18], ['leaf', 70, 60, 10, 20], ['snow', 10, 16, 9, 0], ['snow', 92, 18, 7, 20], ['snow', 40, 9, 5, 10]],
+        details: [['fridge', 50, 27, 58, -3],
+            ['milk', 15, 14, 20, -8], ['apple', 85, 12, 17, 10], ['check', 13, 38, 13, -10], ['lemon', 87, 38, 18, -18],
+            ['egg', 25, 52, 13, 14], ['leaf', 74, 53, 11, 20], ['snow', 50, 4, 7, 0], ['snow', 32, 6, 5, 18], ['snow', 70, 6, 5, -12]],
+        rings: { card: [[50, 37, 64], [50, 37, 88]], details: [[50, 27, 80], [50, 27, 108]] },
+        sparks: { card: [[62, 10, 3], [40, 70, 2.4], [96, 36, 2.2], [4, 36, 2.6], [60, 72, 2]], details: [[30, 26, 3], [72, 24, 2.6], [52, 50, 2.2], [6, 54, 2.4], [94, 54, 2.4]] },
+    },
+};
+
+(async () => {
+    const q = new URLSearchParams(location.search);
+    const scene = q.get('scene') || 'zerowaste';
+    const fmt = q.get('fmt') || 'card';
+    const W = fmt === 'card' ? 1920 : 1080, H = fmt === 'card' ? 1080 : 1920;
+    const ART = Object.assign(await loadArt(), EXTRA);
+    const S = SCENES[scene];
+    const stage = document.getElementById('stage');
+    stage.className = scene;
+    stage.style.width = W + 'px';
+    stage.style.height = H + 'px';
+    const u = Math.min(W, H) / 100;
+    stage.style.setProperty('--u', u + 'px');
+    for (const [x, y, d] of S.rings[fmt]) {
+        const r = document.createElement('div');
+        r.className = 'ring';
+        Object.assign(r.style, { left: x + '%', top: y + '%', width: d * u + 'px', height: d * u + 'px' });
+        stage.appendChild(r);
+    }
+    for (const [x, y, s] of S.sparks[fmt]) {
+        const el = document.createElement('div');
+        el.className = 'spark';
+        Object.assign(el.style, { left: x + '%', top: y + '%', width: s * u + 'px', height: s * u + 'px' });
+        el.innerHTML = '<svg viewBox="0 0 100 100" width="100%" height="100%"><path d="M50 0 Q56 44 100 50 Q56 56 50 100 Q44 56 0 50 Q44 44 50 0 Z" fill="#fff" opacity=".9"/></svg>';
+        stage.appendChild(el);
+    }
+    for (const [art, x, y, s, r] of S[fmt]) {
+        const el = document.createElement('div');
+        el.className = 'item';
+        Object.assign(el.style, { left: x + '%', top: y + '%', width: s * u + 'px', height: s * u + 'px' });
+        el.style.setProperty('--r', r + 'deg');
+        el.innerHTML = `<svg viewBox="0 0 200 200">${ART[art]}</svg>`;
+        stage.appendChild(el);
+    }
+    document.title = 'ready';
+})();
+</script>
+</body>
+</html>
